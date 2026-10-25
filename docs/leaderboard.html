@@ -1,22 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
+<meta name="robots" content="noindex,follow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MiroBench Leaderboard — Per-Domain Model Results</title>
-<meta name="description" content="Per-domain MiroBench leaderboard: 4 LLM agents evaluated across 5 product domains on 16 metrics with MWU/KS p-values, Cliff's δ, and Wasserstein distance.">
+<title>Archived MiroBench Leaderboard — Per-Domain Model Results</title>
+<meta name="description" content="Archived earlier-protocol MiroBench leaderboard: 4 LLM agents evaluated across 5 product domains on 16 metrics with MWU/KS p-values, Cliff's δ, and Wasserstein distance.">
 <meta name="author" content="Yaoning Yu, Ye Yu, Haojing Luo, Haohan Wang">
 <meta name="keywords" content="MiroBench leaderboard, OASIS, DeepSeek, GPT-4o-mini, GPT-5-mini, Reddit simulation, agentic simulation, benchmark results">
 
-<link rel="canonical" href="https://yyu6.github.io/MiroBench/leaderboard.html">
-<link rel="sitemap" type="application/xml" href="https://yyu6.github.io/MiroBench/sitemap.xml">
+<link rel="canonical" href="https://yyu6.github.io/ThreadBench/leaderboard.html">
+<link rel="sitemap" type="application/xml" href="https://yyu6.github.io/ThreadBench/sitemap.xml">
 
-<meta property="og:title" content="MiroBench Leaderboard — Per-Domain Model Results">
+<meta property="og:title" content="ThreadBench — Archived MiroBench Leaderboard — Per-Domain Model Results">
 <meta property="og:description" content="4 LLM agents evaluated across 5 product domains on 16 metrics — MWU/KS p-values, Cliff's δ, Wasserstein distance.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://yyu6.github.io/MiroBench/leaderboard.html">
+<meta property="og:url" content="https://yyu6.github.io/ThreadBench/leaderboard.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MiroBench Leaderboard — Per-Domain Model Results">
+<meta name="twitter:title" content="ThreadBench — Archived MiroBench Leaderboard — Per-Domain Model Results">
 <meta name="twitter:description" content="4 LLM agents evaluated across 5 product domains on 16 metrics — MWU/KS p-values, Cliff's δ, Wasserstein distance.">
 
 <script type="application/ld+json">
@@ -25,11 +26,11 @@
   "@type": "Dataset",
   "name": "MiroBench Leaderboard Results",
   "description": "Per-domain MiroBench leaderboard for 4 LLM agents (DeepSeek-V4-Flash, DeepSeek-Chat, GPT-5-mini, GPT-4o-mini) under OASIS across 5 product domains and 16 metrics in 5 families (Diversity, Tone, Structure, Content, Toxicity).",
-  "url": "https://yyu6.github.io/MiroBench/leaderboard.html",
+  "url": "https://yyu6.github.io/ThreadBench/leaderboard.html",
   "isPartOf": {
     "@type": "ScholarlyArticle",
     "name": "MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions",
-    "url": "https://yyu6.github.io/MiroBench/"
+    "url": "https://yyu6.github.io/ThreadBench/"
   },
   "creator": [
     {"@type": "Person", "name": "Yaoning Yu"},
@@ -120,22 +121,26 @@ tailwind.config = {
 </head>
 
 <body class="font-sans text-[15px] leading-[1.65]">
+<aside role="note" aria-label="Archived benchmark results" style="position:relative;z-index:60;margin-top:68px;background:#eaf0fc;color:#15243a;padding:18px 24px;border-bottom:1px solid #c2cde2;font:14px/1.7 sans-serif;">
+<strong>Archived MiroBench protocol.</strong> This page reports the earlier 5-domain, 16-metric evaluation using MWU-only pass counts. It does not describe the revised ThreadBench paper. <a href="results.html" style="text-decoration:underline;font-weight:600;color:#204fca;">Explore current ThreadBench results (8 domains, 12 metrics, both MWU and KS) →</a>
+</aside>
+
 
 <!-- NAV -->
 <header class="fixed top-0 left-0 right-0 z-50 nav-bg">
   <div class="max-w-[1280px] mx-auto px-6 py-3.5 flex items-center justify-between">
     <a href="index.html" class="inline-flex items-center gap-2 text-[14px] text-mute hover:text-text">
       <span aria-hidden="true">←</span>
-      <span>Back to MiroBench</span>
+      <span>Back to ThreadBench</span>
     </a>
     <div class="flex items-center gap-2 text-[16px] font-semibold tracking-tight">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F62D7" stroke-width="2.2">
         <path d="M3 12h6l2-4 4 8 2-4h4"/>
       </svg>
-      <span>MiroBench</span>
+      <span>ThreadBench</span>
       <span class="font-mono text-[11px] text-mute2 ml-1">· leaderboard</span>
     </div>
-    <a href="https://github.com/yyu6/MiroBench" target="_blank" rel="noopener"
+    <a href="https://github.com/yyu6/ThreadBench" target="_blank" rel="noopener"
        class="inline-flex items-center gap-2 px-3 py-1.5 text-[13px] border border-line2 rounded-md hover:border-text/40">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
         <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
@@ -150,7 +155,7 @@ tailwind.config = {
   <div class="max-w-[1280px] mx-auto px-6">
     <div class="sec-num">Full Leaderboard</div>
     <h1 class="serif-italic mt-2 text-[36px] sm:text-[44px] leading-[1.1] tracking-[-0.01em] max-w-[32ch]">
-      MiroBench · all models, all domains.
+      Earlier MiroBench protocol · all models, all domains.
     </h1>
     <p class="mt-3 text-[14.5px] text-mute leading-relaxed max-w-[80ch]">
       All scores are computed on the 16 selected MiroBench metrics across 5 domains under OASIS as the simulation engine.
@@ -380,9 +385,9 @@ tailwind.config = {
 <!-- FOOTER -->
 <footer class="py-8 border-t border-line">
   <div class="max-w-[1280px] mx-auto px-6 flex flex-col sm:flex-row items-baseline justify-between gap-3">
-    <a href="index.html" class="ulink text-[14px]">← Back to MiroBench</a>
+    <a href="index.html" class="ulink text-[14px]">← Back to ThreadBench</a>
     <div class="font-mono text-[11px] text-mute2">
-      © 2026 · <a class="ulink" href="https://github.com/yyu6/MiroBench" target="_blank">github.com/yyu6/MiroBench</a>
+      © 2026 · <a class="ulink" href="https://github.com/yyu6/ThreadBench" target="_blank">github.com/yyu6/ThreadBench</a>
     </div>
   </div>
 </footer>

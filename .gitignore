@@ -19,3 +19,6 @@ results/
 experiments/**/threads/
 experiments/**/*_results.json
 output/
+
+# Private TopCited account receipts and local workflow notes
+/sessions/threadbench/

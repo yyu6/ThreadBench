@@ -3,88 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MiroBench — Reddit Discussion Simulation Benchmark</title>
-<meta name="description" content="A benchmark for evaluating LLM-agent Reddit discussion simulators against 4,292 real threads across 5 product domains.">
-<meta name="author" content="Yaoning Yu, Ye Yu, Haojing Luo, Haohan Wang">
-<meta name="keywords" content="MiroBench, Reddit discussion simulation, LLM agents, OASIS, benchmark, agentic simulation, social simulation, evaluation">
+<title>ThreadBench — Reddit Discussion Simulation Benchmark</title>
+<meta name="description" content="ThreadBench evaluates Reddit discussion simulation using 9,817 real threads, 12 metrics and ThreadPDG. Compare OASIS and SynthPAI with paper-grounded results.">
+<meta name="author" content="Yaoning Yu, Ye Yu, John Sciarappo, Haojing Luo, Kai-min Chang, Yi-Chia Wang, Haohan Wang">
+<meta name="keywords" content="ThreadBench, Reddit discussion simulation benchmark, ThreadPDG, LLM social simulation evaluation, conversation simulation, OASIS, SynthPAI">
 
-<link rel="canonical" href="https://yyu6.github.io/MiroBench/">
-<link rel="sitemap" type="application/xml" href="https://yyu6.github.io/MiroBench/sitemap.xml">
+<link rel="canonical" href="https://yyu6.github.io/ThreadBench/">
+<link rel="sitemap" type="application/xml" href="https://yyu6.github.io/ThreadBench/sitemap.xml">
 
-<meta property="og:title" content="MiroBench — Reddit Discussion Simulation Benchmark">
-<meta property="og:description" content="Evaluating LLM-agent Reddit discussion simulators against 4,292 real threads across 5 product domains.">
+<meta property="og:title" content="ThreadBench — Reddit Discussion Simulation Benchmark">
+<meta property="og:description" content="ThreadBench evaluates Reddit discussion simulation using 9,817 real threads, 12 metrics and ThreadPDG. Compare OASIS and SynthPAI with paper-grounded results.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://yyu6.github.io/MiroBench/">
+<meta property="og:url" content="https://yyu6.github.io/ThreadBench/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MiroBench — Reddit Discussion Simulation Benchmark">
-<meta name="twitter:description" content="Evaluating LLM-agent Reddit discussion simulators against 4,292 real threads across 5 product domains.">
+<meta name="twitter:title" content="ThreadBench — Reddit Discussion Simulation Benchmark">
+<meta name="twitter:description" content="ThreadBench evaluates Reddit discussion simulation using 9,817 real threads, 12 metrics and ThreadPDG. Compare OASIS and SynthPAI with paper-grounded results.">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
-  "headline": "MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions",
-  "name": "MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions",
-  "abstract": "MiroBench is a benchmark for Reddit discussion simulation, built from 4,292 real Reddit threads across five product domains. It evaluates whether sets of generated discussions match real human conversations across content patterns and reply-tree structure using Mann-Whitney U, Kolmogorov-Smirnov, Cliff's delta, and Wasserstein distance.",
-  "author": [
-    {"@type": "Person", "name": "Yaoning Yu", "affiliation": {"@type": "Organization", "name": "University of Illinois Urbana-Champaign"}},
-    {"@type": "Person", "name": "Ye Yu", "affiliation": {"@type": "Organization", "name": "University of Illinois Urbana-Champaign"}},
-    {"@type": "Person", "name": "Haojing Luo", "affiliation": {"@type": "Organization", "name": "Starc.Institute"}},
-    {"@type": "Person", "name": "Haohan Wang", "affiliation": {"@type": "Organization", "name": "University of Illinois Urbana-Champaign"}}
-  ],
-  "datePublished": "2026",
-  "inLanguage": "en",
-  "license": "https://opensource.org/licenses/MIT",
-  "url": "https://yyu6.github.io/MiroBench/",
-  "sameAs": [
-    "https://github.com/yyu6/MiroBench",
-    "https://arxiv.org/abs/2606.14715"
-  ],
-  "keywords": "Reddit discussion simulation, LLM agents, OASIS, benchmark, agentic simulation, social simulation",
-  "publisher": {
-    "@type": "Organization",
-    "name": "MiroBench Authors"
-  },
-  "isPartOf": {
-    "@type": "Dataset",
-    "name": "MiroBench Reddit Discussion Dataset",
-    "description": "4,292 real Reddit threads across 5 product domains (credit cards, cameras, cell phones, headphones, laptops) with matched train/validation/test splits and 16 scoring metrics in 5 families.",
-    "url": "https://github.com/yyu6/MiroBench/tree/main/mirobench/data",
-    "license": "https://opensource.org/licenses/MIT"
-  }
-}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://yyu6.github.io/ThreadBench/#website", "name": "ThreadBench", "alternateName": "MiroBench", "url": "https://yyu6.github.io/ThreadBench/"}, {"@type": "WebPage", "@id": "https://yyu6.github.io/ThreadBench/#webpage", "url": "https://yyu6.github.io/ThreadBench/", "name": "ThreadBench — Reddit Discussion Simulation Benchmark", "description": "Reddit discussion simulation benchmark: 9,817 real threads across eight domains, twelve metrics and ThreadPDG Planner–Writer generation.", "dateModified": "2026-10-26", "inLanguage": "en", "isPartOf": {"@id": "https://yyu6.github.io/ThreadBench/#website"}, "about": {"@id": "https://yyu6.github.io/ThreadBench/#paper"}}, {"@type": "ScholarlyArticle", "@id": "https://yyu6.github.io/ThreadBench/#paper", "name": "ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions", "headline": "ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions", "author": [{"@type": "Person", "name": "Yaoning Yu"}, {"@type": "Person", "name": "Ye Yu"}, {"@type": "Person", "name": "John Sciarappo"}, {"@type": "Person", "name": "Haojing Luo"}, {"@type": "Person", "name": "Kai-min Chang"}, {"@type": "Person", "name": "Yi-Chia Wang"}, {"@type": "Person", "name": "Haohan Wang"}], "url": "https://arxiv.org/abs/2606.14715", "sameAs": ["https://doi.org/10.48550/arXiv.2606.14715"], "identifier": "arXiv:2606.14715", "dateModified": "2026-10-10", "description": "A Reddit discussion simulation benchmark with 9,817 real threads, 8 domains, 116 subdomains and 12 metrics in four families, with ThreadPDG Planner–Writer generation.", "encoding": {"@type": "MediaObject", "contentUrl": "https://arxiv.org/pdf/2606.14715", "encodingFormat": "application/pdf"}}]}</script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
-        serif: ['Instrument Serif', 'Georgia', 'serif'],
-      },
-      colors: {
-        bg:      '#FFFFFF',
-        surf:    '#FAFAF7',
-        ink:     '#0E0E0F',
-        text:    '#1A1A1A',
-        mute:    '#555555',
-        mute2:   '#888888',
-        line:    '#E4E4E0',
-        line2:   '#D0D0CC',
-        accent:  '#0F62D7',
-        red:     '#B91C1C',
-      },
-    },
-  },
-}
-</script>
+<link rel="stylesheet" href="assets/original-fonts.css">
+<link rel="stylesheet" href="assets/legacy-utilities.css">
 
 <style>
   html { scroll-behavior: smooth; }
@@ -145,7 +83,7 @@ tailwind.config = {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.16em;
-    color: #888;
+    color: #707070;
     text-transform: uppercase;
   }
 
@@ -208,11 +146,11 @@ tailwind.config = {
     white-space: pre;
     color: #1A1A1A;
   }
-  .tok-prompt  { color: #999; user-select: none; }
+  .tok-prompt  { color: #6b6b6b; user-select: none; }
   .tok-cmd     { color: #0F62D7; font-weight: 500; }
   .tok-flag    { color: #9333EA; }
   .tok-str     { color: #047857; }
-  .tok-comment { color: #888; font-style: italic; }
+  .tok-comment { color: #707070; font-style: italic; }
 
   /* Copy button */
   .copy-btn {
@@ -249,9 +187,26 @@ tailwind.config = {
     #live-thread .lt-row { transition: none; opacity: 1; transform: none; }
   }
 </style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}#live-thread .lt-row{opacity:1!important;transform:none!important}</style></noscript>
+<style>.skip-link{position:fixed;top:-100px;left:16px;background:#0e0e0f;color:white;padding:8px 12px;z-index:100}.skip-link:focus{top:12px}:focus-visible{outline:2px solid #0F62D7;outline-offset:4px}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}</style>
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="citation_title" content="ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions">
+<meta name="citation_author" content="Yaoning Yu">
+<meta name="citation_author" content="Ye Yu">
+<meta name="citation_author" content="John Sciarappo">
+<meta name="citation_author" content="Haojing Luo">
+<meta name="citation_author" content="Kai-min Chang">
+<meta name="citation_author" content="Yi-Chia Wang">
+<meta name="citation_author" content="Haohan Wang">
+<meta name="citation_pdf_url" content="https://arxiv.org/pdf/2606.14715">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_arxiv_id" content="2606.14715">
+<meta property="og:image" content="https://yyu6.github.io/ThreadBench/assets/social-card.png">
+<meta name="twitter:image" content="https://yyu6.github.io/ThreadBench/assets/social-card.png">
 </head>
 
 <body class="font-sans text-[15px] leading-[1.65]">
+<a href="#main" class="skip-link">Skip to content</a>
 
 <!-- ════════ NAV ════════ -->
 <header id="nav" class="fixed top-0 left-0 right-0 z-50 nav-bg">
@@ -260,17 +215,17 @@ tailwind.config = {
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F62D7" stroke-width="2.2">
         <path d="M3 12h6l2-4 4 8 2-4h4"/>
       </svg>
-      <span>MiroBench</span>
+      <span>ThreadBench</span>
     </a>
     <nav class="hidden md:flex items-center gap-6 text-[13.5px] text-mute">
       <a href="#motivation" class="hover:text-text">Motivation</a>
       <a href="#leaderboard" class="hover:text-text">Leaderboard</a>
       <a href="#realref" class="hover:text-text">Reference</a>
-      <a href="#top" class="hover:text-text">Metrics</a>
+      <a href="#metrics" class="hover:text-text">Metrics</a>
       <a href="#quickstart" class="hover:text-text">Quick start</a>
       <a href="#cite" class="hover:text-text">Cite</a>
     </nav>
-    <a href="https://github.com/yyu6/MiroBench" target="_blank" rel="noopener"
+    <a href="https://github.com/yyu6/ThreadBench" target="_blank" rel="noopener"
        class="inline-flex items-center gap-2 px-3 py-1.5 text-[13px] border border-line2 rounded-md hover:border-text/40 transition-colors">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
         <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
@@ -280,6 +235,7 @@ tailwind.config = {
   </div>
 </header>
 
+<main id="main">
 <!-- ════════ HERO ════════ -->
 <section id="top" class="pt-32 pb-14">
   <div class="max-w-[1280px] mx-auto px-6">
@@ -289,25 +245,13 @@ tailwind.config = {
       <div>
         <div class="sec-num">A reddit discussion simulation benchmark</div>
         <h1 class="serif-italic mt-3 text-[40px] sm:text-[52px] lg:text-[58px] leading-[1.05] tracking-[-0.01em] max-w-[18ch]">
-          MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions
+          ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions
         </h1>
 
-        <address class="mt-6 text-[14.5px] text-mute leading-relaxed not-italic" itemscope itemtype="https://schema.org/Person">
-          <span class="text-text" itemprop="author">Yaoning Yu</span><sup>1</sup>
-          &nbsp;·&nbsp;
-          <span class="text-text" itemprop="author">Ye Yu</span><sup>1</sup>
-          &nbsp;·&nbsp;
-          <span class="text-text" itemprop="author">Haojing Luo</span><sup>2</sup>
-          &nbsp;·&nbsp;
-          <span class="text-text" itemprop="author">Haohan Wang</span><sup>1 *</sup>
-          <div class="mt-2 text-[13px] text-mute2">
-            <sup>1</sup>University of Illinois Urbana–Champaign &nbsp;
-            <sup>2</sup>Starc.Institute &nbsp;
-            <sup>*</sup>Corresponding author
-          </div></address>
+        <address class="mt-6 text-[14.5px] text-mute leading-relaxed not-italic"><span class="text-text">Yaoning Yu</span><sup>1</sup> &nbsp;·&nbsp; <span class="text-text">Ye Yu</span><sup>1</sup> &nbsp;·&nbsp; <span class="text-text">John Sciarappo</span><sup>2</sup> &nbsp;·&nbsp; <span class="text-text">Haojing Luo</span><sup>3</sup> &nbsp;·&nbsp; <span class="text-text">Kai-min Chang</span><sup>2</sup> &nbsp;·&nbsp; <span class="text-text">Yi-Chia Wang</span><sup>4</sup> &nbsp;·&nbsp; <span class="text-text">Haohan Wang</span><sup>1</sup><div class="mt-2 text-[13px] text-mute2"><sup>1</sup>University of Illinois Urbana–Champaign &nbsp; <sup>2</sup>U.S. Bank &nbsp; <sup>3</sup>Starc.Institute &nbsp; <sup>4</sup>Carnegie Mellon University</div></address>
 
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="https://arxiv.org/abs/2606.14715" target="_blank" rel="noopener"
+          <a href="https://arxiv.org/pdf/2606.14715" target="_blank" rel="noopener"
              class="inline-flex items-center gap-2 px-4 py-2.5 bg-ink text-white rounded-md text-[13.5px] hover:bg-accent transition-colors">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
               <path d="M8 1H2.5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V5.5L8 1z"/>
@@ -315,42 +259,43 @@ tailwind.config = {
             </svg>
             Paper&nbsp;(PDF)
           </a>
-          <a href="https://github.com/yyu6/MiroBench" target="_blank" rel="noopener"
+          <a href="https://github.com/yyu6/ThreadBench" target="_blank" rel="noopener"
              class="inline-flex items-center gap-2 px-4 py-2.5 border border-line2 rounded-md text-[13.5px] hover:border-ink transition-colors">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
               <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
             </svg>
             Code
           </a>
-          <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data" target="_blank"
+          <a href="https://github.com/yyu6/ThreadBench/tree/main/mirobench/data" target="_blank"
              class="inline-flex items-center gap-2 px-4 py-2.5 border border-line2 rounded-md text-[13.5px] hover:border-ink transition-colors">
-            Data
+            Data (earlier release)
           </a>
         </div>
 
         <p class="mt-8 text-[15.5px] text-text leading-[1.7] max-w-[60ch]">
-          LLM agents are increasingly used to simulate human behavior and online communities.
-          But existing work measures individual responses, role-playing, or task performance — not whether
-          a <em class="not-italic font-medium">set</em> of generated conversations matches the content and
-          reply-tree dynamics of real ones. <span class="serif-italic">MiroBench</span> is a Reddit discussion benchmark
-          built from <span class="num">4,292</span> real threads across five domains, evaluating both
-          comment-derived signals and thread structure.
+          <span class="serif-italic">ThreadBench</span> is a benchmark for Reddit discussion simulation,
+          built from <span class="num">9,817</span> real threads across <span class="num">8</span> domains
+          and <span class="num">116</span> subdomains. It evaluates LLM-generated discussions with
+          <span class="num">12</span> metrics of uniformity, expression, tone and interaction,
+          and introduces <span class="font-medium">ThreadPDG</span>, a Planner–Writer method evaluated against OASIS and SynthPAI.
         </p>
+        <p class="mt-3 font-mono text-[10.5px] text-mute2">arXiv:2606.14715 · Paper v2, October 10, 2026 · Website updated <time datetime="2026-10-25">October 25, 2026</time></p>
       </div>
 
       <!-- RIGHT: sunburst chart + info panel -->
       <div id="metrics" class="flex flex-col items-center gap-4">
         <div class="text-[11px] tracking-widest text-mute2 uppercase font-mono self-start">
-          16 metrics · 5 families · hover any wedge
+          12 metrics · 4 families · hover any wedge
         </div>
         <svg id="sunburst" width="430" height="430" viewBox="-215 -215 430 430" class="max-w-full"></svg>
         <div id="sunburst-info" class="w-full border border-line rounded-lg p-4 bg-surf">
-          <div id="sb-family" class="font-mono text-[10.5px] text-accent tracking-widest uppercase">MIROBENCH</div>
-          <div id="sb-name" class="mt-1 text-[16px] font-medium tracking-tight">MiroBench · 16 metrics</div>
+          <div id="sb-family" class="font-mono text-[10.5px] text-accent tracking-widest uppercase">THREADBENCH</div>
+          <div id="sb-name" class="mt-1 text-[16px] font-medium tracking-tight">ThreadBench · 12 metrics</div>
           <div id="sb-desc" class="mt-2 text-[12.5px] text-mute leading-[1.55]">
-            Hover any wedge for the metric definition. Inner ring: 5 families. Outer ring: 16 individual metrics.
+            Hover or select any wedge for the metric definition. Inner ring: 4 families. Outer ring: 12 individual metrics.
           </div>
         </div>
+        <details id="metric-definitions" class="w-full text-[12px] text-mute leading-relaxed"><summary class="cursor-pointer text-accent">View all 12 metric definitions</summary><div class="mt-3"><h3 class="font-medium">Uniformity</h3><dl><dt class="mt-2 font-mono text-[11px]">self_bleu_4</dt><dd>Pairwise 4-gram overlap between comments detects repeated wording.</dd><dt class="mt-2 font-mono text-[11px]">self_bertscore_mean_f1</dt><dd>Contextual similarity between comments detects paraphrases and similar expressions.</dd><dt class="mt-2 font-mono text-[11px]">semantic_mean_cosine</dt><dd>Mean cosine similarity with all-mpnet-base-v2 captures convergence in meaning.</dd></dl></div><div class="mt-3"><h3 class="font-medium">Expression</h3><dl><dt class="mt-2 font-mono text-[11px]">mean_story_probability</dt><dd>StorySeeker estimates the prevalence of personal stories and first-person experiences.</dd><dt class="mt-2 font-mono text-[11px]">emotion_entropy</dt><dd>Entropy of GoEmotions labels measures emotional diversity across comments.</dd></dl></div><div class="mt-3"><h3 class="font-medium">Tone</h3><dl><dt class="mt-2 font-mono text-[11px]">polite_rate</dt><dd>Fraction of comments classified as polite by Intel/polite-guard.</dd><dt class="mt-2 font-mono text-[11px]">neutral_rate</dt><dd>Fraction of comments classified as neutral by Intel/polite-guard.</dd><dt class="mt-2 font-mono text-[11px]">impolite_rate</dt><dd>Fraction of comments classified as impolite by Intel/polite-guard.</dd><dt class="mt-2 font-mono text-[11px]">hard_disagree_rate</dt><dd>Explicit disagreement in parent–reply pairs.</dd></dl></div><div class="mt-3"><h3 class="font-medium">Interaction</h3><dl><dt class="mt-2 font-mono text-[11px]">avg_depth</dt><dd>Mean reply depth measures how far multi-step exchanges develop.</dd><dt class="mt-2 font-mono text-[11px]">structural_virality</dt><dd>Mean shortest-path distance between comments captures the spread of interaction across the reply tree.</dd><dt class="mt-2 font-mono text-[11px]">length_cv</dt><dd>Coefficient of variation of comment lengths measures the mixture of short reactions and longer contributions.</dd></dl></div></details>
       </div>
 
     </div>
@@ -369,9 +314,9 @@ tailwind.config = {
     <div class="mt-8 grid md:grid-cols-2 gap-x-12 gap-y-5 text-[15px] text-text leading-[1.75]">
       <div class="reveal">
         <p>
-          LLM-based agents are increasingly used as simulators of human behavior, social interaction,
-          and online communities. The promise: a controllable way to study how people discuss products,
-          react to events, exchange opinions, and form group-level patterns.
+          LLM-based social simulation evaluation asks whether agents reproduce human behavior,
+          social interaction, and online communities. ThreadBench focuses on how people discuss products,
+          react to events, exchange opinions, and form thread-level patterns.
         </p>
         <p class="mt-4">
           But generating conversations is not enough. Existing studies focus on
@@ -389,8 +334,8 @@ tailwind.config = {
           broader social behavior.
         </p>
         <p class="mt-4">
-          MiroBench combines <span class="num">4,292</span> real Reddit threads with matched
-          train / validation / test splits, standardized seed contexts, and a framework that compares
+          ThreadBench combines <span class="num">9,817</span> real Reddit threads across eight domains with
+          separate seed, reference and test pools, and a framework that compares
           generated and real discussions through both comment-derived signals
           <em class="not-italic font-medium">and</em> reply-tree structure.
         </p>
@@ -405,15 +350,14 @@ tailwind.config = {
           <span class="relative inline-flex rounded-full h-2 w-2 bg-red"></span>
         </span>
         <span class="text-[11px] tracking-widest text-mute2 uppercase font-mono">
-          Live · same seed post, two threads
+          Illustration · same seed post, two discussion styles
         </span>
       </div>
       <p class="text-[13.5px] text-mute leading-relaxed mb-4 max-w-[78ch]">
-        Watch the difference. Both panels begin from the identical r/cellphones seed post.
-        The <span class="font-medium text-text">left</span> is real Reddit; the
-        <span class="font-medium text-text">right</span> is what current LLM agents
-        produce under the same prompt — same topic, but a different distribution of
-        tone, depth, and disagreement.
+        Watch the difference. These illustrative panels share the same example post. The
+        <span class="font-medium text-text">left</span> depicts varied, nested discussion; the
+        <span class="font-medium text-text">right</span> depicts a fluent but more uniform style.
+        This retained visual demonstration is not a sampled experiment or a live simulator.
       </p>
 
       <div id="live-thread" class="grid md:grid-cols-2 gap-5">
@@ -421,11 +365,11 @@ tailwind.config = {
         <!-- ════════════ REAL ════════════ -->
         <div class="border border-line rounded-md bg-white overflow-hidden">
           <div class="px-3 py-1.5 border-b border-line bg-[#FAFAF7] flex items-center gap-2">
-            <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#FF4500] text-white text-[10px] font-bold">r/</span>
+            <svg aria-hidden="true" focusable="false" class="shrink-0" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FF4500"/><text x="10" y="13" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="10" font-weight="700">r/</text></svg>
             <span class="text-[11.5px] font-medium text-text">r/cellphones</span>
             <span class="text-mute2 text-[11px]">·</span>
             <span class="text-mute2 text-[11px]">Posted by u/throwaway2024</span>
-            <span class="ml-auto text-[10px] tracking-widest text-mute2 uppercase font-mono">Real</span>
+            <span class="ml-auto text-[10px] tracking-widest text-mute2 uppercase font-mono">Real-style illustration</span>
           </div>
           <div class="px-4 py-3 border-b border-line">
             <div class="text-[14.5px] font-semibold text-text leading-snug">
@@ -539,7 +483,7 @@ tailwind.config = {
             <span class="text-[11.5px] font-medium text-text">r/cellphones</span>
             <span class="text-mute2 text-[11px]">·</span>
             <span class="text-mute2 text-[11px]">Posted by u/SimAgent_01</span>
-            <span class="ml-auto text-[10px] tracking-widest text-accent uppercase font-mono">Generated · OASIS</span>
+            <span class="ml-auto text-[10px] tracking-widest text-accent uppercase font-mono">Generated-style illustration</span>
           </div>
           <div class="px-4 py-3 border-b border-line">
             <div class="text-[14.5px] font-semibold text-text leading-snug">
@@ -649,288 +593,36 @@ tailwind.config = {
       </div>
 
       <p class="mt-4 text-[12.5px] text-mute leading-relaxed max-w-[88ch]">
-        Same prompt, very different distributions. The real thread carries blunt
+        Same prompt, very different distributions. The left illustration carries blunt
         disagreement, lowercase fragments, a downvoted contrarian, and a 3-deep
-        chain. The generated thread is fluent but uniformly polite, validation-led,
-        without disagreement, and structurally flatter. MiroBench's metrics quantify
+        chain. The right illustration is fluent but uniformly polite, validation-led,
+        without disagreement, and structurally flatter. ThreadBench's metrics quantify
         that gap thread-by-thread.
       </p>
     </div>
 
+<div id="method" class="mt-12 reveal border-l-2 border-line2 pl-5"><h3 class="font-medium text-[15px]">How does ThreadPDG work?</h3><p class="mt-2 text-[14px] text-mute leading-[1.7]">The Planner reads a complete real seed discussion and plans branches and comment roles. The Writer generates new comments from these plans; up to K = 3 drafts are composed using separate reference-pool statistics. Drafts inherit the seed’s comment slots and reply topology. Independent root-post-only generation remains future work. <a class="ulink" href="method.html">Method details</a> · <a class="ulink" href="https://arxiv.org/pdf/2606.14715">Paper §4</a>.</p><p class="mt-3 text-[12px] text-mute2">Corpus: 9,817 threads · 8 domains · 116 reported subdomains. The per-domain counts in Table 1 sum to 117; we preserve the paper’s reported total and flag the discrepancy.</p></div>
     <!-- What we find strip -->
     <div class="mt-12 reveal border-l-2 border-accent pl-5">
       <div class="text-[11px] tracking-widest text-accent uppercase font-mono">What we find</div>
       <p class="mt-2 text-[15px] text-text leading-[1.7]">
-        Current simulators remain <em class="not-italic font-medium">distributionally mismatched</em> to
-        real Reddit threads even when individual comments look fluent. Prompt-based improvement only
-        partly closes the gap. The leaderboard below — and the
-        <a class="ulink" href="leaderboard.html">full per-domain breakdown</a> — make that gap
+        OASIS and SynthPAI remain <em class="not-italic font-medium">distributionally mismatched</em> to
+        real Reddit threads. ThreadPDG passes 67–92% of metrics with GPT-5.4-mini, 58–100% with
+        DeepSeek-V4.1-Flash, and 17–42% with GPT-4o-mini. The results below — and the
+        <a class="ulink" href="results.html">full per-domain breakdown</a> — make that gap
         concrete, family by family.
+        <a class="ulink" href="https://arxiv.org/pdf/2606.14715">Paper §5, Table 3</a>.
       </p>
     </div>
   </div>
 </section>
 
 <!-- ════════ LEADERBOARD ════════ -->
-<section id="leaderboard" class="py-16 border-t border-line">
-  <div class="max-w-[1280px] mx-auto px-6">
-    <div class="mb-7 reveal">
-      <div class="sec-num">§ 02 — Leaderboard</div>
-      <h2 class="mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[44ch]">
-        Models evaluated under <span class="serif-italic">OASIS</span> as simulation engine.
-      </h2>
-    </div>
-
-    <div class="reveal border border-line rounded-lg overflow-x-auto bg-white">
-      <table class="bench min-w-[1080px]">
-        <thead>
-          <tr>
-            <th class="num" style="width:46px;">#</th>
-            <th style="width:200px;">Method · Model</th>
-            <th class="text-right">Diversity</th>
-            <th class="text-right">Tone</th>
-            <th class="text-right">Structure</th>
-            <th class="text-right">Content</th>
-            <th class="text-right">Toxicity</th>
-            <th class="text-right" style="border-left:1px solid #E4E4E0; width:140px;">p&nbsp;&gt;&nbsp;0.05&nbsp;↑</th>
-          </tr>
-        </thead>
-        <tbody class="num">
-
-          <!-- Real-vs-real reference -->
-          <tr style="background:#F7F7F4;">
-            <td class="text-mute2">—</td>
-            <td>
-              <div class="font-sans text-mute text-[12.5px]">Real reference</div>
-              <div class="font-mono text-[11px] text-mute2">held-out test · 200 repeated samples</div>
-            </td>
-            <td class="text-right text-mute">
-              <div>W₁ <span class="text-text">0.016</span></div>
-              <div class="text-[12px]">|δ| <span class="text-text">0.060</span></div>
-            </td>
-            <td class="text-right text-mute">
-              <div>W₁ <span class="text-text">0.034</span></div>
-              <div class="text-[12px]">|δ| <span class="text-text">0.071</span></div>
-            </td>
-            <td class="text-right text-mute">
-              <div>W₁ <span class="text-text">0.165</span></div>
-              <div class="text-[12px]">|δ| <span class="text-text">0.100</span></div>
-            </td>
-            <td class="text-right text-mute">
-              <div>W₁ <span class="text-text">0.074</span></div>
-              <div class="text-[12px]">|δ| <span class="text-text">0.098</span></div>
-            </td>
-            <td class="text-right text-mute">
-              <div>W₁ <span class="text-text">0.004</span></div>
-              <div class="text-[12px]">|δ| <span class="text-text">0.043</span></div>
-            </td>
-            <td class="text-right text-mute2" style="border-left:1px solid #E4E4E0;">— baseline —</td>
-          </tr>
-
-          <!-- 1: DeepSeek-V4-Flash -->
-          <tr>
-            <td>1</td>
-            <td>
-              <div class="font-sans text-text">OASIS</div>
-              <div class="font-mono text-[11.5px] text-mute2">DeepSeek-V4-Flash</div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.162 <span class="text-mute2 text-[11px]">×10.1</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.669 <span class="text-mute2 text-[11px]">×11.2</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.187 <span class="text-mute2 text-[11px]">×5.5</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.472 <span class="text-mute2 text-[11px]">×6.6</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 1.028 <span class="text-mute2 text-[11px]">×6.2</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.768 <span class="text-mute2 text-[11px]">×7.7</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.192 <span class="text-mute2 text-[11px]">×2.6</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.318 <span class="text-mute2 text-[11px]">×3.2</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.006 <span class="text-mute2 text-[11px]">×1.5</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.132 <span class="text-mute2 text-[11px]">×3.1</span></div>
-            </td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">
-              <span class="text-accent text-[16px] font-medium">23 / 80</span>
-              <div class="text-mute2 text-[12px]">28.7%</div>
-            </td>
-          </tr>
-
-          <!-- 2: DeepSeek-Chat -->
-          <tr>
-            <td>2</td>
-            <td>
-              <div class="font-sans text-text">OASIS</div>
-              <div class="font-mono text-[11.5px] text-mute2">DeepSeek-Chat</div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.165 <span class="text-mute2 text-[11px]">×10.3</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.647 <span class="text-mute2 text-[11px]">×10.8</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.177 <span class="text-mute2 text-[11px]">×5.2</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.447 <span class="text-mute2 text-[11px]">×6.3</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 1.044 <span class="text-mute2 text-[11px]">×6.3</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.778 <span class="text-mute2 text-[11px]">×7.8</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.269 <span class="text-mute2 text-[11px]">×3.6</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.496 <span class="text-mute2 text-[11px]">×5.1</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.006 <span class="text-mute2 text-[11px]">×1.5</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.164 <span class="text-mute2 text-[11px]">×3.8</span></div>
-            </td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">
-              <span class="text-text text-[16px]">12 / 80</span>
-              <div class="text-mute2 text-[12px]">15.0%</div>
-            </td>
-          </tr>
-
-          <!-- 3: GPT-5-mini -->
-          <tr>
-            <td>3</td>
-            <td>
-              <div class="font-sans text-text">OASIS</div>
-              <div class="font-mono text-[11.5px] text-mute2">GPT-5-mini</div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.189 <span class="text-mute2 text-[11px]">×11.8</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.680 <span class="text-mute2 text-[11px]">×11.3</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.276 <span class="text-mute2 text-[11px]">×8.1</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.630 <span class="text-mute2 text-[11px]">×8.9</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 1.051 <span class="text-mute2 text-[11px]">×6.4</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.777 <span class="text-mute2 text-[11px]">×7.8</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.492 <span class="text-mute2 text-[11px]">×6.6</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.760 <span class="text-mute2 text-[11px]">×7.8</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.008 <span class="text-mute2 text-[11px]">×2.0</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.228 <span class="text-mute2 text-[11px]">×5.3</span></div>
-            </td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">
-              <span class="text-text text-[16px]">7 / 80</span>
-              <div class="text-mute2 text-[12px]">8.8%</div>
-            </td>
-          </tr>
-
-          <!-- 4: GPT-4o-mini -->
-          <tr>
-            <td>4</td>
-            <td>
-              <div class="font-sans text-text">OASIS</div>
-              <div class="font-mono text-[11.5px] text-mute2">GPT-4o-mini</div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.261 <span class="text-mute2 text-[11px]">×16.3</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.830 <span class="text-mute2 text-[11px]">×13.8</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.283 <span class="text-mute2 text-[11px]">×8.3</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.611 <span class="text-mute2 text-[11px]">×8.6</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 1.093 <span class="text-mute2 text-[11px]">×6.6</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.811 <span class="text-mute2 text-[11px]">×8.1</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.194 <span class="text-mute2 text-[11px]">×2.6</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.509 <span class="text-mute2 text-[11px]">×5.2</span></div>
-            </td>
-            <td class="text-right">
-              <div>W₁ 0.010 <span class="text-mute2 text-[11px]">×2.5</span></div>
-              <div class="text-[12px] text-mute">|δ| 0.703 <span class="text-mute2 text-[11px]">×16.3</span></div>
-            </td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">
-              <span class="text-red text-[16px] font-medium">3 / 80</span>
-              <div class="text-mute2 text-[12px]">3.8%</div>
-            </td>
-          </tr>
-
-          <!-- pending: Gemini -->
-          <tr class="text-mute2">
-            <td>—</td>
-            <td>
-              <div class="font-sans">OASIS</div>
-              <div class="font-mono text-[11px]">Gemini 2.5 Pro · pending</div>
-            </td>
-            <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
-          </tr>
-
-          <!-- pending: DeepSeek-V3.2 -->
-          <tr class="text-mute2">
-            <td>—</td>
-            <td>
-              <div class="font-sans">OASIS</div>
-              <div class="font-mono text-[11px]">DeepSeek-V3.2 · pending</div>
-            </td>
-            <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
-          </tr>
-
-        </tbody>
-      </table>
-    </div>
-
-    <div class="mt-5 text-[12.5px] text-mute leading-relaxed">
-      <p>
-        Family columns show per-family averages across 5 domains:
-        <span class="mono-chip">W₁</span> is the Wasserstein distance between generated and real Reddit
-        distributions (lower = closer to real); <span class="mono-chip">|δ|</span> is the absolute Cliff's-δ
-        effect size. The small <span class="mono-chip">×N</span> next to each value is the model's ratio over the
-        real reference — how many times the real-vs-real noise floor it is. <span class="mono-chip">×1.0</span>
-        would mean indistinguishable from sampling more real data.
-      </p>
-      <p class="mt-2">
-        The top <em class="not-italic font-medium">Real reference</em> row is computed from <span class="num">200</span> repeated
-        sub-samples drawn from the held-out test split — not a single train/test split — so the floor
-        accounts for sample-size variance.
-      </p>
-      <p class="mt-2">
-        <em class="not-italic font-medium">Note on Structure.</em> For structure metrics (<code class="font-mono text-[12px]">avg_depth</code>,
-        <code class="font-mono text-[12px]">structural_virality</code>, <code class="font-mono text-[12px]">length_cv</code>),
-        real Reddit threads have larger values than current LLM outputs — bigger is closer to real. The W₁ and |δ|
-        columns still measure distance (so lower is still better), but the underlying gap is one-sided:
-        LLMs <em class="not-italic font-medium">under-build</em> thread structure.
-      </p>
-      <p class="mt-2">
-        The <span class="mono-chip">p&nbsp;&gt;&nbsp;0.05</span> column counts (metric × domain) cells where Mann–Whitney U cannot reject equal distributions,
-        out of <span class="num">16 metrics × 5 domains = 80</span> cells. All models run under
-        <a class="ulink" href="https://github.com/camel-ai/oasis" target="_blank">OASIS</a> with the same task setup.
-      </p>
-    </div>
-
-    <div class="mt-7 flex items-center justify-end">
-      <a href="leaderboard.html"
-         class="group inline-flex items-center gap-2 px-4 py-2 border border-line2 rounded-md text-[13.5px] hover:border-text/40 hover:bg-surf transition-colors">
-        <span>View full leaderboard</span>
-        <span class="font-mono text-mute2 text-[11px]">per-domain breakdown</span>
-        <span class="text-accent transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
-      </a>
-    </div>
-  </div>
-</section>
+<section id="leaderboard" class="py-16 border-t border-line"><div class="max-w-[1280px] mx-auto px-6">
+<div class="mb-7 reveal"><div class="sec-num">§ 02 — Results</div><h2 class="mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[44ch]">How does <span class="serif-italic">ThreadPDG</span> compare with OASIS and SynthPAI?</h2></div>
+<div class="reveal border border-line rounded-lg overflow-x-auto bg-white" tabindex="0" role="region" aria-label="Paper results by metric family"><table class="bench min-w-[1050px]"><caption class="sr-only">Nine method-model combinations across eight domains; family mean distances and both-test pass counts</caption><thead><tr><th style="width:46px">#</th><th style="width:200px">Method · Model</th><th class="text-right">Uniformity</th><th class="text-right">Expression</th><th class="text-right">Tone</th><th class="text-right">Interaction</th><th class="text-right" style="border-left:1px solid #E4E4E0;width:140px">Both p ≥ 0.05 ↑</th></tr></thead><tbody class="num"><tr style="background:#F7F7F4;"><td class="text-mute2">—</td><td><div class="font-sans text-mute text-[12.5px]">Real reference</div><div class="font-mono text-[11px] text-mute2">150 vs. 150 · 200 repeats/domain</div></td><td class="text-right text-mute"><div>W₁ 0.018</div><div class="text-[12px]">|δ| 0.053</div></td><td class="text-right text-mute"><div>W₁ 0.052</div><div class="text-[12px]">|δ| 0.052</div></td><td class="text-right text-mute"><div>W₁ 0.033</div><div class="text-[12px]">|δ| 0.050</div></td><td class="text-right text-mute"><div>W₁ 0.100</div><div class="text-[12px]">|δ| 0.050</div></td><td class="text-right text-mute2">—<div class="text-[11px]">sampling reference</div></td></tr><tr><td class="text-mute2">1</td><td><div class="font-sans text-[13px] text-accent font-medium">ThreadPDG</div><div class="text-[11px] text-mute">gpt-5.4-mini</div></td><td class="text-right"><div>W₁ 0.007 <span class="text-mute2 text-[11px]">×0.4</span></div><div class=text-mute>|δ| 0.081 <span class="text-mute2 text-[11px]">×1.5</span></div></td><td class="text-right"><div>W₁ 0.041 <span class="text-mute2 text-[11px]">×0.8</span></div><div class=text-mute>|δ| 0.043 <span class="text-mute2 text-[11px]">×0.8</span></div></td><td class="text-right"><div>W₁ 0.036 <span class="text-mute2 text-[11px]">×1.1</span></div><div class=text-mute>|δ| 0.126 <span class="text-mute2 text-[11px]">×2.5</span></div></td><td class="text-right"><div>W₁ 0.125 <span class="text-mute2 text-[11px]">×1.3</span></div><div class=text-mute>|δ| 0.060 <span class="text-mute2 text-[11px]">×1.2</span></div></td><td class="text-right" style="border-left:1px solid #E4E4E0"><span class="text-accent font-medium text-[16px]">78 / 96</span><div class="text-[11px] text-mute2">81.2%</div></td></tr><tr><td class="text-mute2">2</td><td><div class="font-sans text-[13px] text-accent font-medium">ThreadPDG</div><div class="text-[11px] text-mute">DeepSeek-V4.1-Flash</div></td><td class="text-right"><div>W₁ 0.007 <span class="text-mute2 text-[11px]">×0.4</span></div><div class=text-mute>|δ| 0.066 <span class="text-mute2 text-[11px]">×1.2</span></div></td><td class="text-right"><div>W₁ 0.043 <span class="text-mute2 text-[11px]">×0.8</span></div><div class=text-mute>|δ| 0.053 <span class="text-mute2 text-[11px]">×1.0</span></div></td><td class="text-right"><div>W₁ 0.036 <span class="text-mute2 text-[11px]">×1.1</span></div><div class=text-mute>|δ| 0.112 <span class="text-mute2 text-[11px]">×2.2</span></div></td><td class="text-right"><div>W₁ 0.144 <span class="text-mute2 text-[11px]">×1.4</span></div><div class=text-mute>|δ| 0.080 <span class="text-mute2 text-[11px]">×1.6</span></div></td><td class="text-right" style="border-left:1px solid #E4E4E0"><span class="text-accent font-medium text-[16px]">78 / 96</span><div class="text-[11px] text-mute2">81.2%</div></td></tr><tr><td class="text-mute2">3</td><td><div class="font-sans text-[13px] text-accent font-medium">ThreadPDG</div><div class="text-[11px] text-mute">gpt-4o-mini</div></td><td class="text-right"><div>W₁ 0.033 <span class="text-mute2 text-[11px]">×1.9</span></div><div class=text-mute>|δ| 0.433 <span class="text-mute2 text-[11px]">×8.2</span></div></td><td class="text-right"><div>W₁ 0.123 <span class="text-mute2 text-[11px]">×2.4</span></div><div class=text-mute>|δ| 0.215 <span class="text-mute2 text-[11px]">×4.2</span></div></td><td class="text-right"><div>W₁ 0.060 <span class="text-mute2 text-[11px]">×1.8</span></div><div class=text-mute>|δ| 0.227 <span class="text-mute2 text-[11px]">×4.5</span></div></td><td class="text-right"><div>W₁ 0.178 <span class="text-mute2 text-[11px]">×1.8</span></div><div class=text-mute>|δ| 0.148 <span class="text-mute2 text-[11px]">×3.0</span></div></td><td class="text-right" style="border-left:1px solid #E4E4E0"><span class="text-accent font-medium text-[16px]">27 / 96</span><div class="text-[11px] text-mute2">28.1%</div></td></tr><tr><td class="text-mute2">4</td><td><div class="font-sans text-[13px] ">OASIS</div><div class="text-[11px] text-mute">DeepSeek-V4.1-Flash</div></td><td class="text-right"><div>W₁ 0.131 <span class="text-mute2 text-[11px]">×7.5</span></div><div class=text-mute>|δ| 0.805 <span class="text-mute2 text-[11px]">×15.2</span></div></td><td class="text-right"><div>W₁ 0.238 <span class="text-mute2 text-[11px]">×4.6</span></div><div class=text-mute>|δ| 0.513 <span class="text-mute2 text-[11px]">×9.9</span></div></td><td class="text-right"><div>W₁ 0.121 <span class="text-mute2 text-[11px]">×3.7</span></div><div class=text-mute>|δ| 0.403 <span class="text-mute2 text-[11px]">×8.1</span></div></td><td class="text-right"><div>W₁ 1.207 <span class="text-mute2 text-[11px]">×12.0</span></div><div class=text-mute>|δ| 0.957 <span class="text-mute2 text-[11px]">×19.3</span></div></td><td class="text-right" style="border-left:1px solid #E4E4E0"><span class="text-text text-[16px]">11 / 96</span><div class="text-[11px] text-mute2">11.5%</div></td></tr><tr><td class="text-mute2">5</td><td><div class="font-sans text-[13px] ">SynthPAI</div><div class="text-[11px] text-mute">DeepSeek-V4.1-Flash</div></td><td class="text-right"><div>W₁ 0.044 <span class="text-mute2 text-[11px]">×2.5</span></div><div class=text-mute>|δ| 0.687 <span class="text-mute2 text-[11px]">×13.0</span></div></td><td class="text-right"><div>W₁ 0.141 <span class="text-mute2 text-[11px]">×2.7</span></div><div class=text-mute>|δ| 0.320 <span class="text-mute2 text-[11px]">×6.2</span></div></td><td class="text-right"><div>W₁ 0.175 <span class="text-mute2 text-[11px]">×5.3</span></div><div class=text-mute>|δ| 0.625 <span class="text-mute2 text-[11px]">×12.5</span></div></td><td class="text-right"><div>W₁ 0.570 <span class="text-mute2 text-[11px]">×5.7</span></div><div class=text-mute>|δ| 0.531 <span class="text-mute2 text-[11px]">×10.7</span></div></td><td class="text-right" style="border-left:1px solid #E4E4E0"><span class="text-text text-[16px]">7 / 96</span><div class="text-[11px] text-mute2">7.3%</div></td></tr><tr><td class="text-mute2">6</td><td><div class="font-sans text-[13px] ">SynthPAI</div><div class="text-[11px] text-mute">gpt-5.4-mini</div></td><td class="text-right"><div>W₁ 0.048 <span class="text-mute2 text-[11px]">×2.7</span></div><div class=text-mute>|δ| 0.689 <span class="text-mute2 text-[11px]">×13.0</span></div></td><td class="text-right"><div>W₁ 0.236 <span class="text-mute2 text-[11px]">×4.5</span></div><div class=text-mute>|δ| 0.456 <span class="text-mute2 text-[11px]">×8.8</span></div></td><td class="text-right"><div>W₁ 0.143 <span class="text-mute2 text-[11px]">×4.3</span></div><div class=text-mute>|δ| 0.525 <span class="text-mute2 text-[11px]">×10.5</span></div></td><td class="text-right"><div>W₁ 0.610 <span class="text-mute2 text-[11px]">×6.1</span></div><div class=text-mute>|δ| 0.424 <span class="text-mute2 text-[11px]">×8.5</span></div></td><td class="text-right" style="border-left:1px solid #E4E4E0"><span class="text-text text-[16px]">6 / 96</span><div class="text-[11px] text-mute2">6.2%</div></td></tr><tr><td class="text-mute2">7</td><td><div class="font-sans text-[13px] ">SynthPAI</div><div class="text-[11px] text-mute">gpt-4o-mini</div></td><td class="text-right"><div>W₁ 0.117 <span class="text-mute2 text-[11px]">×6.7</span></div><div class=text-mute>|δ| 0.809 <span class="text-mute2 text-[11px]">×15.3</span></div></td><td class="text-right"><div>W₁ 0.187 <span class="text-mute2 text-[11px]">×3.6</span></div><div class=text-mute>|δ| 0.556 <span class="text-mute2 text-[11px]">×10.8</span></div></td><td class="text-right"><div>W₁ 0.185 <span class="text-mute2 text-[11px]">×5.6</span></div><div class=text-mute>|δ| 0.629 <span class="text-mute2 text-[11px]">×12.6</span></div></td><td class="text-right"><div>W₁ 0.538 <span class="text-mute2 text-[11px]">×5.4</span></div><div class=text-mute>|δ| 0.538 <span class="text-mute2 text-[11px]">×10.8</span></div></td><td class="text-right" style="border-left:1px solid #E4E4E0"><span class="text-text text-[16px]">5 / 96</span><div class="text-[11px] text-mute2">5.2%</div></td></tr><tr><td class="text-mute2">8</td><td><div class="font-sans text-[13px] ">OASIS</div><div class="text-[11px] text-mute">gpt-5.4-mini</div></td><td class="text-right"><div>W₁ 0.211 <span class="text-mute2 text-[11px]">×12.0</span></div><div class=text-mute>|δ| 0.962 <span class="text-mute2 text-[11px]">×18.2</span></div></td><td class="text-right"><div>W₁ 0.368 <span class="text-mute2 text-[11px]">×7.1</span></div><div class=text-mute>|δ| 0.755 <span class="text-mute2 text-[11px]">×14.6</span></div></td><td class="text-right"><div>W₁ 0.142 <span class="text-mute2 text-[11px]">×4.3</span></div><div class=text-mute>|δ| 0.506 <span class="text-mute2 text-[11px]">×10.1</span></div></td><td class="text-right"><div>W₁ 1.250 <span class="text-mute2 text-[11px]">×12.5</span></div><div class=text-mute>|δ| 0.970 <span class="text-mute2 text-[11px]">×19.5</span></div></td><td class="text-right" style="border-left:1px solid #E4E4E0"><span class="text-text text-[16px]">3 / 96</span><div class="text-[11px] text-mute2">3.1%</div></td></tr><tr><td class="text-mute2">9</td><td><div class="font-sans text-[13px] ">OASIS</div><div class="text-[11px] text-mute">gpt-4o-mini</div></td><td class="text-right"><div>W₁ 0.254 <span class="text-mute2 text-[11px]">×14.5</span></div><div class=text-mute>|δ| 0.960 <span class="text-mute2 text-[11px]">×18.2</span></div></td><td class="text-right"><div>W₁ 0.316 <span class="text-mute2 text-[11px]">×6.1</span></div><div class=text-mute>|δ| 0.738 <span class="text-mute2 text-[11px]">×14.3</span></div></td><td class="text-right"><div>W₁ 0.309 <span class="text-mute2 text-[11px]">×9.4</span></div><div class=text-mute>|δ| 0.688 <span class="text-mute2 text-[11px]">×13.8</span></div></td><td class="text-right"><div>W₁ 1.259 <span class="text-mute2 text-[11px]">×12.6</span></div><div class=text-mute>|δ| 0.971 <span class="text-mute2 text-[11px]">×19.6</span></div></td><td class="text-right" style="border-left:1px solid #E4E4E0"><span class="text-text text-[16px]">1 / 96</span><div class="text-[11px] text-mute2">1.0%</div></td></tr></tbody></table></div>
+<div class="mt-5 text-[12.5px] text-mute leading-relaxed"><p>Family columns summarize mean Wasserstein distance W₁ and mean absolute Cliff’s delta across eight domains. Lower distances indicate closer distributions; ×N is the ratio to the repeated-real reference. W₁ means mix native metric scales and are descriptive summaries, not a scale-independent ranking.</p><p class="mt-2">All three methods are evaluated with the same twelve metrics across eight domains. A metric passes when <span class="mono-chip">p<sub>MWU</sub> ≥ 0.05</span> and <span class="mono-chip">p<sub>KS</sub> ≥ 0.05</span>. Totals count passing metric × domain cells out of <span class="num">12 × 8 = 96</span>. Each comparison uses 150 generated threads and 150 real test threads. Passing does not prove equivalence. <a class="ulink" href="https://arxiv.org/pdf/2606.14715">Paper §3.3, Table 3, Appendices C and K</a>.</p><p class="mt-2">Human evaluation: ThreadPDG is not distinguished in <span class="num">78.7%</span> of its non-tied discussion pairs, versus 61.1% for OASIS and 58.7% for SynthPAI. The study uses 436 retained annotators and 240 pairs across all three systems; generated-as-real and cannot-distinguish votes are combined by pair-level majority vote.</p></div>
+<div class="mt-7 flex flex-wrap items-center justify-end gap-4"><a class="ulink text-[12px]" href="paper-results.csv" download>Download CSV</a><a class="ulink text-[12px]" href="paper-data.json" download>Full JSON</a><a href="results.html" class="group inline-flex items-center gap-2 px-4 py-2 border border-line2 rounded-md text-[13.5px] hover:border-text/40 hover:bg-surf transition-colors"><span>View full results</span><span class="font-mono text-mute2 text-[11px]">per-domain breakdown</span><span class="text-accent" aria-hidden="true">→</span></a></div></div></section>
 
 <!-- ════════ REAL-VS-REAL REFERENCE ════════ -->
 <section id="realref" class="py-16 border-t border-line bg-surf">
@@ -941,11 +633,11 @@ tailwind.config = {
         What does a <span class="serif-italic">good</span> score look like?
       </h2>
       <p class="mt-3 text-[15px] text-mute leading-relaxed">
-        These figures show the noise floor of the benchmark itself — i.e., the gap you observe when
-        comparing one half of <em class="not-italic font-medium">real</em> Reddit data to the other half.
+        These figures show the sampling variation between two groups of <span class="num">150</span>
+        real threads, compared <span class="num">200</span> times per domain across all eight domains.
         Any model's score on the
         <a class="ulink" href="#leaderboard">leaderboard</a>
-        (or the <a class="ulink" href="leaderboard.html">full per-domain results</a>)
+        (or the <a class="ulink" href="results.html">full per-domain results</a>)
         should be read <em class="not-italic font-medium">against</em> this floor.
         These figures are not part of the leaderboard; they characterise the measurement.
       </p>
@@ -957,12 +649,10 @@ tailwind.config = {
         Repeated-sample MWU &amp; KS p-value pass rates
       </div>
       <div class="border border-line rounded-lg bg-white p-4">
-        <img src="figures/realref_pvalue_heatmap.png" alt="Repeated-sample p-value pass rates across domains and metrics" class="w-full">
+        <img width="3040" height="1520" loading="lazy" src="figures/realref_pvalue_heatmap.png" alt="Repeated-sample p-value pass rates across domains and metrics" class="w-full">
       </div>
       <p class="mt-3 text-[12.5px] text-mute leading-relaxed">
-        Repeatedly drawing two equal-sized samples from the real distribution and running Mann–Whitney U / Kolmogorov–Smirnov:
-        ≈95% of comparisons return <span class="mono-chip">p&nbsp;&gt;&nbsp;0.05</span>, which is the false-positive rate
-        we should expect by construction. This is the "100% match" line that no model has approached.
+        Across repeated real-vs-real comparisons, MWU passes in <span class="num">94.99%</span>, KS in <span class="num">96.95%</span>, and both pass in <span class="num">94.30%</span> of metric comparisons. A pass means no difference was detected at α = 0.05; it does not prove equivalence.
       </p>
     </div>
 
@@ -973,7 +663,7 @@ tailwind.config = {
           Real-vs-real W<sub>1</sub> (log scale)
         </div>
         <div class="border border-line rounded-lg bg-white p-4">
-          <img src="figures/realref_w1_radar.png" alt="Real-vs-real W1 by family and domain" class="w-full">
+          <img width="1517" height="1489" loading="lazy" src="figures/realref_w1_radar.png" alt="Real-vs-real W1 by family and domain" class="w-full">
         </div>
       </div>
       <div>
@@ -981,7 +671,7 @@ tailwind.config = {
           Real-vs-real |Cliff's δ|
         </div>
         <div class="border border-line rounded-lg bg-white p-4">
-          <img src="figures/realref_cliff_radar.png" alt="Real-vs-real Cliff's delta by family and domain" class="w-full">
+          <img width="1517" height="1489" loading="lazy" src="figures/realref_cliff_radar.png" alt="Real-vs-real Cliff's delta by family and domain" class="w-full">
         </div>
       </div>
     </div>
@@ -992,12 +682,10 @@ tailwind.config = {
         Model gap vs real-vs-real baseline
       </div>
       <div class="border border-line rounded-lg bg-white p-4">
-        <img src="figures/realref_model_gap_dotplot.png" alt="Per-model W1 and |Cliff delta| ratios over the real-vs-real baseline" class="w-full">
+        <img width="3040" height="1520" loading="lazy" src="figures/realref_model_gap_dotplot.png" alt="Per-model W1 and |Cliff delta| ratios over the real-vs-real baseline" class="w-full">
       </div>
       <p class="mt-3 text-[12.5px] text-mute leading-relaxed">
-        For each family, the dotplot shows the ratio of a model's average W<sub>1</sub> (and |δ|) to the real-vs-real
-        baseline. A ratio of <span class="mono-chip">1.0</span> would mean a model is indistinguishable from sampling more real data; current
-        models sit at 2×–11× the floor, with the largest gaps on Structure and Repetition.
+        For each family, the dotplot compares mean W<sub>1</sub> and mean |δ| with the repeated-real reference, using the revised paper’s eight domains and twelve metrics. Ratios summarize discrepancy magnitude; ×1.0 is not proof of equivalence. W<sub>1</sub> family means mix native metric scales and are descriptive summaries only. <a class="ulink" href="https://arxiv.org/pdf/2606.14715">Paper Appendices C and K</a>.
       </p>
     </div>
   </div>
@@ -1007,7 +695,7 @@ tailwind.config = {
   <div class="max-w-[1280px] mx-auto px-6">
     <div class="sec-num reveal">§ 04 — Quick start</div>
 
-    <div class="space-y-5">
+    <p class="reveal mt-4 mb-7 text-[13.5px] text-mute leading-relaxed">These commands document the repository’s earlier MiroBench code and five-domain data release. The revised ThreadBench paper uses twelve metrics across eight domains and ThreadPDG; the expanded corpus and method are not implied to be released by these commands.</p><div class="space-y-5">
 
       <div class="reveal">
         <div class="text-[12px] uppercase tracking-widest text-mute mb-2">1 · Install</div>
@@ -1019,12 +707,12 @@ tailwind.config = {
         <div class="code-block">
           <div class="code-bar">
             <span class="font-mono text-[11px] text-mute">install</span>
-            <button class="copy-btn" data-copy='git clone https://github.com/yyu6/MiroBench.git
-cd MiroBench
+            <button class="copy-btn" data-copy='git clone https://github.com/yyu6/ThreadBench.git
+cd ThreadBench
 pip install -e ".[generation]"'>copy</button>
           </div>
-<pre><span class="tok-prompt">$ </span><span class="tok-cmd">git</span> clone https://github.com/yyu6/MiroBench.git
-<span class="tok-prompt">$ </span><span class="tok-cmd">cd</span> MiroBench
+<pre tabindex="0" aria-label="Command example"><span class="tok-prompt">$ </span><span class="tok-cmd">git</span> clone https://github.com/yyu6/ThreadBench.git
+<span class="tok-prompt">$ </span><span class="tok-cmd">cd</span> ThreadBench
 <span class="tok-prompt">$ </span><span class="tok-cmd">pip</span> install -e <span class="tok-str">".[generation]"</span></pre>
         </div>
       </div>
@@ -1049,7 +737,7 @@ pip install -e ".[generation]"'>copy</button>
         <div class="text-[12px] uppercase tracking-widest text-mute mb-2">3 · Generate threads from products</div>
         <p class="text-[13.5px] text-text leading-relaxed mb-2">
           Set <span class="mono-chip">LLM_API_KEY</span> in a <span class="mono-chip">.env</span> file
-          (template at <a class="ulink" href="https://github.com/yyu6/MiroBench/blob/main/.env.example" target="_blank">.env.example</a>), then run:
+          (template at <a class="ulink" href="https://github.com/yyu6/ThreadBench/blob/main/.env.example" target="_blank">.env.example</a>), then run:
         </p>
         <div class="code-block">
           <div class="code-bar">
@@ -1059,7 +747,7 @@ pip install -e ".[generation]"'>copy</button>
     --output-dir artifacts/simulations/ \
     --discussion-backbone vanilla_oasis'>copy</button>
           </div>
-<pre><span class="tok-prompt">$ </span><span class="tok-cmd">mirobench</span> generate path/to/products.json \
+<pre tabindex="0" aria-label="Command example"><span class="tok-prompt">$ </span><span class="tok-cmd">mirobench</span> generate path/to/products.json \
     <span class="tok-flag">--agents</span> 30 <span class="tok-flag">--rounds</span> 30 <span class="tok-flag">--seed-posts</span> 3 \
     <span class="tok-flag">--output-dir</span> artifacts/simulations/ \
     <span class="tok-flag">--discussion-backbone</span> <span class="tok-str">vanilla_oasis</span></pre>
@@ -1077,7 +765,7 @@ pip install -e ".[generation]"'>copy</button>
           simulator (e.g.
           <a class="ulink" href="https://docs.oasis.camel-ai.org/cookbooks/reddit_simulation" target="_blank">OASIS's own Reddit cookbook</a>)? Skip
           step 3 — MiroBench accepts any input that follows the
-          <a class="ulink" href="https://github.com/yyu6/MiroBench/blob/main/mirobench/data/example_thread_format.json" target="_blank">discussion.json schema</a>.
+          <a class="ulink" href="https://github.com/yyu6/ThreadBench/blob/main/mirobench/data/example_thread_format.json" target="_blank">discussion.json schema</a>.
         </p>
       </div>
 
@@ -1088,16 +776,16 @@ pip install -e ".[generation]"'>copy</button>
             <span class="font-mono text-[11px] text-mute">score</span>
             <button class="copy-btn" data-copy="mirobench score my_threads/ --device cpu">copy</button>
           </div>
-<pre><span class="tok-prompt">$ </span><span class="tok-cmd">mirobench</span> score my_threads/ <span class="tok-flag">--device</span> cpu</pre>
+<pre tabindex="0" aria-label="Command example"><span class="tok-prompt">$ </span><span class="tok-cmd">mirobench</span> score my_threads/ <span class="tok-flag">--device</span> cpu</pre>
         </div>
         <p class="text-[13.5px] text-text leading-relaxed mt-3">
           Each thread is a directory holding one <span class="mono-chip">discussion.json</span>
           file; see
-          <a class="ulink" href="https://github.com/yyu6/MiroBench/blob/main/mirobench/data/example_thread_format.json" target="_blank">example_thread_format.json</a>
+          <a class="ulink" href="https://github.com/yyu6/ThreadBench/blob/main/mirobench/data/example_thread_format.json" target="_blank">example_thread_format.json</a>
           for the JSON schema. The command writes <span class="mono-chip">my_threads/thread_scores.csv</span>
           with one row per thread and 61 columns covering all nine scorer families. A 5-row schema
           sample lives at
-          <a class="ulink" href="https://github.com/yyu6/MiroBench/blob/main/mirobench/data/example_thread_scores.csv" target="_blank">example_thread_scores.csv</a>
+          <a class="ulink" href="https://github.com/yyu6/ThreadBench/blob/main/mirobench/data/example_thread_scores.csv" target="_blank">example_thread_scores.csv</a>
           — the same file <span class="mono-chip">mirobench compare</span> accepts verbatim.
         </p>
       </div>
@@ -1108,7 +796,7 @@ pip install -e ".[generation]"'>copy</button>
           <span class="font-medium">Sample size.</span>
           MWU and KS are non-parametric rank tests; below ~30 threads the p-values get noisy.
           Use <span class="num">≥ 50</span> threads per domain for a meaningful similarity ratio
-          (the paper's leaderboard uses <span class="num">200</span> per model × domain).
+          (the revised paper evaluates <span class="num">150</span> generated threads per method × model × domain).
         </p>
         <div class="code-block">
           <div class="code-bar">
@@ -1117,7 +805,7 @@ pip install -e ".[generation]"'>copy</button>
     --core-only \
     --model-name "my-model"'>copy</button>
           </div>
-<pre><span class="tok-prompt">$ </span><span class="tok-cmd">mirobench</span> compare my_threads/thread_scores.csv \
+<pre tabindex="0" aria-label="Command example"><span class="tok-prompt">$ </span><span class="tok-cmd">mirobench</span> compare my_threads/thread_scores.csv \
     <span class="tok-flag">--core-only</span> \
     <span class="tok-flag">--model-name</span> <span class="tok-str">"my-model"</span></pre>
         </div>
@@ -1126,15 +814,14 @@ pip install -e ".[generation]"'>copy</button>
           (metric × domain). Each row carries two
           <span class="font-medium">primary</span> readings —
           <span class="mono-chip">mwu_p_value</span> and <span class="mono-chip">ks_p_value</span>
-          (<span class="serif-italic">p</span> &gt; 0.05 means indistinguishable from real Reddit) —
+          (the revised protocol requires both <span class="serif-italic">p</span>-values ≥ 0.05; passing does not prove equivalence) —
           and two <span class="font-medium">secondary</span> ones —
           <span class="mono-chip">cliffs_delta</span> and <span class="mono-chip">wasserstein</span>
           (how far off when the p-value rejects).
         </p>
         <p class="text-[13.5px] text-text leading-relaxed mt-2">
           The terminal also prints a headline similarity ratio per domain, e.g.
-          <span class="mono-chip">Similarity (MWU p &gt; 0.05): 5/12 (42%)</span>. A simulator "matches"
-          a domain as its ratio approaches the ≈ 95% real-vs-real noise floor shown in §03.
+          <span class="mono-chip">Similarity (MWU p &gt; 0.05): 5/12 (42%)</span>. This MWU-only terminal summary belongs to the earlier release. Revised ThreadBench results require both MWU and KS; see <a class="ulink" href="results.html">current paper results</a>.
         </p>
       </div>
 
@@ -1153,7 +840,7 @@ pip install -e ".[generation]"'>copy</button>
     --calibration-model gpt-4o-mini \
     --iterations 12 --candidates 5 --device cpu'>copy</button>
           </div>
-<pre><span class="tok-prompt">$ </span><span class="tok-cmd">python</span> <span class="tok-flag">-m</span> calibration \
+<pre tabindex="0" aria-label="Command example"><span class="tok-prompt">$ </span><span class="tok-cmd">python</span> <span class="tok-flag">-m</span> calibration \
     <span class="tok-flag">--real-train-csv</span> mirobench/data/credit_cards/reference_scores/thread_scores_train.csv \
     <span class="tok-flag">--real-val-csv  </span> mirobench/data/credit_cards/reference_scores/thread_scores_val.csv \
     <span class="tok-flag">--real-test-csv </span> mirobench/data/credit_cards/reference_scores/thread_scores_test.csv \
@@ -1179,51 +866,43 @@ pip install -e ".[generation]"'>copy</button>
 
     <p class="reveal mt-6 text-[12.5px] text-mute leading-relaxed">
       Full flag reference in the
-      <a class="ulink" href="https://github.com/yyu6/MiroBench#readme" target="_blank">README</a>.
+      <a class="ulink" href="https://github.com/yyu6/ThreadBench#readme" target="_blank">README</a>.
     </p>
 
   </div>
 </section>
 
 <!-- ════════ CITATION ════════ -->
-<section id="cite" class="py-16 border-t border-line">
-  <div class="max-w-[1280px] mx-auto px-6">
-    <div class="sec-num reveal">§ 05 — Citation</div>
-    <h2 class="reveal mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
-      If you find <span class="serif-italic">MiroBench</span> useful in your research, please cite our paper.
-    </h2>
-    <p class="reveal mt-3 mb-7 text-[14.5px] text-mute leading-relaxed">
-      We also welcome citations from any work that builds on the data, the evaluation framework, or the
-      reference distributions released with this benchmark.
-    </p>
-
-    <div class="reveal code-block">
-      <div class="code-bar">
-        <span class="font-mono text-[11px] text-mute">mirobench.bib</span>
-        <button class="copy-btn" data-copy='@article{yu2026mirobench,
-  title  = {MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions},
-  author = {Yu, Yaoning and Yu, Ye and Luo, Haojing and Wang, Haohan},
-  year   = {2026},
-  url    = {https://github.com/yyu6/MiroBench}
-}'>copy</button>
-      </div>
-<pre><span class="tok-cmd">@article</span>{<span class="tok-str">yu2026mirobench</span>,
-  title  = {MiroBench: Benchmarking Realism in Agentic Simulation
-            of Real-world Discussions},
-  author = {Yu, Yaoning and Yu, Ye and Luo, Haojing and Wang, Haohan},
-  year   = {2026},
-  url    = {<span class="tok-str">https://github.com/yyu6/MiroBench</span>}
-}</pre>
-    </div>
-  </div>
-</section>
+<section id="cite" class="py-16 border-t border-line"><div class="max-w-[1280px] mx-auto px-6"><div class="sec-num reveal">§ 05 — Citation</div><h2 class="reveal mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">If you find <span class="serif-italic">ThreadBench</span> useful in your research, please cite our paper.</h2><p class="reveal mt-3 mb-7 text-[14.5px] text-mute leading-relaxed">Use the revised seven-author citation for <a class="ulink" href="https://arxiv.org/abs/2606.14715">arXiv:2606.14715</a>. <a class="ulink" href="threadbench.bib" download>Download BibTeX</a>.</p><div class="reveal code-block"><div class="code-bar"><span class="font-mono text-[11px] text-mute">threadbench.bib</span><button class="copy-btn" data-copy="@article{yu2026threadbench,
+  title = {ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions},
+  author = {Yu, Yaoning and Yu, Ye and Sciarappo, John and Luo, Haojing and Chang, Kai-min and Wang, Yi-Chia and Wang, Haohan},
+  journal = {arXiv preprint arXiv:2606.14715},
+  year = {2026},
+  eprint = {2606.14715},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.MA},
+  doi = {10.48550/arXiv.2606.14715},
+  url = {https://arxiv.org/abs/2606.14715}
+}
+">copy</button></div><pre tabindex="0" aria-label="BibTeX citation">@article{yu2026threadbench,
+  title = {ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions},
+  author = {Yu, Yaoning and Yu, Ye and Sciarappo, John and Luo, Haojing and Chang, Kai-min and Wang, Yi-Chia and Wang, Haohan},
+  journal = {arXiv preprint arXiv:2606.14715},
+  year = {2026},
+  eprint = {2606.14715},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.MA},
+  doi = {10.48550/arXiv.2606.14715},
+  url = {https://arxiv.org/abs/2606.14715}
+}
+</pre></div></div></section>
 
 <!-- ════════ ACKNOWLEDGEMENTS ════════ -->
 <section class="py-12 border-t border-line bg-surf">
   <div class="max-w-[1280px] mx-auto px-6">
     <div class="sec-num">Inspired by</div>
     <p class="mt-3 text-[14.5px] text-mute leading-relaxed">
-      MiroBench builds on prior open-source work:
+      The earlier MiroBench implementation builds on prior open-source work:
       <a class="ulink" href="https://github.com/camel-ai/oasis" target="_blank">OASIS</a> (CAMEL-AI) — the
       multi-agent social-interaction simulation framework that powers our generation pipeline — and
       <a class="ulink" href="https://github.com/666ghj/MiroFish" target="_blank">MiroFish</a>, a universal
@@ -1232,6 +911,7 @@ pip install -e ".[generation]"'>copy</button>
   </div>
 </section>
 
+</main>
 <!-- ════════ FOOTER ════════ -->
 <footer class="py-8 border-t border-line">
   <div class="max-w-[1280px] mx-auto px-6 flex flex-col sm:flex-row items-baseline justify-between gap-3">
@@ -1239,59 +919,21 @@ pip install -e ".[generation]"'>copy</button>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F62D7" stroke-width="2.2">
         <path d="M3 12h6l2-4 4 8 2-4h4"/>
       </svg>
-      <span class="text-[14px] font-medium">MiroBench</span>
-      <span class="font-mono text-[11px] text-mute2">v0.1.0 · MIT</span>
+      <span class="text-[14px] font-medium">ThreadBench</span>
+      <span class="font-mono text-[11px] text-mute2">Paper v2 · 2026</span>
     </div>
     <div class="font-mono text-[11px] text-mute2">
-      © 2026 · <a class="ulink" href="https://github.com/yyu6/MiroBench" target="_blank">github.com/yyu6/MiroBench</a>
+      © 2026 · <a class="ulink" href="https://github.com/yyu6/ThreadBench" target="_blank">github.com/yyu6/ThreadBench</a>
     </div>
   </div>
 </footer>
 
 <!-- ════════ SCRIPTS ════════ -->
-<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="assets/d3.v7.min.js"></script>
 <script>
-// ── Sunburst data: 5 families × 16 metrics ──
-const sbData = {
-  name: "MiroBench",
-  desc: "MiroBench scores generated discussion threads on 16 metrics across 5 families and tests whether each metric's distribution matches real Reddit.",
-  children: [
-    { name: "Diversity", desc: "Lexical and semantic similarity between comments inside a thread.", children: [
-      { name: "self_bleu_4",            desc: "BLEU-4 4-gram overlap across comments. Higher values indicate more repeated phrasing and lower lexical diversity." },
-      { name: "semantic_mean_cosine",   desc: "Sentence-embedding cosine similarity averaged over comment pairs. Higher = narrower semantic space." },
-      { name: "self_bertscore_mean_f1", desc: "BERTScore over contextual token embeddings. Higher values indicate stronger semantic overlap even when wording differs." },
-    ]},
-    { name: "Tone", desc: "Civility, disagreement, and tone variation in the thread.", children: [
-      { name: "hard_disagree_rate", desc: "Fraction of pairs with strong disagreement (stance classifier)." },
-      { name: "polite_rate",        desc: "Polite-tone fraction (Intel polite-guard)." },
-      { name: "impolite_rate",      desc: "Impolite-tone fraction." },
-      { name: "neutral_rate",       desc: "Neutral-tone fraction. LLMs almost never produce neutral comments." },
-    ]},
-    { name: "Structure", desc: "Comment-length variance and reply-tree shape.", children: [
-      { name: "length_cv",            desc: "Coefficient of variation of comment lengths — normalizes length variation by the mean length." },
-      { name: "avg_depth",            desc: "Average reply depth across the tree; top-level comments are depth 1." },
-      { name: "structural_virality",  desc: "Wiener index of the reply tree — how branched and continued the conversation is." },
-    ]},
-    { name: "Content", desc: "Narrativity and emotional variation across comments.", children: [
-      { name: "mean_story_probability", desc: "StorySeeker-derived narrative density. Higher = more anecdotal or story-style content." },
-      { name: "emotion_entropy",        desc: "Diversity of emotion labels per thread (GoEmotions)." },
-    ]},
-    { name: "Toxicity", desc: "Whether a thread contains hostile or harmful language.", children: [
-      { name: "toxicity_mean",         desc: "Detoxify unbiased — toxicity probability averaged across thread." },
-      { name: "severe_toxicity_mean",  desc: "Detoxify unbiased — severe-toxicity probability averaged across thread." },
-      { name: "obscene_mean",          desc: "Detoxify unbiased — obscenity probability averaged across thread." },
-      { name: "threat_mean",           desc: "Detoxify unbiased — threat-content probability averaged across thread." },
-    ]},
-  ]
-};
-
-const familyColors = {
-  "Diversity": "#7C9CC9",   // blue
-  "Tone":      "#E0A458",   // amber
-  "Structure": "#A88AA8",   // purple
-  "Content":   "#7FA46D",   // green
-  "Toxicity":  "#C57676",   // red
-};
+// Original two-ring sunburst, updated to four families and twelve metrics.
+const sbData = {"name": "ThreadBench", "desc": "ThreadBench compares generated and real Reddit discussions using 12 metrics across four families. Select a wedge for its definition.", "children": [{"name": "Uniformity", "desc": "Three complementary views of repetition, from shared phrases to shared meaning.", "children": [{"name": "self_bleu_4", "desc": "Pairwise 4-gram overlap between comments detects repeated wording."}, {"name": "self_bertscore_mean_f1", "desc": "Contextual similarity between comments detects paraphrases and similar expressions."}, {"name": "semantic_mean_cosine", "desc": "Mean cosine similarity with all-mpnet-base-v2 captures convergence in meaning."}]}, {"name": "Expression", "desc": "Personal experience and emotional variation capture different parts of how people express themselves.", "children": [{"name": "mean_story_probability", "desc": "StorySeeker estimates the prevalence of personal stories and first-person experiences."}, {"name": "emotion_entropy", "desc": "Entropy of GoEmotions labels measures emotional diversity across comments."}]}, {"name": "Tone", "desc": "Interpersonal manner and disagreement are measured separately: people can disagree politely.", "children": [{"name": "polite_rate", "desc": "Fraction of comments classified as polite by Intel/polite-guard."}, {"name": "neutral_rate", "desc": "Fraction of comments classified as neutral by Intel/polite-guard."}, {"name": "impolite_rate", "desc": "Fraction of comments classified as impolite by Intel/polite-guard."}, {"name": "hard_disagree_rate", "desc": "Explicit disagreement in parent–reply pairs."}]}, {"name": "Interaction", "desc": "Reply depth, branching and variation in contribution length describe the shape of a discussion.", "children": [{"name": "avg_depth", "desc": "Mean reply depth measures how far multi-step exchanges develop."}, {"name": "structural_virality", "desc": "Mean shortest-path distance between comments captures the spread of interaction across the reply tree."}, {"name": "length_cv", "desc": "Coefficient of variation of comment lengths measures the mixture of short reactions and longer contributions."}]}]};
+const familyColors = {"Uniformity": "#7C9CC9", "Expression": "#7FA46D", "Tone": "#E0A458", "Interaction": "#A88AA8"};
 
 function renderSunburst() {
   const svgEl = document.getElementById("sunburst");
@@ -1345,6 +987,12 @@ function renderSunburst() {
     .attr("stroke-width", 1.8)
     .style("cursor", "pointer")
     .style("transition", "fill-opacity 180ms")
+    .attr("tabindex", 0)
+    .attr("role", "button")
+    .attr("aria-label", d => d.data.name + ": " + d.data.desc)
+    .on("focus", function(_e, d) { updateInfo(d); })
+    .on("click", function(_e, d) { updateInfo(d); })
+    .on("keydown", function(event, d) { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); updateInfo(d); } })
     .on("mouseenter", function(_e, d) {
       d3.select(this).attr("fill-opacity", 1);
       updateInfo(d);
@@ -1399,10 +1047,7 @@ function renderSunburst() {
     "structural_virality": "virality",
     "mean_story_probability": "story",
     "emotion_entropy": "emotion",
-    "toxicity_mean": "toxicity",
-    "severe_toxicity_mean": "severe-tox",
-    "obscene_mean": "obscene",
-    "threat_mean": "threat",
+
   };
   g.selectAll(".metric-label")
     .data(metricNodes)
@@ -1436,16 +1081,16 @@ function renderSunburst() {
     .style("font-size", "20px")
     .style("fill", "#0E0E0F")
     .style("pointer-events", "none")
-    .text("MiroBench");
+    .text("ThreadBench");
   g.append("text")
     .attr("text-anchor", "middle")
     .attr("dy", 15)
     .style("font-family", "JetBrains Mono, monospace")
     .style("font-size", "9px")
     .style("letter-spacing", "0.15em")
-    .style("fill", "#888")
+    .style("fill", "#707070")
     .style("pointer-events", "none")
-    .text("16 METRICS");
+    .text("12 METRICS");
 
   svg.on("mouseleave", () => updateInfo(null));
 
@@ -1454,8 +1099,8 @@ function renderSunburst() {
     const nameEl = document.getElementById("sb-name");
     const descEl = document.getElementById("sb-desc");
     if (!d) {
-      famEl.textContent  = "MIROBENCH";
-      nameEl.textContent = "MiroBench · 16 metrics";
+      famEl.textContent  = "THREADBENCH";
+      nameEl.textContent = "ThreadBench · 12 metrics";
       descEl.textContent = sbData.desc;
       return;
     }

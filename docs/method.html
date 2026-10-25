@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ThreadPDG — Planner–Writer Generation for ThreadBench</title>
+<meta name="description" content="See how ThreadPDG plans discussions, writes comments and combines draft branches. Understand real-seed conditioning, reference pools and evaluation limits.">
+<meta name="author" content="Yaoning Yu, Ye Yu, John Sciarappo, Haojing Luo, Kai-min Chang, Yi-Chia Wang, Haohan Wang">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://yyu6.github.io/ThreadBench/method.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ThreadPDG — Planner–Writer Generation for ThreadBench">
+<meta property="og:description" content="See how ThreadPDG plans discussions, writes comments and combines draft branches. Understand real-seed conditioning, reference pools and evaluation limits.">
+<meta property="og:url" content="https://yyu6.github.io/ThreadBench/method.html">
+<meta property="og:image" content="https://yyu6.github.io/ThreadBench/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ThreadBench: 9,817 real Reddit threads, 8 domains, 12 metrics in 4 families">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ThreadPDG — Planner–Writer Generation for ThreadBench">
+<meta name="twitter:description" content="See how ThreadPDG plans discussions, writes comments and combines draft branches. Understand real-seed conditioning, reference pools and evaluation limits.">
+<meta name="twitter:image" content="https://yyu6.github.io/ThreadBench/assets/social-card.png">
+<meta name="citation_title" content="ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions">
+<meta name="citation_author" content="Yaoning Yu"><meta name="citation_author" content="Ye Yu"><meta name="citation_author" content="John Sciarappo"><meta name="citation_author" content="Haojing Luo"><meta name="citation_author" content="Kai-min Chang"><meta name="citation_author" content="Yi-Chia Wang"><meta name="citation_author" content="Haohan Wang">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_pdf_url" content="https://arxiv.org/pdf/2606.14715">
+<meta name="citation_arxiv_id" content="2606.14715">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://yyu6.github.io/ThreadBench/#website", "name": "ThreadBench", "alternateName": "MiroBench", "url": "https://yyu6.github.io/ThreadBench/"}, {"@type": "WebPage", "@id": "https://yyu6.github.io/ThreadBench/method.html#webpage", "url": "https://yyu6.github.io/ThreadBench/method.html", "name": "ThreadPDG — Planner–Writer Generation for ThreadBench", "description": "See how ThreadPDG plans discussions, writes comments and combines draft branches. Understand real-seed conditioning, reference pools and evaluation limits.", "dateModified": "2026-10-26", "inLanguage": "en", "isPartOf": {"@id": "https://yyu6.github.io/ThreadBench/#website"}, "about": {"@id": "https://yyu6.github.io/ThreadBench/#paper"}}, {"@type": "ScholarlyArticle", "@id": "https://yyu6.github.io/ThreadBench/#paper", "name": "ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions", "headline": "ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions", "author": [{"@type": "Person", "name": "Yaoning Yu"}, {"@type": "Person", "name": "Ye Yu"}, {"@type": "Person", "name": "John Sciarappo"}, {"@type": "Person", "name": "Haojing Luo"}, {"@type": "Person", "name": "Kai-min Chang"}, {"@type": "Person", "name": "Yi-Chia Wang"}, {"@type": "Person", "name": "Haohan Wang"}], "url": "https://arxiv.org/abs/2606.14715", "sameAs": ["https://doi.org/10.48550/arXiv.2606.14715"], "identifier": "arXiv:2606.14715", "dateModified": "2026-10-10", "description": "A Reddit discussion simulation benchmark with 9,817 real threads, 8 domains, 116 subdomains and 12 metrics in four families, with ThreadPDG Planner–Writer generation.", "encoding": {"@type": "MediaObject", "contentUrl": "https://arxiv.org/pdf/2606.14715", "encodingFormat": "application/pdf"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ThreadBench", "item": "https://yyu6.github.io/ThreadBench/"}, {"@type": "ListItem", "position": 2, "name": "ThreadPDG", "item": "https://yyu6.github.io/ThreadBench/method.html"}]}]}</script>
+<link rel="stylesheet" href="assets/original-fonts.css">
+<link rel="stylesheet" href="assets/legacy-utilities.css">
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    background: #FFFFFF;
+    color: #1A1A1A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .serif-italic {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  ::selection { background: rgba(15, 98, 215, 0.18); }
+
+  /* Links */
+  .ulink {
+    color: #1A1A1A;
+    text-decoration: underline;
+    text-decoration-color: #BFBFBC;
+    text-underline-offset: 3px;
+    transition: text-decoration-color 200ms, color 200ms;
+  }
+  .ulink:hover { color: #0F62D7; text-decoration-color: #0F62D7; }
+
+  /* Mono code chip */
+  .mono-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    background: #F0F0EC;
+    border: 1px solid #E4E4E0;
+    border-radius: 3px;
+    padding: 1px 6px;
+    color: #1A1A1A;
+  }
+
+  /* Method badge in leaderboard */
+  .method-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    background: #EEF3FB;
+    border: 1px solid #D6E1F1;
+    color: #0F62D7;
+    padding: 1px 7px;
+    border-radius: 999px;
+  }
+  .method-tag .dot {
+    width: 5px; height: 5px; border-radius: 50%; background: #0F62D7;
+  }
+
+  /* Section number */
+  .sec-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: #707070;
+    text-transform: uppercase;
+  }
+
+  /* Nav */
+  .nav-bg {
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #E4E4E0;
+  }
+
+  /* Tables */
+  table.bench { border-collapse: collapse; width: 100%; }
+  table.bench th, table.bench td {
+    border-bottom: 1px solid #E4E4E0;
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  table.bench thead th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: 500;
+    border-bottom: 1.5px solid #1A1A1A;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  table.bench tbody tr:hover {
+    background: #FAFAF7;
+  }
+
+  /* Numeric */
+  .num { font-family: 'JetBrains Mono', monospace; font-feature-settings: "tnum" 1; }
+
+  /* Code block */
+  .code-block {
+    background: #F7F7F4;
+    border: 1px solid #E4E4E0;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow: hidden;
+  }
+  .code-bar {
+    padding: 8px 14px;
+    background: #EFEFEB;
+    border-bottom: 1px solid #E4E4E0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .code-block pre {
+    padding: 14px 18px;
+    overflow-x: auto;
+    white-space: pre;
+    color: #1A1A1A;
+  }
+  .tok-prompt  { color: #6b6b6b; user-select: none; }
+  .tok-cmd     { color: #0F62D7; font-weight: 500; }
+  .tok-flag    { color: #9333EA; }
+  .tok-str     { color: #047857; }
+  .tok-comment { color: #707070; font-style: italic; }
+
+  /* Copy button */
+  .copy-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: #555;
+    border: 1px solid #D0D0CC;
+    background: #FFFFFF;
+    padding: 2px 9px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 180ms;
+  }
+  .copy-btn:hover { color: #0F62D7; border-color: #0F62D7; }
+  .copy-btn.copied { color: #047857; border-color: #047857; }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(10px); transition: opacity 600ms cubic-bezier(.16,1,.3,1), transform 600ms cubic-bezier(.16,1,.3,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* Sunburst panel */
+  #sunburst { display: block; max-width: 100%; height: auto; }
+
+  /* Live thread (animated, looped) */
+  #live-thread .lt-row {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 650ms cubic-bezier(.16,1,.3,1),
+                transform 650ms cubic-bezier(.16,1,.3,1);
+  }
+  #live-thread .lt-row.shown { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    #live-thread .lt-row { transition: none; opacity: 1; transform: none; }
+  }
+</style>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 nav-bg">
+  <div class="max-w-[1280px] mx-auto px-6 py-3.5 flex items-center justify-between">
+    <a href="./#top" class="flex items-center gap-2 text-[16px] font-semibold tracking-tight">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F62D7" stroke-width="2.2">
+        <path d="M3 12h6l2-4 4 8 2-4h4"/>
+      </svg>
+      <span>ThreadBench</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-[13.5px] text-mute">
+      <a href="./#motivation" class="hover:text-text">Motivation</a>
+      <a href="./#leaderboard" class="hover:text-text">Leaderboard</a>
+      <a href="./#realref" class="hover:text-text">Reference</a>
+      <a href="./#metrics" class="hover:text-text">Metrics</a>
+      <a href="./#quickstart" class="hover:text-text">Quick start</a>
+      <a href="./#cite" class="hover:text-text">Cite</a>
+    </nav>
+    <a href="https://github.com/yyu6/ThreadBench" target="_blank" rel="noopener"
+       class="inline-flex items-center gap-2 px-3 py-1.5 text-[13px] border border-line2 rounded-md hover:border-text/40 transition-colors">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+      </svg>
+      <span class="font-mono text-[12px]">GitHub</span>
+    </a>
+  </div>
+</header>
+<main id="main"><div class="container subpage-hero"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="./">ThreadBench</a><span aria-hidden="true">/</span><span>ThreadPDG</span></nav><p class="eyebrow">THE GENERATION METHOD</p><h1>Plan how a discussion grows.<br><em>Write what comes next.</em></h1><p class="page-deck">ThreadPDG—Thread-Prompt-based Discussion Generation—is a Planner–Writer framework that studies a complete real seed discussion, generates multiple drafts and combines their branches using thread-level statistics.</p><div class="hero-actions"><a class="button primary" href="https://arxiv.org/pdf/2606.14715">Read §4 and Appendix F ↗</a><a class="button" href="results.html">See the evaluation →</a></div></div>
+<section class="section tinted" aria-labelledby="workflow-title"><div class="container"><div class="section-label">01 / THE WORKFLOW</div><h2 id="workflow-title">From a real example<br><em>to a new discussion.</em></h2><ol class="method-steps"><li><span class="step-number">01</span><span class="eyebrow">PLANNER</span><h3>Learn how a thread develops.</h3><p>Read a real seed thread. Plan each branch’s direction and each comment’s role within the reply template.</p></li><li><span class="step-number">02</span><span class="eyebrow">WRITER</span><h3>Turn plans into new comments.</h3><p>Use comment plans, assigned personas and prior generated context to fill the planned discussion.</p></li><li><span class="step-number">03</span><span class="eyebrow">COMPOSITION</span><h3>Combine the strongest branches.</h3><p>Generate multiple drafts and select branches against reference-pool metric targets for the current seed.</p></li></ol></div></section>
+<section class="section container prose-grid" aria-labelledby="conditioning-title"><div><div class="section-label">02 / CONDITIONING</div><h2 id="conditioning-title">What goes into<br><em>generation?</em></h2></div><div class="prose"><h3>A complete real seed thread</h3><p>The Planner reads the root post, comments and parent–reply relationships. A structural template specifies comment slots, reply structure and length targets. Each draft inherits the seed’s comment count and reply-tree topology. The Planner determines the direction of each branch and what every comment should contribute.</p><h3>A domain profile and assigned personas</h3><p>A profile derived from the domain’s separate reference pool guides the discussion patterns. The Writer follows the plans and template, with personas sampled from MatrAIx and previously generated discussion context. This is prompt-based generation; no model-weight update is implied.</p><h3>A separate reference pool</h3><p>For branch composition, each seed receives a randomly sampled reference thread from the domain’s reference pool. That one thread supplies the targets for all metrics, preserving relationships among the target metric values. The selection objective uses metric weights and reference-pool interquartile ranges.</p><a class="source" href="https://arxiv.org/pdf/2606.14715">Paper · §4, Appendix F ↗</a></div></section>
+<section class="section tinted" aria-labelledby="composition-title"><div class="container prose-grid"><div><div class="section-label">03 / MULTI-DRAFT COMPOSITION</div><h2 id="composition-title">Several drafts.<br><em>One composed thread.</em></h2></div><div class="prose"><p>The main experiments allow up to <strong>K = 3</strong> Planner–Writer drafts per seed. A branch contains a parent comment and all its sub-comments. The final thread can take different branches from different drafts of that same seed.</p><p>The search minimizes a weighted sum of squared, IQR-normalized differences between the composed thread’s metrics and its sampled reference targets. Selection uses the current seed’s drafts and target plus fixed reference-pool statistics, without other held-out test data.</p><aside class="note" aria-label="Evaluation separation"><strong>Keep the pools separate.</strong> Each domain has non-overlapping seed, reference and test pools. Reference-pool statistics guide generation and selection; an independently sampled group of 150 held-out real test threads is used for final evaluation.</aside><a class="source" href="https://arxiv.org/pdf/2606.14715">Paper · §4.2, §5.1 ↗</a></div></div></section>
+<section class="section container prose-grid" aria-labelledby="limitations-title"><div><div class="section-label">04 / SCOPE &amp; LIMITATIONS</div><h2 id="limitations-title">Progress with<br><em>a clear boundary.</em></h2></div><div class="prose"><p>ThreadPDG is a case study in using ThreadBench to improve discussion realism. It currently depends on corresponding real seed discussions. Generating equally realistic threads independently at inference time is future work.</p><p>Results vary by model and domain. With GPT-5.4-mini, the method passes 67–92% of metrics; with DeepSeek-V4.1-Flash, 58–100%; and with GPT-4o-mini, 17–42%. Politeness, disagreement and length remain challenges.</p><p>Passing statistical tests means a difference was not detected at the chosen threshold. It does not prove distributional equivalence or establish realism beyond the benchmark’s measured properties.</p><a class="source" href="https://arxiv.org/pdf/2606.14715">Paper · §5, Appendix L ↗</a><h3>How does ThreadBench relate to other social simulation projects?</h3><p>ThreadBench evaluates the distributions of generated Reddit discussions against real threads. <a href="https://docs.oasis.camel-ai.org/introduction">OASIS</a> is a social media simulation framework; <a href="https://github.com/eth-sri/SynthPAI">SynthPAI</a> provides synthetic Reddit comments for personal attribute inference. Their generation methods are evaluated alongside ThreadPDG in this paper. <a href="https://arxiv.org/abs/2510.17516">SimBench</a> benchmarks human-behavior simulation across structured tasks such as moral and economic choices; it is related work, with a different evaluation scope and no shared score scale.</p><p>For the ThreadBench protocol’s direct comparisons, see <a href="results.html">ThreadPDG, OASIS and SynthPAI results</a>. For metric definitions, see the <a href="./#metric-definitions">twelve-metric reference</a>.</p><p><a class="button" href="results.html">Inspect all 72 comparisons →</a></p></div></section></main>
+<footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="./">ThreadBench.</a><p>Measuring the realism of online discussions.</p><p class="small">Previously MiroBench · Research preprint, 2026</p></div><nav aria-label="Resources"><a href="https://arxiv.org/abs/2606.14715">arXiv paper ↗</a><a href="https://github.com/yyu6/ThreadBench">GitHub repository ↗</a><a href="paper-data.json">Paper results (JSON)</a><a href="threadbench.bib" download>BibTeX</a><a href="llms.txt">Site summary for agents</a></nav></div><div class="container footer-bottom"><span>Website updated <time datetime="2026-10-26">October 26, 2026</time></span><span>Paper v2 · <time datetime="2026-10-10">October 10, 2026</time></span></div></footer>
+<div id="status" class="toast" role="status" aria-live="polite"></div>
+</body></html>

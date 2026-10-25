@@ -1,0 +1,31 @@
+# ThreadBench
+
+> ThreadBench is a Reddit discussion simulation benchmark described in arXiv:2606.14715. It contains 9,817 real threads across 8 domains and 116 subdomains, evaluated with 12 metrics in four families: Uniformity, Expression, Tone and Interaction.
+
+ThreadBench is the revised paper's name. The canonical site is https://yyu6.github.io/ThreadBench/ and the repository is https://github.com/yyu6/ThreadBench. Its GitHub repository currently contains the earlier MiroBench implementation and five-domain dataset; the paper's expanded corpus and ThreadPDG implementation should not be inferred to be available there.
+
+## Research
+
+- [Paper](https://arxiv.org/abs/2606.14715): ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions. Version 2, October 10, 2026.
+- [Overview](https://yyu6.github.io/ThreadBench/): Corpus, metric definitions, statistical protocol, results, limitations and citation.
+- [ThreadPDG method](https://yyu6.github.io/ThreadBench/method.html): Prompt-based Planner–Writer discussion generation with full real-seed conditioning and multi-draft branch composition.
+- [Results explorer](https://yyu6.github.io/ThreadBench/results.html): All 72 published comparisons, with model/method/domain filters and metric-level rounded MWU/KS p-values.
+
+## Data and citation
+
+- [Paper result JSON](https://yyu6.github.io/ThreadBench/paper-data.json): 72 comparisons and 864 metric-level p-value pairs with explicit published pass flags and source metadata. This export is paper results, not raw Reddit corpus data.
+- [Paper result CSV](https://yyu6.github.io/ThreadBench/paper-results.csv): One row per comparison and metric, with rounded p-values and published pass decisions.
+- [BibTeX](https://yyu6.github.io/ThreadBench/threadbench.bib): Seven-author paper citation.
+- [Earlier implementation and data](https://github.com/yyu6/ThreadBench): ThreadBench repository with the earlier MiroBench implementation; check release coverage before reproducing the expanded paper.
+
+## Interpretation
+
+A metric passes when both two-sided MWU and KS tests have p >= 0.05; passing does not establish equivalence. Published p-values are rounded: use the explicit paper pass flags rather than recomputing decisions from displayed .05 values.
+
+ThreadPDG passes 67–92% of metrics with GPT-5.4-mini, 58–100% with DeepSeek-V4.1-Flash, and 17–42% with GPT-4o-mini across eight domains. The 58–100% headline is not the range for all three backbones.
+
+The human study has 436 retained annotators and 240 matched pairs across all three systems. ThreadPDG is not distinguished in 78.7% of its non-tied pairs by pair-level majority vote: generated-as-real and cannot-distinguish votes are combined. This is not an individual-rater accuracy score.
+
+ThreadPDG conditions on a complete real seed thread, including comments and reply relationships, plus domain profiles and reference-pool statistics. Main experiments use up to three drafts per seed. Independent root-post-only generation remains future work.
+
+Inventory note: Table 1’s per-domain subdomain counts sum to 117 while the abstract and total report 116. This site retains the paper-reported total 116 and flags the discrepancy pending correction.

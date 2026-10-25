@@ -1,0 +1,95 @@
+# Paper website — original visual design
+
+GitHub Pages serves the static files in this directory at
+https://yyu6.github.io/ThreadBench/ from the `main` branch (`/docs`).
+The repository is https://github.com/yyu6/ThreadBench. The homepage retains
+its original white/ivory layout, Inter + Instrument Serif typography,
+interactive two-ring metric sunburst, animated discussion illustration,
+scientific chart placements and quick-start code blocks. Only paper content,
+numbers, metrics and data in the existing chart forms have been updated.
+
+```sh
+python scripts/build_paper_site.py
+python scripts/build_paper_site.py --check
+python -m http.server 8765 --directory docs
+```
+
+Open http://localhost:8765/. The result explorer is `results.html`; the method
+page is `method.html`. These supporting pages use the original site's header,
+fonts and palette. All paper results and static metric definitions remain
+available without JavaScript.
+
+## Editing and source data
+
+- `scripts/templates/home.html`: the restored original homepage, with narrow
+  data/content insertion tokens. Preserve its original layout and animation.
+- `scripts/paper_home.py`: fills updated authors, metrics, summary results,
+  method description, source links and citation into the original template.
+- `scripts/build_paper_site.py`: supporting pages, CSV/BibTeX exports and sitemap.
+- `paper-data.json`: 72 comparisons and 864 metric cells from paper Table 3,
+  plus distance tables from Appendix K and 96 repeated-real reference cells
+  from Appendix C. Source paths and SHA-256 hashes are recorded.
+
+Pass flags preserve published decisions. Do not recompute them from rounded
+p-values: displayed `.05` values can fall on either side of the threshold.
+The paper's Table 1 subdomain rows sum to 117 while its reported total is 116;
+the user asked to retain 116 and annotate this discrepancy.
+
+## Original scientific figures
+
+`figures/realref_pvalue_heatmap.png`, `realref_w1_radar.png`,
+`realref_cliff_radar.png` and `realref_model_gap_dotplot.png` preserve the
+previous heatmap, polygon-radar and ratio-dotplot forms. Their values now come
+from the revised eight-domain, twelve-metric paper tables, not the earlier
+five-domain corpus. To regenerate (authoring dependencies only):
+
+```sh
+python scripts/build_paper_figures.py  # requires matplotlib and numpy
+python scripts/build_paper_site.py   # updates explicit image dimensions
+```
+
+Family W1 means mix native metric scales and are labelled descriptive
+summaries. Ratios and p-value passes are not claims of equivalence.
+
+## Styling and local dependencies
+
+The original design's Tailwind utilities are precompiled in
+`assets/legacy-utilities.css`. Original fonts and D3 7.9.0 are self-hosted,
+with licenses included; there are no runtime CDN requests. When adding utility
+classes, rebuild the CSS using the original config:
+
+```sh
+npm install --prefix /tmp/threadbench-tailwind --no-save tailwindcss@3.4.17
+/tmp/threadbench-tailwind/node_modules/.bin/tailwindcss \
+  -c scripts/tailwind.config.cjs -i scripts/legacy-utilities.css \
+  -o docs/assets/legacy-utilities.css --minify
+```
+
+`assets/site.css` and `site.js` provide supporting-page tables, filters and
+clipboard controls. `assets/social-card.png` is a 1200×630 screenshot export
+of the restored original-style homepage. It does not affect visible layout.
+
+## Earlier code release
+
+`leaderboard.html` and `leaderboard.json` remain the earlier MiroBench
+five-domain, sixteen-metric, MWU-only community board. The page is visibly
+archived, noindexed and excluded from the current sitemap. Keep its `LB:*`
+markers compatible with `python -m mirobench.leaderboard check`.
+
+The Python implementation and bundled corpus remain the earlier release.
+The site does not imply that the expanded corpus or ThreadPDG implementation
+is already available. This is a website update, not a package/data migration.
+
+## Verification and GEO evidence
+
+```sh
+python -m pytest -q
+python -m mirobench.leaderboard check
+```
+
+See `sessions/threadbench/browser-qa.cjs` for browser tests and its README for
+QA-only dependency setup. Keyword recommendations, returned difficulty/volume
+data, filtering decisions, topic-focused content recommendations and prior
+GEO optimizer evidence are under `sessions/threadbench/`. The current query
+map and content decisions are in `keyword-analysis.md` there. No search
+ranking or AI citation uplift has been measured or promised.

@@ -1,0 +1,865 @@
+domain,method,model,metric,family,mwu_p_display,ks_p_display,paper_pass,domain_passes,metrics_per_domain,n_generated,n_real,paper_version
+Camera,OASIS,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Camera,OASIS,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Camera,OASIS,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Camera,OASIS,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Camera,OASIS,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Camera,OASIS,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+Camera,OASIS,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Camera,OASIS,DeepSeek-V4.1-Flash,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Camera,OASIS,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Camera,OASIS,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Camera,OASIS,DeepSeek-V4.1-Flash,impolite_rate,Tone,.08,.03,0,1,12,150,150,v2
+Camera,OASIS,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,.46,.06,1,1,12,150,150,v2
+Camera,OASIS,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-5.4-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-5.4-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-5.4-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-5.4-mini,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-4o-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Camera,OASIS,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Camera,SynthPAI,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,.08,.11,1,1,12,150,150,v2
+Camera,SynthPAI,DeepSeek-V4.1-Flash,avg_depth,Interaction,.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,DeepSeek-V4.1-Flash,structural_virality,Interaction,.39,.03,0,1,12,150,150,v2
+Camera,SynthPAI,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,DeepSeek-V4.1-Flash,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,gpt-5.4-mini,semantic_mean_cosine,Uniformity,.55,.14,1,1,12,150,150,v2
+Camera,SynthPAI,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,gpt-5.4-mini,length_cv,Interaction,.46,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,gpt-5.4-mini,neutral_rate,Tone,.03,.07,0,1,12,150,150,v2
+Camera,SynthPAI,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,gpt-5.4-mini,hard_disagree_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Camera,SynthPAI,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Camera,SynthPAI,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Camera,SynthPAI,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Camera,SynthPAI,gpt-4o-mini,avg_depth,Interaction,.05,<.01,0,2,12,150,150,v2
+Camera,SynthPAI,gpt-4o-mini,structural_virality,Interaction,.85,.22,1,2,12,150,150,v2
+Camera,SynthPAI,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,2,12,150,150,v2
+Camera,SynthPAI,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,2,12,150,150,v2
+Camera,SynthPAI,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,2,12,150,150,v2
+Camera,SynthPAI,gpt-4o-mini,polite_rate,Tone,.07,.17,1,2,12,150,150,v2
+Camera,SynthPAI,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Camera,SynthPAI,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Camera,SynthPAI,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Camera,ThreadPDG,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,.44,.71,1,11,12,150,150,v2
+Camera,ThreadPDG,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,.92,.28,1,11,12,150,150,v2
+Camera,ThreadPDG,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,.68,.44,1,11,12,150,150,v2
+Camera,ThreadPDG,DeepSeek-V4.1-Flash,avg_depth,Interaction,.86,.98,1,11,12,150,150,v2
+Camera,ThreadPDG,DeepSeek-V4.1-Flash,structural_virality,Interaction,.81,.85,1,11,12,150,150,v2
+Camera,ThreadPDG,DeepSeek-V4.1-Flash,length_cv,Interaction,.21,.44,1,11,12,150,150,v2
+Camera,ThreadPDG,DeepSeek-V4.1-Flash,mean_story_probability,Expression,.15,.16,1,11,12,150,150,v2
+Camera,ThreadPDG,DeepSeek-V4.1-Flash,emotion_entropy,Expression,.50,.79,1,11,12,150,150,v2
+Camera,ThreadPDG,DeepSeek-V4.1-Flash,polite_rate,Tone,.76,.33,1,11,12,150,150,v2
+Camera,ThreadPDG,DeepSeek-V4.1-Flash,neutral_rate,Tone,.15,.07,1,11,12,150,150,v2
+Camera,ThreadPDG,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,.05,0,11,12,150,150,v2
+Camera,ThreadPDG,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,.10,.09,1,11,12,150,150,v2
+Camera,ThreadPDG,gpt-5.4-mini,self_bleu_4,Uniformity,.12,.01,0,10,12,150,150,v2
+Camera,ThreadPDG,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,.27,.19,1,10,12,150,150,v2
+Camera,ThreadPDG,gpt-5.4-mini,semantic_mean_cosine,Uniformity,.72,.61,1,10,12,150,150,v2
+Camera,ThreadPDG,gpt-5.4-mini,avg_depth,Interaction,.98,.92,1,10,12,150,150,v2
+Camera,ThreadPDG,gpt-5.4-mini,structural_virality,Interaction,.70,.57,1,10,12,150,150,v2
+Camera,ThreadPDG,gpt-5.4-mini,length_cv,Interaction,.70,.34,1,10,12,150,150,v2
+Camera,ThreadPDG,gpt-5.4-mini,mean_story_probability,Expression,.17,.51,1,10,12,150,150,v2
+Camera,ThreadPDG,gpt-5.4-mini,emotion_entropy,Expression,.65,.65,1,10,12,150,150,v2
+Camera,ThreadPDG,gpt-5.4-mini,polite_rate,Tone,.02,<.01,0,10,12,150,150,v2
+Camera,ThreadPDG,gpt-5.4-mini,neutral_rate,Tone,.06,.20,1,10,12,150,150,v2
+Camera,ThreadPDG,gpt-5.4-mini,impolite_rate,Tone,.83,.90,1,10,12,150,150,v2
+Camera,ThreadPDG,gpt-5.4-mini,hard_disagree_rate,Tone,.19,.37,1,10,12,150,150,v2
+Camera,ThreadPDG,gpt-4o-mini,self_bleu_4,Uniformity,.03,.02,0,2,12,150,150,v2
+Camera,ThreadPDG,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Camera,ThreadPDG,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Camera,ThreadPDG,gpt-4o-mini,avg_depth,Interaction,.41,.37,1,2,12,150,150,v2
+Camera,ThreadPDG,gpt-4o-mini,structural_virality,Interaction,.23,.23,1,2,12,150,150,v2
+Camera,ThreadPDG,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,2,12,150,150,v2
+Camera,ThreadPDG,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,2,12,150,150,v2
+Camera,ThreadPDG,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,2,12,150,150,v2
+Camera,ThreadPDG,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Camera,ThreadPDG,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Camera,ThreadPDG,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Camera,ThreadPDG,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Celebrity,OASIS,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,DeepSeek-V4.1-Flash,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,DeepSeek-V4.1-Flash,impolite_rate,Tone,.67,.15,1,1,12,150,150,v2
+Celebrity,OASIS,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,gpt-5.4-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,gpt-5.4-mini,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,gpt-5.4-mini,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Celebrity,OASIS,gpt-5.4-mini,hard_disagree_rate,Tone,.37,.27,1,1,12,150,150,v2
+Celebrity,OASIS,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Celebrity,OASIS,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Celebrity,OASIS,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Celebrity,OASIS,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Celebrity,OASIS,gpt-4o-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+Celebrity,OASIS,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+Celebrity,OASIS,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Celebrity,OASIS,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+Celebrity,OASIS,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Celebrity,OASIS,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Celebrity,OASIS,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Celebrity,OASIS,gpt-4o-mini,hard_disagree_rate,Tone,.15,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,DeepSeek-V4.1-Flash,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,DeepSeek-V4.1-Flash,neutral_rate,Tone,.02,.02,0,0,12,150,150,v2
+Celebrity,SynthPAI,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-5.4-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-5.4-mini,length_cv,Interaction,.11,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-5.4-mini,neutral_rate,Tone,.02,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-5.4-mini,hard_disagree_rate,Tone,.03,.02,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-4o-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Celebrity,SynthPAI,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Celebrity,ThreadPDG,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,.77,.71,1,12,12,150,150,v2
+Celebrity,ThreadPDG,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,.77,.88,1,12,12,150,150,v2
+Celebrity,ThreadPDG,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,.90,.88,1,12,12,150,150,v2
+Celebrity,ThreadPDG,DeepSeek-V4.1-Flash,avg_depth,Interaction,.58,.56,1,12,12,150,150,v2
+Celebrity,ThreadPDG,DeepSeek-V4.1-Flash,structural_virality,Interaction,.30,.33,1,12,12,150,150,v2
+Celebrity,ThreadPDG,DeepSeek-V4.1-Flash,length_cv,Interaction,.05,.20,1,12,12,150,150,v2
+Celebrity,ThreadPDG,DeepSeek-V4.1-Flash,mean_story_probability,Expression,.56,.67,1,12,12,150,150,v2
+Celebrity,ThreadPDG,DeepSeek-V4.1-Flash,emotion_entropy,Expression,.67,.80,1,12,12,150,150,v2
+Celebrity,ThreadPDG,DeepSeek-V4.1-Flash,polite_rate,Tone,.72,.55,1,12,12,150,150,v2
+Celebrity,ThreadPDG,DeepSeek-V4.1-Flash,neutral_rate,Tone,.68,.77,1,12,12,150,150,v2
+Celebrity,ThreadPDG,DeepSeek-V4.1-Flash,impolite_rate,Tone,.69,.66,1,12,12,150,150,v2
+Celebrity,ThreadPDG,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,.78,.64,1,12,12,150,150,v2
+Celebrity,ThreadPDG,gpt-5.4-mini,self_bleu_4,Uniformity,.12,.12,1,11,12,150,150,v2
+Celebrity,ThreadPDG,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,.29,.70,1,11,12,150,150,v2
+Celebrity,ThreadPDG,gpt-5.4-mini,semantic_mean_cosine,Uniformity,.91,.79,1,11,12,150,150,v2
+Celebrity,ThreadPDG,gpt-5.4-mini,avg_depth,Interaction,.56,.50,1,11,12,150,150,v2
+Celebrity,ThreadPDG,gpt-5.4-mini,structural_virality,Interaction,.26,.22,1,11,12,150,150,v2
+Celebrity,ThreadPDG,gpt-5.4-mini,length_cv,Interaction,.17,.11,1,11,12,150,150,v2
+Celebrity,ThreadPDG,gpt-5.4-mini,mean_story_probability,Expression,.24,.53,1,11,12,150,150,v2
+Celebrity,ThreadPDG,gpt-5.4-mini,emotion_entropy,Expression,.49,.52,1,11,12,150,150,v2
+Celebrity,ThreadPDG,gpt-5.4-mini,polite_rate,Tone,.05,.06,0,11,12,150,150,v2
+Celebrity,ThreadPDG,gpt-5.4-mini,neutral_rate,Tone,.58,.45,1,11,12,150,150,v2
+Celebrity,ThreadPDG,gpt-5.4-mini,impolite_rate,Tone,.31,.43,1,11,12,150,150,v2
+Celebrity,ThreadPDG,gpt-5.4-mini,hard_disagree_rate,Tone,.41,.62,1,11,12,150,150,v2
+Celebrity,ThreadPDG,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,3,12,150,150,v2
+Celebrity,ThreadPDG,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,3,12,150,150,v2
+Celebrity,ThreadPDG,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,3,12,150,150,v2
+Celebrity,ThreadPDG,gpt-4o-mini,avg_depth,Interaction,.77,.71,1,3,12,150,150,v2
+Celebrity,ThreadPDG,gpt-4o-mini,structural_virality,Interaction,.91,.83,1,3,12,150,150,v2
+Celebrity,ThreadPDG,gpt-4o-mini,length_cv,Interaction,.04,.05,0,3,12,150,150,v2
+Celebrity,ThreadPDG,gpt-4o-mini,mean_story_probability,Expression,<.01,.02,0,3,12,150,150,v2
+Celebrity,ThreadPDG,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,3,12,150,150,v2
+Celebrity,ThreadPDG,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,3,12,150,150,v2
+Celebrity,ThreadPDG,gpt-4o-mini,neutral_rate,Tone,<.01,.01,0,3,12,150,150,v2
+Celebrity,ThreadPDG,gpt-4o-mini,impolite_rate,Tone,.51,.92,1,3,12,150,150,v2
+Celebrity,ThreadPDG,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,3,12,150,150,v2
+Cellphone,OASIS,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,DeepSeek-V4.1-Flash,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,.87,.90,1,1,12,150,150,v2
+Cellphone,OASIS,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,gpt-5.4-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,gpt-5.4-mini,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,gpt-5.4-mini,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,OASIS,gpt-5.4-mini,hard_disagree_rate,Tone,.93,.20,1,1,12,150,150,v2
+Cellphone,OASIS,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Cellphone,OASIS,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Cellphone,OASIS,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Cellphone,OASIS,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Cellphone,OASIS,gpt-4o-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+Cellphone,OASIS,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+Cellphone,OASIS,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Cellphone,OASIS,gpt-4o-mini,emotion_entropy,Expression,.05,<.01,0,0,12,150,150,v2
+Cellphone,OASIS,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Cellphone,OASIS,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Cellphone,OASIS,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Cellphone,OASIS,gpt-4o-mini,hard_disagree_rate,Tone,.05,.01,0,0,12,150,150,v2
+Cellphone,SynthPAI,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,.17,.12,1,1,12,150,150,v2
+Cellphone,SynthPAI,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,DeepSeek-V4.1-Flash,emotion_entropy,Expression,.17,.03,0,1,12,150,150,v2
+Cellphone,SynthPAI,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-5.4-mini,semantic_mean_cosine,Uniformity,.64,.06,1,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-5.4-mini,length_cv,Interaction,.07,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-5.4-mini,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-5.4-mini,hard_disagree_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-4o-mini,structural_virality,Interaction,.63,.26,1,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-4o-mini,emotion_entropy,Expression,.11,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,SynthPAI,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Cellphone,ThreadPDG,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,.09,.42,1,10,12,150,150,v2
+Cellphone,ThreadPDG,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,.23,.33,1,10,12,150,150,v2
+Cellphone,ThreadPDG,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,.90,.35,1,10,12,150,150,v2
+Cellphone,ThreadPDG,DeepSeek-V4.1-Flash,avg_depth,Interaction,.43,.41,1,10,12,150,150,v2
+Cellphone,ThreadPDG,DeepSeek-V4.1-Flash,structural_virality,Interaction,.20,.43,1,10,12,150,150,v2
+Cellphone,ThreadPDG,DeepSeek-V4.1-Flash,length_cv,Interaction,.07,<.01,0,10,12,150,150,v2
+Cellphone,ThreadPDG,DeepSeek-V4.1-Flash,mean_story_probability,Expression,.78,.42,1,10,12,150,150,v2
+Cellphone,ThreadPDG,DeepSeek-V4.1-Flash,emotion_entropy,Expression,.12,.08,1,10,12,150,150,v2
+Cellphone,ThreadPDG,DeepSeek-V4.1-Flash,polite_rate,Tone,.18,.15,1,10,12,150,150,v2
+Cellphone,ThreadPDG,DeepSeek-V4.1-Flash,neutral_rate,Tone,.97,1.0,1,10,12,150,150,v2
+Cellphone,ThreadPDG,DeepSeek-V4.1-Flash,impolite_rate,Tone,.05,.13,1,10,12,150,150,v2
+Cellphone,ThreadPDG,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,<.01,.01,0,10,12,150,150,v2
+Cellphone,ThreadPDG,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,.04,0,10,12,150,150,v2
+Cellphone,ThreadPDG,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,.95,.70,1,10,12,150,150,v2
+Cellphone,ThreadPDG,gpt-5.4-mini,semantic_mean_cosine,Uniformity,.13,.41,1,10,12,150,150,v2
+Cellphone,ThreadPDG,gpt-5.4-mini,avg_depth,Interaction,.76,.70,1,10,12,150,150,v2
+Cellphone,ThreadPDG,gpt-5.4-mini,structural_virality,Interaction,.91,.93,1,10,12,150,150,v2
+Cellphone,ThreadPDG,gpt-5.4-mini,length_cv,Interaction,.31,.49,1,10,12,150,150,v2
+Cellphone,ThreadPDG,gpt-5.4-mini,mean_story_probability,Expression,.92,.88,1,10,12,150,150,v2
+Cellphone,ThreadPDG,gpt-5.4-mini,emotion_entropy,Expression,.84,.55,1,10,12,150,150,v2
+Cellphone,ThreadPDG,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,10,12,150,150,v2
+Cellphone,ThreadPDG,gpt-5.4-mini,neutral_rate,Tone,.26,.12,1,10,12,150,150,v2
+Cellphone,ThreadPDG,gpt-5.4-mini,impolite_rate,Tone,.17,.33,1,10,12,150,150,v2
+Cellphone,ThreadPDG,gpt-5.4-mini,hard_disagree_rate,Tone,.17,.27,1,10,12,150,150,v2
+Cellphone,ThreadPDG,gpt-4o-mini,self_bleu_4,Uniformity,.55,.72,1,5,12,150,150,v2
+Cellphone,ThreadPDG,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,5,12,150,150,v2
+Cellphone,ThreadPDG,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,5,12,150,150,v2
+Cellphone,ThreadPDG,gpt-4o-mini,avg_depth,Interaction,.07,.16,1,5,12,150,150,v2
+Cellphone,ThreadPDG,gpt-4o-mini,structural_virality,Interaction,.01,.04,0,5,12,150,150,v2
+Cellphone,ThreadPDG,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,5,12,150,150,v2
+Cellphone,ThreadPDG,gpt-4o-mini,mean_story_probability,Expression,<.01,.06,0,5,12,150,150,v2
+Cellphone,ThreadPDG,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,5,12,150,150,v2
+Cellphone,ThreadPDG,gpt-4o-mini,polite_rate,Tone,.46,.29,1,5,12,150,150,v2
+Cellphone,ThreadPDG,gpt-4o-mini,neutral_rate,Tone,.20,.15,1,5,12,150,150,v2
+Cellphone,ThreadPDG,gpt-4o-mini,impolite_rate,Tone,.02,.02,0,5,12,150,150,v2
+Cellphone,ThreadPDG,gpt-4o-mini,hard_disagree_rate,Tone,.10,.07,1,5,12,150,150,v2
+Game,OASIS,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,.07,.18,1,2,12,150,150,v2
+Game,OASIS,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Game,OASIS,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Game,OASIS,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,2,12,150,150,v2
+Game,OASIS,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,2,12,150,150,v2
+Game,OASIS,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,2,12,150,150,v2
+Game,OASIS,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,2,12,150,150,v2
+Game,OASIS,DeepSeek-V4.1-Flash,emotion_entropy,Expression,<.01,<.01,0,2,12,150,150,v2
+Game,OASIS,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Game,OASIS,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Game,OASIS,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Game,OASIS,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,.08,.08,1,2,12,150,150,v2
+Game,OASIS,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-5.4-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-5.4-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-5.4-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-5.4-mini,hard_disagree_rate,Tone,.20,.02,0,0,12,150,150,v2
+Game,OASIS,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-4o-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Game,OASIS,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Game,SynthPAI,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Game,SynthPAI,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Game,SynthPAI,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Game,SynthPAI,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Game,SynthPAI,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Game,SynthPAI,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+Game,SynthPAI,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Game,SynthPAI,DeepSeek-V4.1-Flash,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Game,SynthPAI,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Game,SynthPAI,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Game,SynthPAI,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Game,SynthPAI,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,.08,.07,1,1,12,150,150,v2
+Game,SynthPAI,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Game,SynthPAI,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Game,SynthPAI,gpt-5.4-mini,semantic_mean_cosine,Uniformity,.07,.07,1,2,12,150,150,v2
+Game,SynthPAI,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,2,12,150,150,v2
+Game,SynthPAI,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,2,12,150,150,v2
+Game,SynthPAI,gpt-5.4-mini,length_cv,Interaction,.04,<.01,0,2,12,150,150,v2
+Game,SynthPAI,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,2,12,150,150,v2
+Game,SynthPAI,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,2,12,150,150,v2
+Game,SynthPAI,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Game,SynthPAI,gpt-5.4-mini,neutral_rate,Tone,.37,.63,1,2,12,150,150,v2
+Game,SynthPAI,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Game,SynthPAI,gpt-5.4-mini,hard_disagree_rate,Tone,.02,<.01,0,2,12,150,150,v2
+Game,SynthPAI,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Game,SynthPAI,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Game,SynthPAI,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Game,SynthPAI,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Game,SynthPAI,gpt-4o-mini,structural_virality,Interaction,.48,.01,0,0,12,150,150,v2
+Game,SynthPAI,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+Game,SynthPAI,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Game,SynthPAI,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+Game,SynthPAI,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Game,SynthPAI,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Game,SynthPAI,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Game,SynthPAI,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Game,ThreadPDG,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,.75,.51,1,10,12,150,150,v2
+Game,ThreadPDG,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,.11,.08,1,10,12,150,150,v2
+Game,ThreadPDG,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,.15,.45,1,10,12,150,150,v2
+Game,ThreadPDG,DeepSeek-V4.1-Flash,avg_depth,Interaction,.18,.28,1,10,12,150,150,v2
+Game,ThreadPDG,DeepSeek-V4.1-Flash,structural_virality,Interaction,.03,.05,0,10,12,150,150,v2
+Game,ThreadPDG,DeepSeek-V4.1-Flash,length_cv,Interaction,.71,.69,1,10,12,150,150,v2
+Game,ThreadPDG,DeepSeek-V4.1-Flash,mean_story_probability,Expression,.71,.91,1,10,12,150,150,v2
+Game,ThreadPDG,DeepSeek-V4.1-Flash,emotion_entropy,Expression,.30,.22,1,10,12,150,150,v2
+Game,ThreadPDG,DeepSeek-V4.1-Flash,polite_rate,Tone,.17,.05,1,10,12,150,150,v2
+Game,ThreadPDG,DeepSeek-V4.1-Flash,neutral_rate,Tone,.60,.63,1,10,12,150,150,v2
+Game,ThreadPDG,DeepSeek-V4.1-Flash,impolite_rate,Tone,.88,.36,1,10,12,150,150,v2
+Game,ThreadPDG,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,<.01,<.01,0,10,12,150,150,v2
+Game,ThreadPDG,gpt-5.4-mini,self_bleu_4,Uniformity,.36,.72,1,8,12,150,150,v2
+Game,ThreadPDG,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,.03,.02,0,8,12,150,150,v2
+Game,ThreadPDG,gpt-5.4-mini,semantic_mean_cosine,Uniformity,.29,.63,1,8,12,150,150,v2
+Game,ThreadPDG,gpt-5.4-mini,avg_depth,Interaction,.19,.29,1,8,12,150,150,v2
+Game,ThreadPDG,gpt-5.4-mini,structural_virality,Interaction,.07,.03,0,8,12,150,150,v2
+Game,ThreadPDG,gpt-5.4-mini,length_cv,Interaction,.22,.29,1,8,12,150,150,v2
+Game,ThreadPDG,gpt-5.4-mini,mean_story_probability,Expression,.93,1.0,1,8,12,150,150,v2
+Game,ThreadPDG,gpt-5.4-mini,emotion_entropy,Expression,.70,.53,1,8,12,150,150,v2
+Game,ThreadPDG,gpt-5.4-mini,polite_rate,Tone,.03,.02,0,8,12,150,150,v2
+Game,ThreadPDG,gpt-5.4-mini,neutral_rate,Tone,.63,.89,1,8,12,150,150,v2
+Game,ThreadPDG,gpt-5.4-mini,impolite_rate,Tone,.46,.53,1,8,12,150,150,v2
+Game,ThreadPDG,gpt-5.4-mini,hard_disagree_rate,Tone,<.01,<.01,0,8,12,150,150,v2
+Game,ThreadPDG,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,3,12,150,150,v2
+Game,ThreadPDG,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,3,12,150,150,v2
+Game,ThreadPDG,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,3,12,150,150,v2
+Game,ThreadPDG,gpt-4o-mini,avg_depth,Interaction,.06,.07,1,3,12,150,150,v2
+Game,ThreadPDG,gpt-4o-mini,structural_virality,Interaction,.01,.03,0,3,12,150,150,v2
+Game,ThreadPDG,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,3,12,150,150,v2
+Game,ThreadPDG,gpt-4o-mini,mean_story_probability,Expression,.69,.84,1,3,12,150,150,v2
+Game,ThreadPDG,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,3,12,150,150,v2
+Game,ThreadPDG,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,3,12,150,150,v2
+Game,ThreadPDG,gpt-4o-mini,neutral_rate,Tone,.02,.04,0,3,12,150,150,v2
+Game,ThreadPDG,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,3,12,150,150,v2
+Game,ThreadPDG,gpt-4o-mini,hard_disagree_rate,Tone,.67,.53,1,3,12,150,150,v2
+Health Issue,OASIS,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,DeepSeek-V4.1-Flash,mean_story_probability,Expression,.02,.15,0,1,12,150,150,v2
+Health Issue,OASIS,DeepSeek-V4.1-Flash,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,DeepSeek-V4.1-Flash,polite_rate,Tone,.08,.09,1,1,12,150,150,v2
+Health Issue,OASIS,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-5.4-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-5.4-mini,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-5.4-mini,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-5.4-mini,hard_disagree_rate,Tone,.51,.10,1,1,12,150,150,v2
+Health Issue,OASIS,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-4o-mini,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Health Issue,OASIS,gpt-4o-mini,hard_disagree_rate,Tone,.79,.66,1,1,12,150,150,v2
+Health Issue,SynthPAI,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Health Issue,SynthPAI,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Health Issue,SynthPAI,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,.47,.57,1,2,12,150,150,v2
+Health Issue,SynthPAI,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,2,12,150,150,v2
+Health Issue,SynthPAI,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,2,12,150,150,v2
+Health Issue,SynthPAI,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,2,12,150,150,v2
+Health Issue,SynthPAI,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,2,12,150,150,v2
+Health Issue,SynthPAI,DeepSeek-V4.1-Flash,emotion_entropy,Expression,.49,.19,1,2,12,150,150,v2
+Health Issue,SynthPAI,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Health Issue,SynthPAI,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Health Issue,SynthPAI,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Health Issue,SynthPAI,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Health Issue,SynthPAI,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Health Issue,SynthPAI,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Health Issue,SynthPAI,gpt-5.4-mini,semantic_mean_cosine,Uniformity,.43,.57,1,1,12,150,150,v2
+Health Issue,SynthPAI,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Health Issue,SynthPAI,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Health Issue,SynthPAI,gpt-5.4-mini,length_cv,Interaction,.66,<.01,0,1,12,150,150,v2
+Health Issue,SynthPAI,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Health Issue,SynthPAI,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Health Issue,SynthPAI,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Health Issue,SynthPAI,gpt-5.4-mini,neutral_rate,Tone,.13,.02,0,1,12,150,150,v2
+Health Issue,SynthPAI,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Health Issue,SynthPAI,gpt-5.4-mini,hard_disagree_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Health Issue,SynthPAI,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Health Issue,SynthPAI,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Health Issue,SynthPAI,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Health Issue,SynthPAI,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Health Issue,SynthPAI,gpt-4o-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+Health Issue,SynthPAI,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+Health Issue,SynthPAI,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Health Issue,SynthPAI,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+Health Issue,SynthPAI,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Health Issue,SynthPAI,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Health Issue,SynthPAI,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Health Issue,SynthPAI,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Health Issue,ThreadPDG,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,.02,.02,0,7,12,150,150,v2
+Health Issue,ThreadPDG,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,.02,.14,0,7,12,150,150,v2
+Health Issue,ThreadPDG,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,.40,.53,1,7,12,150,150,v2
+Health Issue,ThreadPDG,DeepSeek-V4.1-Flash,avg_depth,Interaction,.48,.23,1,7,12,150,150,v2
+Health Issue,ThreadPDG,DeepSeek-V4.1-Flash,structural_virality,Interaction,.39,.72,1,7,12,150,150,v2
+Health Issue,ThreadPDG,DeepSeek-V4.1-Flash,length_cv,Interaction,.74,.36,1,7,12,150,150,v2
+Health Issue,ThreadPDG,DeepSeek-V4.1-Flash,mean_story_probability,Expression,.37,.72,1,7,12,150,150,v2
+Health Issue,ThreadPDG,DeepSeek-V4.1-Flash,emotion_entropy,Expression,.35,.36,1,7,12,150,150,v2
+Health Issue,ThreadPDG,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,7,12,150,150,v2
+Health Issue,ThreadPDG,DeepSeek-V4.1-Flash,neutral_rate,Tone,.03,.11,0,7,12,150,150,v2
+Health Issue,ThreadPDG,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,<.01,0,7,12,150,150,v2
+Health Issue,ThreadPDG,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,.29,.23,1,7,12,150,150,v2
+Health Issue,ThreadPDG,gpt-5.4-mini,self_bleu_4,Uniformity,.44,.11,1,8,12,150,150,v2
+Health Issue,ThreadPDG,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,.92,.96,1,8,12,150,150,v2
+Health Issue,ThreadPDG,gpt-5.4-mini,semantic_mean_cosine,Uniformity,.21,.25,1,8,12,150,150,v2
+Health Issue,ThreadPDG,gpt-5.4-mini,avg_depth,Interaction,.47,.23,1,8,12,150,150,v2
+Health Issue,ThreadPDG,gpt-5.4-mini,structural_virality,Interaction,.41,.70,1,8,12,150,150,v2
+Health Issue,ThreadPDG,gpt-5.4-mini,length_cv,Interaction,.22,.04,0,8,12,150,150,v2
+Health Issue,ThreadPDG,gpt-5.4-mini,mean_story_probability,Expression,.76,.82,1,8,12,150,150,v2
+Health Issue,ThreadPDG,gpt-5.4-mini,emotion_entropy,Expression,.06,.09,1,8,12,150,150,v2
+Health Issue,ThreadPDG,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,8,12,150,150,v2
+Health Issue,ThreadPDG,gpt-5.4-mini,neutral_rate,Tone,.02,.08,0,8,12,150,150,v2
+Health Issue,ThreadPDG,gpt-5.4-mini,impolite_rate,Tone,.05,.16,0,8,12,150,150,v2
+Health Issue,ThreadPDG,gpt-5.4-mini,hard_disagree_rate,Tone,.34,.16,1,8,12,150,150,v2
+Health Issue,ThreadPDG,gpt-4o-mini,self_bleu_4,Uniformity,.01,<.01,0,3,12,150,150,v2
+Health Issue,ThreadPDG,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,3,12,150,150,v2
+Health Issue,ThreadPDG,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,3,12,150,150,v2
+Health Issue,ThreadPDG,gpt-4o-mini,avg_depth,Interaction,.42,.26,1,3,12,150,150,v2
+Health Issue,ThreadPDG,gpt-4o-mini,structural_virality,Interaction,.41,.67,1,3,12,150,150,v2
+Health Issue,ThreadPDG,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,3,12,150,150,v2
+Health Issue,ThreadPDG,gpt-4o-mini,mean_story_probability,Expression,<.01,.04,0,3,12,150,150,v2
+Health Issue,ThreadPDG,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,3,12,150,150,v2
+Health Issue,ThreadPDG,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,3,12,150,150,v2
+Health Issue,ThreadPDG,gpt-4o-mini,neutral_rate,Tone,.27,.36,1,3,12,150,150,v2
+Health Issue,ThreadPDG,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,3,12,150,150,v2
+Health Issue,ThreadPDG,gpt-4o-mini,hard_disagree_rate,Tone,.01,.02,0,3,12,150,150,v2
+Movies,OASIS,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Movies,OASIS,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Movies,OASIS,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,<.01,<.01,0,2,12,150,150,v2
+Movies,OASIS,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,2,12,150,150,v2
+Movies,OASIS,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,2,12,150,150,v2
+Movies,OASIS,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,2,12,150,150,v2
+Movies,OASIS,DeepSeek-V4.1-Flash,mean_story_probability,Expression,.12,.13,1,2,12,150,150,v2
+Movies,OASIS,DeepSeek-V4.1-Flash,emotion_entropy,Expression,<.01,<.01,0,2,12,150,150,v2
+Movies,OASIS,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Movies,OASIS,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+Movies,OASIS,DeepSeek-V4.1-Flash,impolite_rate,Tone,.34,.70,1,2,12,150,150,v2
+Movies,OASIS,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,.02,.07,0,2,12,150,150,v2
+Movies,OASIS,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-5.4-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-5.4-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-5.4-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-5.4-mini,hard_disagree_rate,Tone,.02,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-4o-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Movies,OASIS,gpt-4o-mini,hard_disagree_rate,Tone,.08,<.01,0,0,12,150,150,v2
+Movies,SynthPAI,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,.03,.04,0,1,12,150,150,v2
+Movies,SynthPAI,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,DeepSeek-V4.1-Flash,emotion_entropy,Expression,.55,.72,1,1,12,150,150,v2
+Movies,SynthPAI,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,gpt-5.4-mini,semantic_mean_cosine,Uniformity,.07,.17,1,1,12,150,150,v2
+Movies,SynthPAI,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,gpt-5.4-mini,length_cv,Interaction,.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,gpt-5.4-mini,mean_story_probability,Expression,.04,.13,0,1,12,150,150,v2
+Movies,SynthPAI,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,gpt-5.4-mini,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,gpt-5.4-mini,hard_disagree_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+Movies,SynthPAI,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Movies,SynthPAI,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Movies,SynthPAI,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+Movies,SynthPAI,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+Movies,SynthPAI,gpt-4o-mini,structural_virality,Interaction,.08,<.01,0,0,12,150,150,v2
+Movies,SynthPAI,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+Movies,SynthPAI,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+Movies,SynthPAI,gpt-4o-mini,emotion_entropy,Expression,.02,.06,0,0,12,150,150,v2
+Movies,SynthPAI,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Movies,SynthPAI,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Movies,SynthPAI,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Movies,SynthPAI,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+Movies,ThreadPDG,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,.97,.42,1,10,12,150,150,v2
+Movies,ThreadPDG,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,.78,.70,1,10,12,150,150,v2
+Movies,ThreadPDG,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,.82,.88,1,10,12,150,150,v2
+Movies,ThreadPDG,DeepSeek-V4.1-Flash,avg_depth,Interaction,.72,.61,1,10,12,150,150,v2
+Movies,ThreadPDG,DeepSeek-V4.1-Flash,structural_virality,Interaction,.28,.36,1,10,12,150,150,v2
+Movies,ThreadPDG,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,10,12,150,150,v2
+Movies,ThreadPDG,DeepSeek-V4.1-Flash,mean_story_probability,Expression,.47,.56,1,10,12,150,150,v2
+Movies,ThreadPDG,DeepSeek-V4.1-Flash,emotion_entropy,Expression,.80,.96,1,10,12,150,150,v2
+Movies,ThreadPDG,DeepSeek-V4.1-Flash,polite_rate,Tone,.58,.47,1,10,12,150,150,v2
+Movies,ThreadPDG,DeepSeek-V4.1-Flash,neutral_rate,Tone,.77,.94,1,10,12,150,150,v2
+Movies,ThreadPDG,DeepSeek-V4.1-Flash,impolite_rate,Tone,.02,.09,0,10,12,150,150,v2
+Movies,ThreadPDG,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,.36,.13,1,10,12,150,150,v2
+Movies,ThreadPDG,gpt-5.4-mini,self_bleu_4,Uniformity,.13,.08,1,11,12,150,150,v2
+Movies,ThreadPDG,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,.31,.64,1,11,12,150,150,v2
+Movies,ThreadPDG,gpt-5.4-mini,semantic_mean_cosine,Uniformity,.38,.38,1,11,12,150,150,v2
+Movies,ThreadPDG,gpt-5.4-mini,avg_depth,Interaction,.61,.34,1,11,12,150,150,v2
+Movies,ThreadPDG,gpt-5.4-mini,structural_virality,Interaction,.19,.25,1,11,12,150,150,v2
+Movies,ThreadPDG,gpt-5.4-mini,length_cv,Interaction,.07,.05,1,11,12,150,150,v2
+Movies,ThreadPDG,gpt-5.4-mini,mean_story_probability,Expression,.67,.65,1,11,12,150,150,v2
+Movies,ThreadPDG,gpt-5.4-mini,emotion_entropy,Expression,.73,.76,1,11,12,150,150,v2
+Movies,ThreadPDG,gpt-5.4-mini,polite_rate,Tone,.01,.01,0,11,12,150,150,v2
+Movies,ThreadPDG,gpt-5.4-mini,neutral_rate,Tone,.33,.37,1,11,12,150,150,v2
+Movies,ThreadPDG,gpt-5.4-mini,impolite_rate,Tone,.09,.15,1,11,12,150,150,v2
+Movies,ThreadPDG,gpt-5.4-mini,hard_disagree_rate,Tone,.50,.11,1,11,12,150,150,v2
+Movies,ThreadPDG,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,3,12,150,150,v2
+Movies,ThreadPDG,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,3,12,150,150,v2
+Movies,ThreadPDG,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,3,12,150,150,v2
+Movies,ThreadPDG,gpt-4o-mini,avg_depth,Interaction,.43,.36,1,3,12,150,150,v2
+Movies,ThreadPDG,gpt-4o-mini,structural_virality,Interaction,.05,.14,0,3,12,150,150,v2
+Movies,ThreadPDG,gpt-4o-mini,length_cv,Interaction,.03,.04,0,3,12,150,150,v2
+Movies,ThreadPDG,gpt-4o-mini,mean_story_probability,Expression,.30,.15,1,3,12,150,150,v2
+Movies,ThreadPDG,gpt-4o-mini,emotion_entropy,Expression,<.01,.04,0,3,12,150,150,v2
+Movies,ThreadPDG,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,3,12,150,150,v2
+Movies,ThreadPDG,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,3,12,150,150,v2
+Movies,ThreadPDG,gpt-4o-mini,impolite_rate,Tone,.08,.15,1,3,12,150,150,v2
+Movies,ThreadPDG,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,3,12,150,150,v2
+News,OASIS,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+News,OASIS,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+News,OASIS,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,<.01,<.01,0,1,12,150,150,v2
+News,OASIS,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+News,OASIS,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+News,OASIS,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+News,OASIS,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+News,OASIS,DeepSeek-V4.1-Flash,emotion_entropy,Expression,<.01,<.01,0,1,12,150,150,v2
+News,OASIS,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+News,OASIS,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+News,OASIS,DeepSeek-V4.1-Flash,impolite_rate,Tone,.43,<.01,0,1,12,150,150,v2
+News,OASIS,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,.50,.09,1,1,12,150,150,v2
+News,OASIS,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-5.4-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-5.4-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-5.4-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-5.4-mini,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-4o-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,OASIS,gpt-4o-mini,hard_disagree_rate,Tone,.02,<.01,0,0,12,150,150,v2
+News,SynthPAI,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,DeepSeek-V4.1-Flash,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,gpt-5.4-mini,semantic_mean_cosine,Uniformity,.03,<.01,0,0,12,150,150,v2
+News,SynthPAI,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,gpt-5.4-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,gpt-5.4-mini,mean_story_probability,Expression,.01,.05,0,0,12,150,150,v2
+News,SynthPAI,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,gpt-5.4-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+News,SynthPAI,gpt-5.4-mini,hard_disagree_rate,Tone,.05,.02,0,0,12,150,150,v2
+News,SynthPAI,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,2,12,150,150,v2
+News,SynthPAI,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,2,12,150,150,v2
+News,SynthPAI,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,2,12,150,150,v2
+News,SynthPAI,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,2,12,150,150,v2
+News,SynthPAI,gpt-4o-mini,structural_virality,Interaction,.44,.37,1,2,12,150,150,v2
+News,SynthPAI,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,2,12,150,150,v2
+News,SynthPAI,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,2,12,150,150,v2
+News,SynthPAI,gpt-4o-mini,emotion_entropy,Expression,.46,.54,1,2,12,150,150,v2
+News,SynthPAI,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+News,SynthPAI,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+News,SynthPAI,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+News,SynthPAI,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+News,ThreadPDG,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,.13,.16,1,7,12,150,150,v2
+News,ThreadPDG,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,.63,.74,1,7,12,150,150,v2
+News,ThreadPDG,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,.01,.02,0,7,12,150,150,v2
+News,ThreadPDG,DeepSeek-V4.1-Flash,avg_depth,Interaction,.38,.36,1,7,12,150,150,v2
+News,ThreadPDG,DeepSeek-V4.1-Flash,structural_virality,Interaction,.78,.29,1,7,12,150,150,v2
+News,ThreadPDG,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,7,12,150,150,v2
+News,ThreadPDG,DeepSeek-V4.1-Flash,mean_story_probability,Expression,.14,.19,1,7,12,150,150,v2
+News,ThreadPDG,DeepSeek-V4.1-Flash,emotion_entropy,Expression,.55,.83,1,7,12,150,150,v2
+News,ThreadPDG,DeepSeek-V4.1-Flash,polite_rate,Tone,.09,.07,1,7,12,150,150,v2
+News,ThreadPDG,DeepSeek-V4.1-Flash,neutral_rate,Tone,.02,.07,0,7,12,150,150,v2
+News,ThreadPDG,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,<.01,0,7,12,150,150,v2
+News,ThreadPDG,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,.01,<.01,0,7,12,150,150,v2
+News,ThreadPDG,gpt-5.4-mini,self_bleu_4,Uniformity,.42,.65,1,9,12,150,150,v2
+News,ThreadPDG,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,.20,.38,1,9,12,150,150,v2
+News,ThreadPDG,gpt-5.4-mini,semantic_mean_cosine,Uniformity,.35,.53,1,9,12,150,150,v2
+News,ThreadPDG,gpt-5.4-mini,avg_depth,Interaction,.57,.59,1,9,12,150,150,v2
+News,ThreadPDG,gpt-5.4-mini,structural_virality,Interaction,.99,.57,1,9,12,150,150,v2
+News,ThreadPDG,gpt-5.4-mini,length_cv,Interaction,.45,.57,1,9,12,150,150,v2
+News,ThreadPDG,gpt-5.4-mini,mean_story_probability,Expression,.92,1.0,1,9,12,150,150,v2
+News,ThreadPDG,gpt-5.4-mini,emotion_entropy,Expression,.21,.20,1,9,12,150,150,v2
+News,ThreadPDG,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,9,12,150,150,v2
+News,ThreadPDG,gpt-5.4-mini,neutral_rate,Tone,<.01,.03,0,9,12,150,150,v2
+News,ThreadPDG,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,9,12,150,150,v2
+News,ThreadPDG,gpt-5.4-mini,hard_disagree_rate,Tone,.12,.06,1,9,12,150,150,v2
+News,ThreadPDG,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,4,12,150,150,v2
+News,ThreadPDG,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,4,12,150,150,v2
+News,ThreadPDG,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,4,12,150,150,v2
+News,ThreadPDG,gpt-4o-mini,avg_depth,Interaction,.45,.66,1,4,12,150,150,v2
+News,ThreadPDG,gpt-4o-mini,structural_virality,Interaction,.94,.54,1,4,12,150,150,v2
+News,ThreadPDG,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,4,12,150,150,v2
+News,ThreadPDG,gpt-4o-mini,mean_story_probability,Expression,.69,.91,1,4,12,150,150,v2
+News,ThreadPDG,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,4,12,150,150,v2
+News,ThreadPDG,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,4,12,150,150,v2
+News,ThreadPDG,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,4,12,150,150,v2
+News,ThreadPDG,gpt-4o-mini,impolite_rate,Tone,.54,.45,1,4,12,150,150,v2
+News,ThreadPDG,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,4,12,150,150,v2
+TV Series,OASIS,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,2,12,150,150,v2
+TV Series,OASIS,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,2,12,150,150,v2
+TV Series,OASIS,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,<.01,<.01,0,2,12,150,150,v2
+TV Series,OASIS,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,2,12,150,150,v2
+TV Series,OASIS,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,2,12,150,150,v2
+TV Series,OASIS,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,2,12,150,150,v2
+TV Series,OASIS,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,2,12,150,150,v2
+TV Series,OASIS,DeepSeek-V4.1-Flash,emotion_entropy,Expression,<.01,<.01,0,2,12,150,150,v2
+TV Series,OASIS,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+TV Series,OASIS,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,2,12,150,150,v2
+TV Series,OASIS,DeepSeek-V4.1-Flash,impolite_rate,Tone,.09,.33,1,2,12,150,150,v2
+TV Series,OASIS,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,.83,.82,1,2,12,150,150,v2
+TV Series,OASIS,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-5.4-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-5.4-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-5.4-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-5.4-mini,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-4o-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,OASIS,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,<.01,<.01,0,1,12,150,150,v2
+TV Series,SynthPAI,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,1,12,150,150,v2
+TV Series,SynthPAI,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,<.01,<.01,0,1,12,150,150,v2
+TV Series,SynthPAI,DeepSeek-V4.1-Flash,avg_depth,Interaction,<.01,<.01,0,1,12,150,150,v2
+TV Series,SynthPAI,DeepSeek-V4.1-Flash,structural_virality,Interaction,<.01,<.01,0,1,12,150,150,v2
+TV Series,SynthPAI,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,1,12,150,150,v2
+TV Series,SynthPAI,DeepSeek-V4.1-Flash,mean_story_probability,Expression,<.01,<.01,0,1,12,150,150,v2
+TV Series,SynthPAI,DeepSeek-V4.1-Flash,emotion_entropy,Expression,.87,.09,1,1,12,150,150,v2
+TV Series,SynthPAI,DeepSeek-V4.1-Flash,polite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+TV Series,SynthPAI,DeepSeek-V4.1-Flash,neutral_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+TV Series,SynthPAI,DeepSeek-V4.1-Flash,impolite_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+TV Series,SynthPAI,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,<.01,<.01,0,1,12,150,150,v2
+TV Series,SynthPAI,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-5.4-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-5.4-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-5.4-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-5.4-mini,length_cv,Interaction,.07,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-5.4-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-5.4-mini,emotion_entropy,Expression,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-5.4-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-5.4-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-5.4-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-5.4-mini,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-4o-mini,avg_depth,Interaction,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-4o-mini,structural_virality,Interaction,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-4o-mini,length_cv,Interaction,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-4o-mini,mean_story_probability,Expression,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-4o-mini,emotion_entropy,Expression,.79,.03,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-4o-mini,neutral_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-4o-mini,impolite_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,SynthPAI,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,0,12,150,150,v2
+TV Series,ThreadPDG,DeepSeek-V4.1-Flash,self_bleu_4,Uniformity,.27,.31,1,11,12,150,150,v2
+TV Series,ThreadPDG,DeepSeek-V4.1-Flash,self_bertscore_mean_f1,Uniformity,.08,.09,1,11,12,150,150,v2
+TV Series,ThreadPDG,DeepSeek-V4.1-Flash,semantic_mean_cosine,Uniformity,.46,.44,1,11,12,150,150,v2
+TV Series,ThreadPDG,DeepSeek-V4.1-Flash,avg_depth,Interaction,.51,.25,1,11,12,150,150,v2
+TV Series,ThreadPDG,DeepSeek-V4.1-Flash,structural_virality,Interaction,.63,.76,1,11,12,150,150,v2
+TV Series,ThreadPDG,DeepSeek-V4.1-Flash,length_cv,Interaction,<.01,<.01,0,11,12,150,150,v2
+TV Series,ThreadPDG,DeepSeek-V4.1-Flash,mean_story_probability,Expression,.58,.46,1,11,12,150,150,v2
+TV Series,ThreadPDG,DeepSeek-V4.1-Flash,emotion_entropy,Expression,.96,.21,1,11,12,150,150,v2
+TV Series,ThreadPDG,DeepSeek-V4.1-Flash,polite_rate,Tone,.61,.72,1,11,12,150,150,v2
+TV Series,ThreadPDG,DeepSeek-V4.1-Flash,neutral_rate,Tone,.20,.34,1,11,12,150,150,v2
+TV Series,ThreadPDG,DeepSeek-V4.1-Flash,impolite_rate,Tone,.08,.41,1,11,12,150,150,v2
+TV Series,ThreadPDG,DeepSeek-V4.1-Flash,hard_disagree_rate,Tone,.65,.90,1,11,12,150,150,v2
+TV Series,ThreadPDG,gpt-5.4-mini,self_bleu_4,Uniformity,<.01,<.01,0,11,12,150,150,v2
+TV Series,ThreadPDG,gpt-5.4-mini,self_bertscore_mean_f1,Uniformity,.24,.36,1,11,12,150,150,v2
+TV Series,ThreadPDG,gpt-5.4-mini,semantic_mean_cosine,Uniformity,1.0,.70,1,11,12,150,150,v2
+TV Series,ThreadPDG,gpt-5.4-mini,avg_depth,Interaction,.46,.35,1,11,12,150,150,v2
+TV Series,ThreadPDG,gpt-5.4-mini,structural_virality,Interaction,.58,.74,1,11,12,150,150,v2
+TV Series,ThreadPDG,gpt-5.4-mini,length_cv,Interaction,.06,.16,1,11,12,150,150,v2
+TV Series,ThreadPDG,gpt-5.4-mini,mean_story_probability,Expression,.74,.77,1,11,12,150,150,v2
+TV Series,ThreadPDG,gpt-5.4-mini,emotion_entropy,Expression,.38,.06,1,11,12,150,150,v2
+TV Series,ThreadPDG,gpt-5.4-mini,polite_rate,Tone,.19,.14,1,11,12,150,150,v2
+TV Series,ThreadPDG,gpt-5.4-mini,neutral_rate,Tone,.43,.30,1,11,12,150,150,v2
+TV Series,ThreadPDG,gpt-5.4-mini,impolite_rate,Tone,.70,.86,1,11,12,150,150,v2
+TV Series,ThreadPDG,gpt-5.4-mini,hard_disagree_rate,Tone,.26,.42,1,11,12,150,150,v2
+TV Series,ThreadPDG,gpt-4o-mini,self_bleu_4,Uniformity,<.01,<.01,0,4,12,150,150,v2
+TV Series,ThreadPDG,gpt-4o-mini,self_bertscore_mean_f1,Uniformity,<.01,<.01,0,4,12,150,150,v2
+TV Series,ThreadPDG,gpt-4o-mini,semantic_mean_cosine,Uniformity,<.01,<.01,0,4,12,150,150,v2
+TV Series,ThreadPDG,gpt-4o-mini,avg_depth,Interaction,.61,.33,1,4,12,150,150,v2
+TV Series,ThreadPDG,gpt-4o-mini,structural_virality,Interaction,.82,.89,1,4,12,150,150,v2
+TV Series,ThreadPDG,gpt-4o-mini,length_cv,Interaction,.05,.11,1,4,12,150,150,v2
+TV Series,ThreadPDG,gpt-4o-mini,mean_story_probability,Expression,.08,.04,0,4,12,150,150,v2
+TV Series,ThreadPDG,gpt-4o-mini,emotion_entropy,Expression,<.01,<.01,0,4,12,150,150,v2
+TV Series,ThreadPDG,gpt-4o-mini,polite_rate,Tone,<.01,<.01,0,4,12,150,150,v2
+TV Series,ThreadPDG,gpt-4o-mini,neutral_rate,Tone,<.01,.03,0,4,12,150,150,v2
+TV Series,ThreadPDG,gpt-4o-mini,impolite_rate,Tone,.18,.15,1,4,12,150,150,v2
+TV Series,ThreadPDG,gpt-4o-mini,hard_disagree_rate,Tone,<.01,<.01,0,4,12,150,150,v2

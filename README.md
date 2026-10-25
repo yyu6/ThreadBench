@@ -1,18 +1,22 @@
+> **Paper update (October 2026):** The revised paper is **ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions** ([arXiv:2606.14715](https://arxiv.org/abs/2606.14715)). It describes 9,817 real threads across 8 domains and 116 subdomains, 12 metrics in 4 families, and the ThreadPDG Planner–Writer method. The [website](https://yyu6.github.io/ThreadBench/) and [paper results explorer](https://yyu6.github.io/ThreadBench/results.html) now describe this version. **This repository's existing Python implementation, bundled data and community leaderboard still use the earlier MiroBench release documented below.** Do not treat its 5-domain data or 16-metric MWU-only leaderboard as reproducing the new paper protocol. The website's CSV/JSON downloads contain published results, not the expanded raw corpus.
+
 <div align="center">
 
-# MiroBench
+# ThreadBench
 
 **Benchmarking Realism in Agentic Simulation of Real-world Discussions**  
 
-MiroBench is a benchmark for evaluating whether LLM-generated online discussion threads match real Reddit discussion patterns.
+ThreadBench is a benchmark for evaluating whether LLM-generated online discussion threads match real Reddit discussion patterns.
 
-[Website](https://yyu6.github.io/MiroBench/) | [PDF](https://arxiv.org/pdf/2606.14715) | [Code](https://github.com/yyu6/MiroBench) | HuggingFace(coming soon)
+[Website](https://yyu6.github.io/ThreadBench/) | [Paper](https://arxiv.org/abs/2606.14715) | [Code](https://github.com/yyu6/ThreadBench) | HuggingFace(coming soon)
 
 </div>
 
-## Overview
+## Earlier implementation overview
 
-MiroBench provides:
+The following sections document the earlier MiroBench code and bundled dataset. The Python package and CLI remain `mirobench` for compatibility; the revised paper protocol and published results are described on the [ThreadBench website](https://yyu6.github.io/ThreadBench/).
+
+The earlier implementation provides:
 
 - **5 product domains** with real Reddit discussion threads scored on standardized metrics
 - **9 scorer families** covering 57 fine-grained metrics across lexical diversity, semantic similarity, toxicity, emotion, politeness, disagreement, narrativity, and thread structure
@@ -49,8 +53,8 @@ MiroBench evaluates generated threads across 9 scorer families:
 ## Installation
 
 ```bash
-git clone https://github.com/yyu6/MiroBench.git
-cd MiroBench
+git clone https://github.com/yyu6/ThreadBench.git
+cd ThreadBench
 pip install -e .                  # core (scoring + comparison)
 pip install -e ".[generation]"    # optional: thread generation via OASIS
 ```
@@ -214,7 +218,7 @@ Reddit; the secondary |δ| / W₁ numbers then quantify how distinguishable.
 
 ### Submit to the leaderboard
 
-The public [leaderboard](https://yyu6.github.io/MiroBench/leaderboard.html) is
+The public [leaderboard](https://yyu6.github.io/ThreadBench/leaderboard.html) is
 **generated from the `experiments/` folder** — no HTML editing. Add one folder
 of scored CSVs and open a PR:
 
@@ -430,11 +434,16 @@ We thank the authors of these projects for releasing their work openly.
 ## Citation
 
 ```bibtex
-@misc{mirobench2026,
-  title={MiroBench: A Benchmark for Evaluating Synthetic Online Product Discussions},
-  author={MiroBench Authors},
-  year={2026},
-  url={https://github.com/yyu6/MiroBench}
+@article{yu2026threadbench,
+  title = {ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions},
+  author = {Yu, Yaoning and Yu, Ye and Sciarappo, John and Luo, Haojing and Chang, Kai-min and Wang, Yi-Chia and Wang, Haohan},
+  journal = {arXiv preprint arXiv:2606.14715},
+  year = {2026},
+  eprint = {2606.14715},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.MA},
+  doi = {10.48550/arXiv.2606.14715},
+  url = {https://arxiv.org/abs/2606.14715}
 }
 ```
 

@@ -1,0 +1,7409 @@
+{
+  "name": "ThreadBench",
+  "title": "ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions",
+  "paper_url": "https://arxiv.org/abs/2606.14715",
+  "paper_version": "v2",
+  "paper_date": "2026-10-10",
+  "updated": "2026-10-26",
+  "source": {
+    "archive": "GEO_ICLR_2027 (19).zip",
+    "table": "sections/results-main-table.tex",
+    "sha256": "def1cb22f3ed7ddd4874f2ac8d67baed59152b7b4dd165561a2738f6af46533d",
+    "note": "Pass flags are transcribed from the published table formatting; p-values are rounded, so displayed .05 values must not be used to recompute pass decisions.",
+    "inventory_note": "Paper Table 1 lists domain subdomain counts summing to 117 while the abstract and total report 116. Both are preserved pending author correction.",
+    "distance_table": "sections/A8-distance-measure.tex",
+    "distance_table_sha256": "9d3e0298c0186d78644e96776724e99ef2193e5506b965cb266782fbd1172d28",
+    "reference_table": "sections/A4-real-vs-real-metrics.tex",
+    "reference_table_sha256": "348f3fd1175cf17f4d1ee6cc96daefcbec4637aec3156836b71e87a2da79788a"
+  },
+  "domains": [
+    {
+      "name": "Camera",
+      "threads": 1922,
+      "subdomains": 44
+    },
+    {
+      "name": "Celebrity",
+      "threads": 700,
+      "subdomains": 4
+    },
+    {
+      "name": "Cellphone",
+      "threads": 1395,
+      "subdomains": 44
+    },
+    {
+      "name": "Game",
+      "threads": 1000,
+      "subdomains": 5
+    },
+    {
+      "name": "Health Issue",
+      "threads": 2100,
+      "subdomains": 5
+    },
+    {
+      "name": "Movies",
+      "threads": 700,
+      "subdomains": 5
+    },
+    {
+      "name": "News",
+      "threads": 1000,
+      "subdomains": 5
+    },
+    {
+      "name": "TV Series",
+      "threads": 1000,
+      "subdomains": 5
+    }
+  ],
+  "families": [
+    {
+      "name": "Uniformity",
+      "question": "Do people bring different ideas?",
+      "color": "#2758cf",
+      "description": "Three complementary views of repetition, from shared phrases to shared meaning.",
+      "metrics": [
+        [
+          "self_bleu_4",
+          "Self-BLEU-4",
+          "Pairwise 4-gram overlap between comments detects repeated wording."
+        ],
+        [
+          "self_bertscore_mean_f1",
+          "Self-BERTScore",
+          "Contextual similarity between comments detects paraphrases and similar expressions."
+        ],
+        [
+          "semantic_mean_cosine",
+          "Semantic cosine",
+          "Mean cosine similarity with all-mpnet-base-v2 captures convergence in meaning."
+        ]
+      ]
+    },
+    {
+      "name": "Expression",
+      "question": "Does the conversation feel personal?",
+      "color": "#00816d",
+      "description": "Personal experience and emotional variation capture different parts of how people express themselves.",
+      "metrics": [
+        [
+          "mean_story_probability",
+          "Story probability",
+          "StorySeeker estimates the prevalence of personal stories and first-person experiences."
+        ],
+        [
+          "emotion_entropy",
+          "Emotion entropy",
+          "Entropy of GoEmotions labels measures emotional diversity across comments."
+        ]
+      ]
+    },
+    {
+      "name": "Tone",
+      "question": "How do people address one another?",
+      "color": "#a95324",
+      "description": "Interpersonal manner and disagreement are measured separately: people can disagree politely.",
+      "metrics": [
+        [
+          "polite_rate",
+          "Polite rate",
+          "Fraction of comments classified as polite by Intel/polite-guard."
+        ],
+        [
+          "neutral_rate",
+          "Neutral rate",
+          "Fraction of comments classified as neutral by Intel/polite-guard."
+        ],
+        [
+          "impolite_rate",
+          "Impolite rate",
+          "Fraction of comments classified as impolite by Intel/polite-guard."
+        ],
+        [
+          "hard_disagree_rate",
+          "Hard disagreement",
+          "Explicit disagreement in parent–reply pairs."
+        ]
+      ]
+    },
+    {
+      "name": "Interaction",
+      "question": "How does a discussion grow?",
+      "color": "#7958a1",
+      "description": "Reply depth, branching and variation in contribution length describe the shape of a discussion.",
+      "metrics": [
+        [
+          "avg_depth",
+          "Average depth",
+          "Mean reply depth measures how far multi-step exchanges develop."
+        ],
+        [
+          "structural_virality",
+          "Structural virality",
+          "Mean shortest-path distance between comments captures the spread of interaction across the reply tree."
+        ],
+        [
+          "length_cv",
+          "Length variation",
+          "Coefficient of variation of comment lengths measures the mixture of short reactions and longer contributions."
+        ]
+      ]
+    }
+  ],
+  "metric_order": [
+    "self_bleu_4",
+    "self_bertscore_mean_f1",
+    "semantic_mean_cosine",
+    "avg_depth",
+    "structural_virality",
+    "length_cv",
+    "mean_story_probability",
+    "emotion_entropy",
+    "polite_rate",
+    "neutral_rate",
+    "impolite_rate",
+    "hard_disagree_rate"
+  ],
+  "results": [
+    {
+      "domain": "Camera",
+      "method": "OASIS",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.019,
+          "cliffs": 0.703
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.079,
+          "cliffs": 0.981
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.301,
+          "cliffs": 0.977
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.189,
+          "cliffs": 0.947
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.247,
+          "cliffs": 0.947
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.568,
+          "cliffs": 0.98
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.082,
+          "cliffs": 0.665
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.181,
+          "cliffs": 0.26
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.277,
+          "cliffs": 0.657
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.153,
+          "cliffs": 0.852
+        },
+        {
+          "mwu": ".08",
+          "ks": ".03",
+          "pass": false,
+          "w1": 0.055,
+          "cliffs": 0.122
+        },
+        {
+          "mwu": ".46",
+          "ks": ".06",
+          "pass": true,
+          "w1": 0.046,
+          "cliffs": 0.05
+        }
+      ]
+    },
+    {
+      "domain": "Camera",
+      "method": "OASIS",
+      "model": "gpt-5.4-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.094,
+          "cliffs": 0.982
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.162,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.435,
+          "cliffs": 0.994
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.189,
+          "cliffs": 0.947
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.247,
+          "cliffs": 0.947
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.706,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.119,
+          "cliffs": 0.972
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.821,
+          "cliffs": 0.829
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.074,
+          "cliffs": 0.201
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.124,
+          "cliffs": 0.692
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.224,
+          "cliffs": 0.532
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.082,
+          "cliffs": 0.314
+        }
+      ]
+    },
+    {
+      "domain": "Camera",
+      "method": "OASIS",
+      "model": "gpt-4o-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.076,
+          "cliffs": 0.978
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.207,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.511,
+          "cliffs": 0.999
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.189,
+          "cliffs": 0.947
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.247,
+          "cliffs": 0.947
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.73,
+          "cliffs": 0.998
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.116,
+          "cliffs": 0.959
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.302,
+          "cliffs": 0.405
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.614,
+          "cliffs": 0.957
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.146,
+          "cliffs": 0.805
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.372,
+          "cliffs": 0.901
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.068,
+          "cliffs": 0.224
+        }
+      ]
+    },
+    {
+      "domain": "Camera",
+      "method": "SynthPAI",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.047,
+          "cliffs": 0.947
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.049,
+          "cliffs": 0.851
+        },
+        {
+          "mwu": ".08",
+          "ks": ".11",
+          "pass": true,
+          "w1": 0.02,
+          "cliffs": 0.122
+        },
+        {
+          "mwu": ".01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.315,
+          "cliffs": 0.179
+        },
+        {
+          "mwu": ".39",
+          "ks": ".03",
+          "pass": false,
+          "w1": 0.363,
+          "cliffs": 0.06
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.263,
+          "cliffs": 0.612
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.036,
+          "cliffs": 0.235
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.375,
+          "cliffs": 0.485
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.281,
+          "cliffs": 0.857
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.067,
+          "cliffs": 0.406
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.397,
+          "cliffs": 0.933
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.137,
+          "cliffs": 0.551
+        }
+      ]
+    },
+    {
+      "domain": "Camera",
+      "method": "SynthPAI",
+      "model": "gpt-5.4-mini",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.062,
+          "cliffs": 0.976
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.06,
+          "cliffs": 0.921
+        },
+        {
+          "mwu": ".55",
+          "ks": ".14",
+          "pass": true,
+          "w1": 0.016,
+          "cliffs": 0.04
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.569,
+          "cliffs": 0.456
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.791,
+          "cliffs": 0.412
+        },
+        {
+          "mwu": ".46",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.142,
+          "cliffs": 0.05
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.035,
+          "cliffs": 0.179
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.565,
+          "cliffs": 0.691
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.261,
+          "cliffs": 0.824
+        },
+        {
+          "mwu": ".03",
+          "ks": ".07",
+          "pass": false,
+          "w1": 0.029,
+          "cliffs": 0.145
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.303,
+          "cliffs": 0.848
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.092,
+          "cliffs": 0.425
+        }
+      ]
+    },
+    {
+      "domain": "Camera",
+      "method": "SynthPAI",
+      "model": "gpt-4o-mini",
+      "passes": 2,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.021,
+          "cliffs": 0.808
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.124,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.176,
+          "cliffs": 0.736
+        },
+        {
+          "mwu": ".05",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.268,
+          "cliffs": 0.138
+        },
+        {
+          "mwu": ".85",
+          "ks": ".22",
+          "pass": true,
+          "w1": 0.324,
+          "cliffs": 0.013
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.691,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.097,
+          "cliffs": 0.794
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.2,
+          "cliffs": 0.307
+        },
+        {
+          "mwu": ".07",
+          "ks": ".17",
+          "pass": true,
+          "w1": 0.052,
+          "cliffs": 0.129
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.131,
+          "cliffs": 0.738
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.138,
+          "cliffs": 0.338
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.129,
+          "cliffs": 0.369
+        }
+      ]
+    },
+    {
+      "domain": "Camera",
+      "method": "ThreadPDG",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 11,
+      "metrics": [
+        {
+          "mwu": ".44",
+          "ks": ".71",
+          "pass": true,
+          "w1": 0.002,
+          "cliffs": 0.051
+        },
+        {
+          "mwu": ".92",
+          "ks": ".28",
+          "pass": true,
+          "w1": 0.005,
+          "cliffs": 0.007
+        },
+        {
+          "mwu": ".68",
+          "ks": ".44",
+          "pass": true,
+          "w1": 0.011,
+          "cliffs": 0.027
+        },
+        {
+          "mwu": ".86",
+          "ks": ".98",
+          "pass": true,
+          "w1": 0.09,
+          "cliffs": 0.012
+        },
+        {
+          "mwu": ".81",
+          "ks": ".85",
+          "pass": true,
+          "w1": 0.139,
+          "cliffs": 0.017
+        },
+        {
+          "mwu": ".21",
+          "ks": ".44",
+          "pass": true,
+          "w1": 0.047,
+          "cliffs": 0.085
+        },
+        {
+          "mwu": ".15",
+          "ks": ".16",
+          "pass": true,
+          "w1": 0.017,
+          "cliffs": 0.097
+        },
+        {
+          "mwu": ".50",
+          "ks": ".79",
+          "pass": true,
+          "w1": 0.068,
+          "cliffs": 0.045
+        },
+        {
+          "mwu": ".76",
+          "ks": ".33",
+          "pass": true,
+          "w1": 0.041,
+          "cliffs": 0.02
+        },
+        {
+          "mwu": ".15",
+          "ks": ".07",
+          "pass": true,
+          "w1": 0.017,
+          "cliffs": 0.097
+        },
+        {
+          "mwu": "<.01",
+          "ks": ".05",
+          "pass": false,
+          "w1": 0.064,
+          "cliffs": 0.173
+        },
+        {
+          "mwu": ".10",
+          "ks": ".09",
+          "pass": true,
+          "w1": 0.022,
+          "cliffs": 0.108
+        }
+      ]
+    },
+    {
+      "domain": "Camera",
+      "method": "ThreadPDG",
+      "model": "gpt-5.4-mini",
+      "passes": 10,
+      "metrics": [
+        {
+          "mwu": ".12",
+          "ks": ".01",
+          "pass": false,
+          "w1": 0.002,
+          "cliffs": 0.103
+        },
+        {
+          "mwu": ".27",
+          "ks": ".19",
+          "pass": true,
+          "w1": 0.004,
+          "cliffs": 0.074
+        },
+        {
+          "mwu": ".72",
+          "ks": ".61",
+          "pass": true,
+          "w1": 0.009,
+          "cliffs": 0.024
+        },
+        {
+          "mwu": ".98",
+          "ks": ".92",
+          "pass": true,
+          "w1": 0.088,
+          "cliffs": 0.002
+        },
+        {
+          "mwu": ".70",
+          "ks": ".57",
+          "pass": true,
+          "w1": 0.144,
+          "cliffs": 0.026
+        },
+        {
+          "mwu": ".70",
+          "ks": ".34",
+          "pass": true,
+          "w1": 0.041,
+          "cliffs": 0.026
+        },
+        {
+          "mwu": ".17",
+          "ks": ".51",
+          "pass": true,
+          "w1": 0.013,
+          "cliffs": 0.091
+        },
+        {
+          "mwu": ".65",
+          "ks": ".65",
+          "pass": true,
+          "w1": 0.055,
+          "cliffs": 0.03
+        },
+        {
+          "mwu": ".02",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.062,
+          "cliffs": 0.161
+        },
+        {
+          "mwu": ".06",
+          "ks": ".20",
+          "pass": true,
+          "w1": 0.024,
+          "cliffs": 0.124
+        },
+        {
+          "mwu": ".83",
+          "ks": ".90",
+          "pass": true,
+          "w1": 0.018,
+          "cliffs": 0.015
+        },
+        {
+          "mwu": ".19",
+          "ks": ".37",
+          "pass": true,
+          "w1": 0.018,
+          "cliffs": 0.086
+        }
+      ]
+    },
+    {
+      "domain": "Camera",
+      "method": "ThreadPDG",
+      "model": "gpt-4o-mini",
+      "passes": 2,
+      "metrics": [
+        {
+          "mwu": ".03",
+          "ks": ".02",
+          "pass": false,
+          "w1": 0.005,
+          "cliffs": 0.15
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.039,
+          "cliffs": 0.689
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.048,
+          "cliffs": 0.332
+        },
+        {
+          "mwu": ".41",
+          "ks": ".37",
+          "pass": true,
+          "w1": 0.11,
+          "cliffs": 0.056
+        },
+        {
+          "mwu": ".23",
+          "ks": ".23",
+          "pass": true,
+          "w1": 0.214,
+          "cliffs": 0.083
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.176,
+          "cliffs": 0.399
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.046,
+          "cliffs": 0.279
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.197,
+          "cliffs": 0.27
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.157,
+          "cliffs": 0.489
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.043,
+          "cliffs": 0.254
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.146,
+          "cliffs": 0.491
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.04,
+          "cliffs": 0.236
+        }
+      ]
+    },
+    {
+      "domain": "Celebrity",
+      "method": "OASIS",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.015,
+          "cliffs": 0.537
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.059,
+          "cliffs": 0.966
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.346,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.728,
+          "cliffs": 0.939
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.946,
+          "cliffs": 0.939
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.608,
+          "cliffs": 0.918
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.16,
+          "cliffs": 0.801
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.558,
+          "cliffs": 0.614
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.14,
+          "cliffs": 0.425
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.085,
+          "cliffs": 0.699
+        },
+        {
+          "mwu": ".67",
+          "ks": ".15",
+          "pass": true,
+          "w1": 0.053,
+          "cliffs": 0.033
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.144,
+          "cliffs": 0.438
+        }
+      ]
+    },
+    {
+      "domain": "Celebrity",
+      "method": "OASIS",
+      "model": "gpt-5.4-mini",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.037,
+          "cliffs": 0.667
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.127,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.379,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.728,
+          "cliffs": 0.939
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.946,
+          "cliffs": 0.939
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.706,
+          "cliffs": 0.962
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.195,
+          "cliffs": 0.94
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.699,
+          "cliffs": 0.76
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.166,
+          "cliffs": 0.714
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.071,
+          "cliffs": 0.584
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.273,
+          "cliffs": 0.822
+        },
+        {
+          "mwu": ".37",
+          "ks": ".27",
+          "pass": true,
+          "w1": 0.058,
+          "cliffs": 0.082
+        }
+      ]
+    },
+    {
+      "domain": "Celebrity",
+      "method": "OASIS",
+      "model": "gpt-4o-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.025,
+          "cliffs": 0.63
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.162,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.495,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.728,
+          "cliffs": 0.939
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.946,
+          "cliffs": 0.939
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.68,
+          "cliffs": 0.953
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.207,
+          "cliffs": 0.973
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.416,
+          "cliffs": 0.522
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.428,
+          "cliffs": 0.794
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.08,
+          "cliffs": 0.655
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.325,
+          "cliffs": 0.704
+        },
+        {
+          "mwu": ".15",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.102,
+          "cliffs": 0.123
+        }
+      ]
+    },
+    {
+      "domain": "Celebrity",
+      "method": "SynthPAI",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.029,
+          "cliffs": 0.756
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.063,
+          "cliffs": 0.96
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.058,
+          "cliffs": 0.522
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.414,
+          "cliffs": 0.43
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.797,
+          "cliffs": 0.312
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.304,
+          "cliffs": 0.646
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.101,
+          "cliffs": 0.535
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.165,
+          "cliffs": 0.204
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.161,
+          "cliffs": 0.68
+        },
+        {
+          "mwu": ".02",
+          "ks": ".02",
+          "pass": false,
+          "w1": 0.025,
+          "cliffs": 0.18
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.215,
+          "cliffs": 0.725
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.108,
+          "cliffs": 0.323
+        }
+      ]
+    },
+    {
+      "domain": "Celebrity",
+      "method": "SynthPAI",
+      "model": "gpt-5.4-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.047,
+          "cliffs": 0.878
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.069,
+          "cliffs": 0.976
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.046,
+          "cliffs": 0.529
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.876,
+          "cliffs": 0.726
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.912,
+          "cliffs": 0.509
+        },
+        {
+          "mwu": ".11",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.169,
+          "cliffs": 0.119
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.133,
+          "cliffs": 0.706
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.461,
+          "cliffs": 0.602
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.169,
+          "cliffs": 0.722
+        },
+        {
+          "mwu": ".02",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.023,
+          "cliffs": 0.167
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.202,
+          "cliffs": 0.692
+        },
+        {
+          "mwu": ".03",
+          "ks": ".02",
+          "pass": false,
+          "w1": 0.052,
+          "cliffs": 0.165
+        }
+      ]
+    },
+    {
+      "domain": "Celebrity",
+      "method": "SynthPAI",
+      "model": "gpt-4o-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.011,
+          "cliffs": 0.218
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.119,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.237,
+          "cliffs": 0.955
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.637,
+          "cliffs": 0.603
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.485,
+          "cliffs": 0.27
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.701,
+          "cliffs": 0.963
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.207,
+          "cliffs": 0.963
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.28,
+          "cliffs": 0.375
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.136,
+          "cliffs": 0.535
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.093,
+          "cliffs": 0.766
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.207,
+          "cliffs": 0.67
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.307,
+          "cliffs": 0.721
+        }
+      ]
+    },
+    {
+      "domain": "Celebrity",
+      "method": "ThreadPDG",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 12,
+      "metrics": [
+        {
+          "mwu": ".77",
+          "ks": ".71",
+          "pass": true,
+          "w1": 0.003,
+          "cliffs": 0.021
+        },
+        {
+          "mwu": ".77",
+          "ks": ".88",
+          "pass": true,
+          "w1": 0.002,
+          "cliffs": 0.022
+        },
+        {
+          "mwu": ".90",
+          "ks": ".88",
+          "pass": true,
+          "w1": 0.005,
+          "cliffs": 0.009
+        },
+        {
+          "mwu": ".58",
+          "ks": ".56",
+          "pass": true,
+          "w1": 0.07,
+          "cliffs": 0.04
+        },
+        {
+          "mwu": ".30",
+          "ks": ".33",
+          "pass": true,
+          "w1": 0.22,
+          "cliffs": 0.076
+        },
+        {
+          "mwu": ".05",
+          "ks": ".20",
+          "pass": true,
+          "w1": 0.092,
+          "cliffs": 0.142
+        },
+        {
+          "mwu": ".56",
+          "ks": ".67",
+          "pass": true,
+          "w1": 0.021,
+          "cliffs": 0.043
+        },
+        {
+          "mwu": ".67",
+          "ks": ".80",
+          "pass": true,
+          "w1": 0.061,
+          "cliffs": 0.031
+        },
+        {
+          "mwu": ".72",
+          "ks": ".55",
+          "pass": true,
+          "w1": 0.029,
+          "cliffs": 0.027
+        },
+        {
+          "mwu": ".68",
+          "ks": ".77",
+          "pass": true,
+          "w1": 0.01,
+          "cliffs": 0.03
+        },
+        {
+          "mwu": ".69",
+          "ks": ".66",
+          "pass": true,
+          "w1": 0.014,
+          "cliffs": 0.03
+        },
+        {
+          "mwu": ".78",
+          "ks": ".64",
+          "pass": true,
+          "w1": 0.016,
+          "cliffs": 0.021
+        }
+      ]
+    },
+    {
+      "domain": "Celebrity",
+      "method": "ThreadPDG",
+      "model": "gpt-5.4-mini",
+      "passes": 11,
+      "metrics": [
+        {
+          "mwu": ".12",
+          "ks": ".12",
+          "pass": true,
+          "w1": 0.004,
+          "cliffs": 0.112
+        },
+        {
+          "mwu": ".29",
+          "ks": ".70",
+          "pass": true,
+          "w1": 0.003,
+          "cliffs": 0.076
+        },
+        {
+          "mwu": ".91",
+          "ks": ".79",
+          "pass": true,
+          "w1": 0.006,
+          "cliffs": 0.008
+        },
+        {
+          "mwu": ".56",
+          "ks": ".50",
+          "pass": true,
+          "w1": 0.07,
+          "cliffs": 0.041
+        },
+        {
+          "mwu": ".26",
+          "ks": ".22",
+          "pass": true,
+          "w1": 0.221,
+          "cliffs": 0.081
+        },
+        {
+          "mwu": ".17",
+          "ks": ".11",
+          "pass": true,
+          "w1": 0.078,
+          "cliffs": 0.098
+        },
+        {
+          "mwu": ".24",
+          "ks": ".53",
+          "pass": true,
+          "w1": 0.024,
+          "cliffs": 0.085
+        },
+        {
+          "mwu": ".49",
+          "ks": ".52",
+          "pass": true,
+          "w1": 0.079,
+          "cliffs": 0.05
+        },
+        {
+          "mwu": ".05",
+          "ks": ".06",
+          "pass": false,
+          "w1": 0.045,
+          "cliffs": 0.142
+        },
+        {
+          "mwu": ".58",
+          "ks": ".45",
+          "pass": true,
+          "w1": 0.011,
+          "cliffs": 0.04
+        },
+        {
+          "mwu": ".31",
+          "ks": ".43",
+          "pass": true,
+          "w1": 0.021,
+          "cliffs": 0.072
+        },
+        {
+          "mwu": ".41",
+          "ks": ".62",
+          "pass": true,
+          "w1": 0.019,
+          "cliffs": 0.059
+        }
+      ]
+    },
+    {
+      "domain": "Celebrity",
+      "method": "ThreadPDG",
+      "model": "gpt-4o-mini",
+      "passes": 3,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.011,
+          "cliffs": 0.386
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.023,
+          "cliffs": 0.511
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.056,
+          "cliffs": 0.521
+        },
+        {
+          "mwu": ".77",
+          "ks": ".71",
+          "pass": true,
+          "w1": 0.09,
+          "cliffs": 0.022
+        },
+        {
+          "mwu": ".91",
+          "ks": ".83",
+          "pass": true,
+          "w1": 0.176,
+          "cliffs": 0.008
+        },
+        {
+          "mwu": ".04",
+          "ks": ".05",
+          "pass": false,
+          "w1": 0.118,
+          "cliffs": 0.16
+        },
+        {
+          "mwu": "<.01",
+          "ks": ".02",
+          "pass": false,
+          "w1": 0.043,
+          "cliffs": 0.217
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.221,
+          "cliffs": 0.27
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.057,
+          "cliffs": 0.232
+        },
+        {
+          "mwu": "<.01",
+          "ks": ".01",
+          "pass": false,
+          "w1": 0.033,
+          "cliffs": 0.232
+        },
+        {
+          "mwu": ".51",
+          "ks": ".92",
+          "pass": true,
+          "w1": 0.026,
+          "cliffs": 0.05
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.092,
+          "cliffs": 0.366
+        }
+      ]
+    },
+    {
+      "domain": "Cellphone",
+      "method": "OASIS",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.013,
+          "cliffs": 0.505
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.074,
+          "cliffs": 0.993
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.309,
+          "cliffs": 0.961
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.164,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.356,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.629,
+          "cliffs": 0.976
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.185,
+          "cliffs": 0.871
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.596,
+          "cliffs": 0.665
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.149,
+          "cliffs": 0.452
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.185,
+          "cliffs": 0.826
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.113,
+          "cliffs": 0.305
+        },
+        {
+          "mwu": ".87",
+          "ks": ".90",
+          "pass": true,
+          "w1": 0.015,
+          "cliffs": 0.014
+        }
+      ]
+    },
+    {
+      "domain": "Cellphone",
+      "method": "OASIS",
+      "model": "gpt-5.4-mini",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.092,
+          "cliffs": 0.998
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.166,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.431,
+          "cliffs": 0.998
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.164,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.356,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.72,
+          "cliffs": 0.989
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.228,
+          "cliffs": 0.982
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.576,
+          "cliffs": 0.647
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.097,
+          "cliffs": 0.3
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.193,
+          "cliffs": 0.856
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.285,
+          "cliffs": 0.702
+        },
+        {
+          "mwu": ".93",
+          "ks": ".20",
+          "pass": true,
+          "w1": 0.061,
+          "cliffs": 0.008
+        }
+      ]
+    },
+    {
+      "domain": "Cellphone",
+      "method": "OASIS",
+      "model": "gpt-4o-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.053,
+          "cliffs": 0.977
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.178,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.445,
+          "cliffs": 0.999
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.164,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.356,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.72,
+          "cliffs": 0.991
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.206,
+          "cliffs": 0.937
+        },
+        {
+          "mwu": ".05",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.172,
+          "cliffs": 0.175
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.481,
+          "cliffs": 0.913
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.189,
+          "cliffs": 0.847
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.26,
+          "cliffs": 0.705
+        },
+        {
+          "mwu": ".05",
+          "ks": ".01",
+          "pass": false,
+          "w1": 0.094,
+          "cliffs": 0.173
+        }
+      ]
+    },
+    {
+      "domain": "Cellphone",
+      "method": "SynthPAI",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.041,
+          "cliffs": 0.982
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.064,
+          "cliffs": 0.979
+        },
+        {
+          "mwu": ".17",
+          "ks": ".12",
+          "pass": true,
+          "w1": 0.023,
+          "cliffs": 0.113
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.43,
+          "cliffs": 0.398
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.389,
+          "cliffs": 0.225
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.301,
+          "cliffs": 0.839
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.107,
+          "cliffs": 0.557
+        },
+        {
+          "mwu": ".17",
+          "ks": ".03",
+          "pass": false,
+          "w1": 0.147,
+          "cliffs": 0.112
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.247,
+          "cliffs": 0.905
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.141,
+          "cliffs": 0.698
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.426,
+          "cliffs": 0.972
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.126,
+          "cliffs": 0.626
+        }
+      ]
+    },
+    {
+      "domain": "Cellphone",
+      "method": "SynthPAI",
+      "model": "gpt-5.4-mini",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.061,
+          "cliffs": 0.998
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.068,
+          "cliffs": 0.983
+        },
+        {
+          "mwu": ".64",
+          "ks": ".06",
+          "pass": true,
+          "w1": 0.016,
+          "cliffs": 0.038
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.558,
+          "cliffs": 0.515
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.636,
+          "cliffs": 0.385
+        },
+        {
+          "mwu": ".07",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.088,
+          "cliffs": 0.15
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.118,
+          "cliffs": 0.621
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.389,
+          "cliffs": 0.491
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.236,
+          "cliffs": 0.881
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.063,
+          "cliffs": 0.334
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.293,
+          "cliffs": 0.799
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.13,
+          "cliffs": 0.528
+        }
+      ]
+    },
+    {
+      "domain": "Cellphone",
+      "method": "SynthPAI",
+      "model": "gpt-4o-mini",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.018,
+          "cliffs": 0.866
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.121,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.192,
+          "cliffs": 0.812
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.285,
+          "cliffs": 0.241
+        },
+        {
+          "mwu": ".63",
+          "ks": ".26",
+          "pass": true,
+          "w1": 0.29,
+          "cliffs": 0.041
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.683,
+          "cliffs": 0.983
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.19,
+          "cliffs": 0.863
+        },
+        {
+          "mwu": ".11",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.14,
+          "cliffs": 0.137
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.153,
+          "cliffs": 0.563
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.208,
+          "cliffs": 0.912
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.29,
+          "cliffs": 0.733
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.176,
+          "cliffs": 0.547
+        }
+      ]
+    },
+    {
+      "domain": "Cellphone",
+      "method": "ThreadPDG",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 10,
+      "metrics": [
+        {
+          "mwu": ".09",
+          "ks": ".42",
+          "pass": true,
+          "w1": 0.01,
+          "cliffs": 0.139
+        },
+        {
+          "mwu": ".23",
+          "ks": ".33",
+          "pass": true,
+          "w1": 0.008,
+          "cliffs": 0.1
+        },
+        {
+          "mwu": ".90",
+          "ks": ".35",
+          "pass": true,
+          "w1": 0.018,
+          "cliffs": 0.01
+        },
+        {
+          "mwu": ".43",
+          "ks": ".41",
+          "pass": true,
+          "w1": 0.122,
+          "cliffs": 0.065
+        },
+        {
+          "mwu": ".20",
+          "ks": ".43",
+          "pass": true,
+          "w1": 0.264,
+          "cliffs": 0.106
+        },
+        {
+          "mwu": ".07",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.131,
+          "cliffs": 0.15
+        },
+        {
+          "mwu": ".78",
+          "ks": ".42",
+          "pass": true,
+          "w1": 0.018,
+          "cliffs": 0.023
+        },
+        {
+          "mwu": ".12",
+          "ks": ".08",
+          "pass": true,
+          "w1": 0.124,
+          "cliffs": 0.127
+        },
+        {
+          "mwu": ".18",
+          "ks": ".15",
+          "pass": true,
+          "w1": 0.038,
+          "cliffs": 0.109
+        },
+        {
+          "mwu": ".97",
+          "ks": "1.0",
+          "pass": true,
+          "w1": 0.013,
+          "cliffs": 0.003
+        },
+        {
+          "mwu": ".05",
+          "ks": ".13",
+          "pass": true,
+          "w1": 0.048,
+          "cliffs": 0.16
+        },
+        {
+          "mwu": "<.01",
+          "ks": ".01",
+          "pass": false,
+          "w1": 0.038,
+          "cliffs": 0.25
+        }
+      ]
+    },
+    {
+      "domain": "Cellphone",
+      "method": "ThreadPDG",
+      "model": "gpt-5.4-mini",
+      "passes": 10,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": ".04",
+          "pass": false,
+          "w1": 0.011,
+          "cliffs": 0.262
+        },
+        {
+          "mwu": ".95",
+          "ks": ".70",
+          "pass": true,
+          "w1": 0.005,
+          "cliffs": 0.006
+        },
+        {
+          "mwu": ".13",
+          "ks": ".41",
+          "pass": true,
+          "w1": 0.032,
+          "cliffs": 0.135
+        },
+        {
+          "mwu": ".76",
+          "ks": ".70",
+          "pass": true,
+          "w1": 0.13,
+          "cliffs": 0.028
+        },
+        {
+          "mwu": ".91",
+          "ks": ".93",
+          "pass": true,
+          "w1": 0.131,
+          "cliffs": 0.01
+        },
+        {
+          "mwu": ".31",
+          "ks": ".49",
+          "pass": true,
+          "w1": 0.077,
+          "cliffs": 0.091
+        },
+        {
+          "mwu": ".92",
+          "ks": ".88",
+          "pass": true,
+          "w1": 0.015,
+          "cliffs": 0.009
+        },
+        {
+          "mwu": ".84",
+          "ks": ".55",
+          "pass": true,
+          "w1": 0.072,
+          "cliffs": 0.018
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.076,
+          "cliffs": 0.267
+        },
+        {
+          "mwu": ".26",
+          "ks": ".12",
+          "pass": true,
+          "w1": 0.027,
+          "cliffs": 0.1
+        },
+        {
+          "mwu": ".17",
+          "ks": ".33",
+          "pass": true,
+          "w1": 0.039,
+          "cliffs": 0.123
+        },
+        {
+          "mwu": ".17",
+          "ks": ".27",
+          "pass": true,
+          "w1": 0.024,
+          "cliffs": 0.121
+        }
+      ]
+    },
+    {
+      "domain": "Cellphone",
+      "method": "ThreadPDG",
+      "model": "gpt-4o-mini",
+      "passes": 5,
+      "metrics": [
+        {
+          "mwu": ".55",
+          "ks": ".72",
+          "pass": true,
+          "w1": 0.008,
+          "cliffs": 0.05
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.035,
+          "cliffs": 0.645
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.039,
+          "cliffs": 0.273
+        },
+        {
+          "mwu": ".07",
+          "ks": ".16",
+          "pass": true,
+          "w1": 0.176,
+          "cliffs": 0.151
+        },
+        {
+          "mwu": ".01",
+          "ks": ".04",
+          "pass": false,
+          "w1": 0.426,
+          "cliffs": 0.206
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.138,
+          "cliffs": 0.315
+        },
+        {
+          "mwu": "<.01",
+          "ks": ".06",
+          "pass": false,
+          "w1": 0.049,
+          "cliffs": 0.216
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.267,
+          "cliffs": 0.32
+        },
+        {
+          "mwu": ".46",
+          "ks": ".29",
+          "pass": true,
+          "w1": 0.024,
+          "cliffs": 0.062
+        },
+        {
+          "mwu": ".20",
+          "ks": ".15",
+          "pass": true,
+          "w1": 0.026,
+          "cliffs": 0.106
+        },
+        {
+          "mwu": ".02",
+          "ks": ".02",
+          "pass": false,
+          "w1": 0.06,
+          "cliffs": 0.197
+        },
+        {
+          "mwu": ".10",
+          "ks": ".07",
+          "pass": true,
+          "w1": 0.02,
+          "cliffs": 0.136
+        }
+      ]
+    },
+    {
+      "domain": "Game",
+      "method": "OASIS",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 2,
+      "metrics": [
+        {
+          "mwu": ".07",
+          "ks": ".18",
+          "pass": true,
+          "w1": 0.004,
+          "cliffs": 0.135
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.063,
+          "cliffs": 0.979
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.328,
+          "cliffs": 0.998
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.965,
+          "cliffs": 0.987
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.343,
+          "cliffs": 0.987
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.659,
+          "cliffs": 0.987
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.099,
+          "cliffs": 0.673
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.432,
+          "cliffs": 0.556
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.294,
+          "cliffs": 0.685
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.124,
+          "cliffs": 0.812
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.121,
+          "cliffs": 0.223
+        },
+        {
+          "mwu": ".08",
+          "ks": ".08",
+          "pass": true,
+          "w1": 0.04,
+          "cliffs": 0.131
+        }
+      ]
+    },
+    {
+      "domain": "Game",
+      "method": "OASIS",
+      "model": "gpt-5.4-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.053,
+          "cliffs": 0.908
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.145,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.436,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.965,
+          "cliffs": 0.987
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.343,
+          "cliffs": 0.987
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.769,
+          "cliffs": 0.999
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.145,
+          "cliffs": 0.933
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.635,
+          "cliffs": 0.75
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.08,
+          "cliffs": 0.46
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.128,
+          "cliffs": 0.825
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.189,
+          "cliffs": 0.545
+        },
+        {
+          "mwu": ".20",
+          "ks": ".02",
+          "pass": false,
+          "w1": 0.092,
+          "cliffs": 0.107
+        }
+      ]
+    },
+    {
+      "domain": "Game",
+      "method": "OASIS",
+      "model": "gpt-4o-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.063,
+          "cliffs": 0.922
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.208,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.544,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.965,
+          "cliffs": 0.987
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.343,
+          "cliffs": 0.987
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.795,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.144,
+          "cliffs": 0.948
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.597,
+          "cliffs": 0.76
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.761,
+          "cliffs": 0.984
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.139,
+          "cliffs": 0.897
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.561,
+          "cliffs": 0.962
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.114,
+          "cliffs": 0.391
+        }
+      ]
+    },
+    {
+      "domain": "Game",
+      "method": "SynthPAI",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.039,
+          "cliffs": 0.877
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.065,
+          "cliffs": 0.963
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.079,
+          "cliffs": 0.45
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.805,
+          "cliffs": 0.812
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.749,
+          "cliffs": 0.763
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.319,
+          "cliffs": 0.769
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.056,
+          "cliffs": 0.373
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.499,
+          "cliffs": 0.598
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.131,
+          "cliffs": 0.727
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.077,
+          "cliffs": 0.436
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.259,
+          "cliffs": 0.789
+        },
+        {
+          "mwu": ".08",
+          "ks": ".07",
+          "pass": true,
+          "w1": 0.036,
+          "cliffs": 0.122
+        }
+      ]
+    },
+    {
+      "domain": "Game",
+      "method": "SynthPAI",
+      "model": "gpt-5.4-mini",
+      "passes": 2,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.054,
+          "cliffs": 0.931
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.056,
+          "cliffs": 0.957
+        },
+        {
+          "mwu": ".07",
+          "ks": ".07",
+          "pass": true,
+          "w1": 0.017,
+          "cliffs": 0.121
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.786,
+          "cliffs": 0.645
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.712,
+          "cliffs": 0.386
+        },
+        {
+          "mwu": ".04",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.152,
+          "cliffs": 0.136
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.069,
+          "cliffs": 0.45
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.465,
+          "cliffs": 0.655
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.131,
+          "cliffs": 0.751
+        },
+        {
+          "mwu": ".37",
+          "ks": ".63",
+          "pass": true,
+          "w1": 0.019,
+          "cliffs": 0.061
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.183,
+          "cliffs": 0.667
+        },
+        {
+          "mwu": ".02",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.036,
+          "cliffs": 0.159
+        }
+      ]
+    },
+    {
+      "domain": "Game",
+      "method": "SynthPAI",
+      "model": "gpt-4o-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.014,
+          "cliffs": 0.585
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.115,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.237,
+          "cliffs": 0.946
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.458,
+          "cliffs": 0.428
+        },
+        {
+          "mwu": ".48",
+          "ks": ".01",
+          "pass": false,
+          "w1": 0.441,
+          "cliffs": 0.05
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.733,
+          "cliffs": 0.995
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.134,
+          "cliffs": 0.875
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.198,
+          "cliffs": 0.281
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.073,
+          "cliffs": 0.38
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.126,
+          "cliffs": 0.822
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.119,
+          "cliffs": 0.392
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.217,
+          "cliffs": 0.587
+        }
+      ]
+    },
+    {
+      "domain": "Game",
+      "method": "ThreadPDG",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 10,
+      "metrics": [
+        {
+          "mwu": ".75",
+          "ks": ".51",
+          "pass": true,
+          "w1": 0.002,
+          "cliffs": 0.023
+        },
+        {
+          "mwu": ".11",
+          "ks": ".08",
+          "pass": true,
+          "w1": 0.004,
+          "cliffs": 0.118
+        },
+        {
+          "mwu": ".15",
+          "ks": ".45",
+          "pass": true,
+          "w1": 0.013,
+          "cliffs": 0.104
+        },
+        {
+          "mwu": ".18",
+          "ks": ".28",
+          "pass": true,
+          "w1": 0.172,
+          "cliffs": 0.099
+        },
+        {
+          "mwu": ".03",
+          "ks": ".05",
+          "pass": false,
+          "w1": 0.378,
+          "cliffs": 0.161
+        },
+        {
+          "mwu": ".71",
+          "ks": ".69",
+          "pass": true,
+          "w1": 0.032,
+          "cliffs": 0.027
+        },
+        {
+          "mwu": ".71",
+          "ks": ".91",
+          "pass": true,
+          "w1": 0.009,
+          "cliffs": 0.027
+        },
+        {
+          "mwu": ".30",
+          "ks": ".22",
+          "pass": true,
+          "w1": 0.071,
+          "cliffs": 0.076
+        },
+        {
+          "mwu": ".17",
+          "ks": ".05",
+          "pass": true,
+          "w1": 0.025,
+          "cliffs": 0.102
+        },
+        {
+          "mwu": ".60",
+          "ks": ".63",
+          "pass": true,
+          "w1": 0.012,
+          "cliffs": 0.038
+        },
+        {
+          "mwu": ".88",
+          "ks": ".36",
+          "pass": true,
+          "w1": 0.028,
+          "cliffs": 0.011
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.061,
+          "cliffs": 0.276
+        }
+      ]
+    },
+    {
+      "domain": "Game",
+      "method": "ThreadPDG",
+      "model": "gpt-5.4-mini",
+      "passes": 8,
+      "metrics": [
+        {
+          "mwu": ".36",
+          "ks": ".72",
+          "pass": true,
+          "w1": 0.002,
+          "cliffs": 0.061
+        },
+        {
+          "mwu": ".03",
+          "ks": ".02",
+          "pass": false,
+          "w1": 0.005,
+          "cliffs": 0.148
+        },
+        {
+          "mwu": ".29",
+          "ks": ".63",
+          "pass": true,
+          "w1": 0.009,
+          "cliffs": 0.071
+        },
+        {
+          "mwu": ".19",
+          "ks": ".29",
+          "pass": true,
+          "w1": 0.163,
+          "cliffs": 0.087
+        },
+        {
+          "mwu": ".07",
+          "ks": ".03",
+          "pass": false,
+          "w1": 0.313,
+          "cliffs": 0.123
+        },
+        {
+          "mwu": ".22",
+          "ks": ".29",
+          "pass": true,
+          "w1": 0.05,
+          "cliffs": 0.082
+        },
+        {
+          "mwu": ".93",
+          "ks": "1.0",
+          "pass": true,
+          "w1": 0.007,
+          "cliffs": 0.006
+        },
+        {
+          "mwu": ".70",
+          "ks": ".53",
+          "pass": true,
+          "w1": 0.039,
+          "cliffs": 0.026
+        },
+        {
+          "mwu": ".03",
+          "ks": ".02",
+          "pass": false,
+          "w1": 0.027,
+          "cliffs": 0.145
+        },
+        {
+          "mwu": ".63",
+          "ks": ".89",
+          "pass": true,
+          "w1": 0.012,
+          "cliffs": 0.032
+        },
+        {
+          "mwu": ".46",
+          "ks": ".53",
+          "pass": true,
+          "w1": 0.021,
+          "cliffs": 0.049
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.055,
+          "cliffs": 0.247
+        }
+      ]
+    },
+    {
+      "domain": "Game",
+      "method": "ThreadPDG",
+      "model": "gpt-4o-mini",
+      "passes": 3,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.01,
+          "cliffs": 0.447
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.031,
+          "cliffs": 0.681
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.071,
+          "cliffs": 0.513
+        },
+        {
+          "mwu": ".06",
+          "ks": ".07",
+          "pass": true,
+          "w1": 0.199,
+          "cliffs": 0.131
+        },
+        {
+          "mwu": ".01",
+          "ks": ".03",
+          "pass": false,
+          "w1": 0.402,
+          "cliffs": 0.174
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.19,
+          "cliffs": 0.439
+        },
+        {
+          "mwu": ".69",
+          "ks": ".84",
+          "pass": true,
+          "w1": 0.011,
+          "cliffs": 0.028
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.161,
+          "cliffs": 0.254
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.103,
+          "cliffs": 0.417
+        },
+        {
+          "mwu": ".02",
+          "ks": ".04",
+          "pass": false,
+          "w1": 0.028,
+          "cliffs": 0.164
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.097,
+          "cliffs": 0.295
+        },
+        {
+          "mwu": ".67",
+          "ks": ".53",
+          "pass": true,
+          "w1": 0.015,
+          "cliffs": 0.03
+        }
+      ]
+    },
+    {
+      "domain": "Health Issue",
+      "method": "OASIS",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.021,
+          "cliffs": 0.655
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.084,
+          "cliffs": 0.969
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.355,
+          "cliffs": 0.979
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.792,
+          "cliffs": 0.893
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.524,
+          "cliffs": 0.893
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.618,
+          "cliffs": 0.972
+        },
+        {
+          "mwu": ".02",
+          "ks": ".15",
+          "pass": false,
+          "w1": 0.053,
+          "cliffs": 0.169
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.215,
+          "cliffs": 0.262
+        },
+        {
+          "mwu": ".08",
+          "ks": ".09",
+          "pass": true,
+          "w1": 0.035,
+          "cliffs": 0.129
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.139,
+          "cliffs": 0.68
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.177,
+          "cliffs": 0.457
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.133,
+          "cliffs": 0.401
+        }
+      ]
+    },
+    {
+      "domain": "Health Issue",
+      "method": "OASIS",
+      "model": "gpt-5.4-mini",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.129,
+          "cliffs": 0.959
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.178,
+          "cliffs": 0.997
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.435,
+          "cliffs": 0.992
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.792,
+          "cliffs": 0.893
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.524,
+          "cliffs": 0.893
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.646,
+          "cliffs": 0.977
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.15,
+          "cliffs": 0.565
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.451,
+          "cliffs": 0.499
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.174,
+          "cliffs": 0.613
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.104,
+          "cliffs": 0.485
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.309,
+          "cliffs": 0.727
+        },
+        {
+          "mwu": ".51",
+          "ks": ".10",
+          "pass": true,
+          "w1": 0.026,
+          "cliffs": 0.053
+        }
+      ]
+    },
+    {
+      "domain": "Health Issue",
+      "method": "OASIS",
+      "model": "gpt-4o-mini",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.114,
+          "cliffs": 0.974
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.23,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.465,
+          "cliffs": 0.999
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.792,
+          "cliffs": 0.893
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.524,
+          "cliffs": 0.893
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.776,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.228,
+          "cliffs": 0.887
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.058,
+          "cliffs": 0.849
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.658,
+          "cliffs": 0.999
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.139,
+          "cliffs": 0.677
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.454,
+          "cliffs": 0.919
+        },
+        {
+          "mwu": ".79",
+          "ks": ".66",
+          "pass": true,
+          "w1": 0.03,
+          "cliffs": 0.022
+        }
+      ]
+    },
+    {
+      "domain": "Health Issue",
+      "method": "SynthPAI",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 2,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.041,
+          "cliffs": 0.892
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.067,
+          "cliffs": 0.927
+        },
+        {
+          "mwu": ".47",
+          "ks": ".57",
+          "pass": true,
+          "w1": 0.013,
+          "cliffs": 0.05
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.76,
+          "cliffs": 0.68
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.056,
+          "cliffs": 0.69
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.297,
+          "cliffs": 0.605
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.084,
+          "cliffs": 0.29
+        },
+        {
+          "mwu": ".49",
+          "ks": ".19",
+          "pass": true,
+          "w1": 0.107,
+          "cliffs": 0.048
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.258,
+          "cliffs": 0.866
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.078,
+          "cliffs": 0.282
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.341,
+          "cliffs": 0.817
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.112,
+          "cliffs": 0.37
+        }
+      ]
+    },
+    {
+      "domain": "Health Issue",
+      "method": "SynthPAI",
+      "model": "gpt-5.4-mini",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.066,
+          "cliffs": 0.954
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.071,
+          "cliffs": 0.927
+        },
+        {
+          "mwu": ".43",
+          "ks": ".57",
+          "pass": true,
+          "w1": 0.013,
+          "cliffs": 0.055
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.845,
+          "cliffs": 0.711
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.253,
+          "cliffs": 0.726
+        },
+        {
+          "mwu": ".66",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.165,
+          "cliffs": 0.03
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.123,
+          "cliffs": 0.458
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.521,
+          "cliffs": 0.571
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.274,
+          "cliffs": 0.913
+        },
+        {
+          "mwu": ".13",
+          "ks": ".02",
+          "pass": false,
+          "w1": 0.03,
+          "cliffs": 0.104
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.318,
+          "cliffs": 0.765
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.062,
+          "cliffs": 0.223
+        }
+      ]
+    },
+    {
+      "domain": "Health Issue",
+      "method": "SynthPAI",
+      "model": "gpt-4o-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.024,
+          "cliffs": 0.783
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.129,
+          "cliffs": 0.992
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.19,
+          "cliffs": 0.736
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.648,
+          "cliffs": 0.606
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.89,
+          "cliffs": 0.589
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.698,
+          "cliffs": 0.995
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.207,
+          "cliffs": 0.8
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.565,
+          "cliffs": 0.532
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.197,
+          "cliffs": 0.684
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.123,
+          "cliffs": 0.564
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.312,
+          "cliffs": 0.76
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.168,
+          "cliffs": 0.489
+        }
+      ]
+    },
+    {
+      "domain": "Health Issue",
+      "method": "ThreadPDG",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 7,
+      "metrics": [
+        {
+          "mwu": ".02",
+          "ks": ".02",
+          "pass": false,
+          "w1": 0.006,
+          "cliffs": 0.157
+        },
+        {
+          "mwu": ".02",
+          "ks": ".14",
+          "pass": false,
+          "w1": 0.008,
+          "cliffs": 0.151
+        },
+        {
+          "mwu": ".40",
+          "ks": ".53",
+          "pass": true,
+          "w1": 0.017,
+          "cliffs": 0.056
+        },
+        {
+          "mwu": ".48",
+          "ks": ".23",
+          "pass": true,
+          "w1": 0.095,
+          "cliffs": 0.047
+        },
+        {
+          "mwu": ".39",
+          "ks": ".72",
+          "pass": true,
+          "w1": 0.166,
+          "cliffs": 0.058
+        },
+        {
+          "mwu": ".74",
+          "ks": ".36",
+          "pass": true,
+          "w1": 0.051,
+          "cliffs": 0.022
+        },
+        {
+          "mwu": ".37",
+          "ks": ".72",
+          "pass": true,
+          "w1": 0.02,
+          "cliffs": 0.059
+        },
+        {
+          "mwu": ".35",
+          "ks": ".36",
+          "pass": true,
+          "w1": 0.062,
+          "cliffs": 0.062
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.101,
+          "cliffs": 0.313
+        },
+        {
+          "mwu": ".03",
+          "ks": ".11",
+          "pass": false,
+          "w1": 0.043,
+          "cliffs": 0.146
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.128,
+          "cliffs": 0.33
+        },
+        {
+          "mwu": ".29",
+          "ks": ".23",
+          "pass": true,
+          "w1": 0.038,
+          "cliffs": 0.07
+        }
+      ]
+    },
+    {
+      "domain": "Health Issue",
+      "method": "ThreadPDG",
+      "model": "gpt-5.4-mini",
+      "passes": 8,
+      "metrics": [
+        {
+          "mwu": ".44",
+          "ks": ".11",
+          "pass": true,
+          "w1": 0.004,
+          "cliffs": 0.052
+        },
+        {
+          "mwu": ".92",
+          "ks": ".96",
+          "pass": true,
+          "w1": 0.003,
+          "cliffs": 0.007
+        },
+        {
+          "mwu": ".21",
+          "ks": ".25",
+          "pass": true,
+          "w1": 0.02,
+          "cliffs": 0.085
+        },
+        {
+          "mwu": ".47",
+          "ks": ".23",
+          "pass": true,
+          "w1": 0.093,
+          "cliffs": 0.048
+        },
+        {
+          "mwu": ".41",
+          "ks": ".70",
+          "pass": true,
+          "w1": 0.163,
+          "cliffs": 0.055
+        },
+        {
+          "mwu": ".22",
+          "ks": ".04",
+          "pass": false,
+          "w1": 0.07,
+          "cliffs": 0.083
+        },
+        {
+          "mwu": ".76",
+          "ks": ".82",
+          "pass": true,
+          "w1": 0.013,
+          "cliffs": 0.02
+        },
+        {
+          "mwu": ".06",
+          "ks": ".09",
+          "pass": true,
+          "w1": 0.108,
+          "cliffs": 0.127
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.118,
+          "cliffs": 0.383
+        },
+        {
+          "mwu": ".02",
+          "ks": ".08",
+          "pass": false,
+          "w1": 0.037,
+          "cliffs": 0.152
+        },
+        {
+          "mwu": ".05",
+          "ks": ".16",
+          "pass": false,
+          "w1": 0.055,
+          "cliffs": 0.133
+        },
+        {
+          "mwu": ".34",
+          "ks": ".16",
+          "pass": true,
+          "w1": 0.034,
+          "cliffs": 0.063
+        }
+      ]
+    },
+    {
+      "domain": "Health Issue",
+      "method": "ThreadPDG",
+      "model": "gpt-4o-mini",
+      "passes": 3,
+      "metrics": [
+        {
+          "mwu": ".01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.007,
+          "cliffs": 0.167
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.034,
+          "cliffs": 0.561
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.04,
+          "cliffs": 0.253
+        },
+        {
+          "mwu": ".42",
+          "ks": ".26",
+          "pass": true,
+          "w1": 0.089,
+          "cliffs": 0.054
+        },
+        {
+          "mwu": ".41",
+          "ks": ".67",
+          "pass": true,
+          "w1": 0.168,
+          "cliffs": 0.055
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.177,
+          "cliffs": 0.352
+        },
+        {
+          "mwu": "<.01",
+          "ks": ".04",
+          "pass": false,
+          "w1": 0.051,
+          "cliffs": 0.178
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.218,
+          "cliffs": 0.262
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.072,
+          "cliffs": 0.245
+        },
+        {
+          "mwu": ".27",
+          "ks": ".36",
+          "pass": true,
+          "w1": 0.025,
+          "cliffs": 0.074
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.097,
+          "cliffs": 0.27
+        },
+        {
+          "mwu": ".01",
+          "ks": ".02",
+          "pass": false,
+          "w1": 0.048,
+          "cliffs": 0.168
+        }
+      ]
+    },
+    {
+      "domain": "Movies",
+      "method": "OASIS",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 2,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.013,
+          "cliffs": 0.538
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.039,
+          "cliffs": 0.884
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.258,
+          "cliffs": 0.972
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.968,
+          "cliffs": 0.974
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.191,
+          "cliffs": 0.974
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.331,
+          "cliffs": 0.814
+        },
+        {
+          "mwu": ".12",
+          "ks": ".13",
+          "pass": true,
+          "w1": 0.031,
+          "cliffs": 0.146
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.266,
+          "cliffs": 0.394
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.169,
+          "cliffs": 0.558
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.111,
+          "cliffs": 0.724
+        },
+        {
+          "mwu": ".34",
+          "ks": ".70",
+          "pass": true,
+          "w1": 0.031,
+          "cliffs": 0.091
+        },
+        {
+          "mwu": ".02",
+          "ks": ".07",
+          "pass": false,
+          "w1": 0.055,
+          "cliffs": 0.216
+        }
+      ]
+    },
+    {
+      "domain": "Movies",
+      "method": "OASIS",
+      "model": "gpt-5.4-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.05,
+          "cliffs": 0.897
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.143,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.392,
+          "cliffs": 0.997
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.968,
+          "cliffs": 0.974
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.191,
+          "cliffs": 0.974
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.533,
+          "cliffs": 0.977
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.127,
+          "cliffs": 0.698
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.412,
+          "cliffs": 0.546
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.156,
+          "cliffs": 0.715
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.083,
+          "cliffs": 0.553
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.296,
+          "cliffs": 0.791
+        },
+        {
+          "mwu": ".02",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.096,
+          "cliffs": 0.222
+        }
+      ]
+    },
+    {
+      "domain": "Movies",
+      "method": "OASIS",
+      "model": "gpt-4o-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.061,
+          "cliffs": 0.937
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.209,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.534,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.968,
+          "cliffs": 0.974
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.191,
+          "cliffs": 0.974
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.623,
+          "cliffs": 0.998
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.171,
+          "cliffs": 0.986
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.539,
+          "cliffs": 0.689
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.731,
+          "cliffs": 0.996
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.124,
+          "cliffs": 0.821
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.523,
+          "cliffs": 0.979
+        },
+        {
+          "mwu": ".08",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.055,
+          "cliffs": 0.148
+        }
+      ]
+    },
+    {
+      "domain": "Movies",
+      "method": "SynthPAI",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.034,
+          "cliffs": 0.888
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.06,
+          "cliffs": 0.978
+        },
+        {
+          "mwu": ".03",
+          "ks": ".04",
+          "pass": false,
+          "w1": 0.022,
+          "cliffs": 0.155
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.836,
+          "cliffs": 0.624
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.771,
+          "cliffs": 0.42
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.215,
+          "cliffs": 0.579
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.072,
+          "cliffs": 0.348
+        },
+        {
+          "mwu": ".55",
+          "ks": ".72",
+          "pass": true,
+          "w1": 0.063,
+          "cliffs": 0.044
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.18,
+          "cliffs": 0.83
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.087,
+          "cliffs": 0.55
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.315,
+          "cliffs": 0.902
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.166,
+          "cliffs": 0.585
+        }
+      ]
+    },
+    {
+      "domain": "Movies",
+      "method": "SynthPAI",
+      "model": "gpt-5.4-mini",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.051,
+          "cliffs": 0.958
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.064,
+          "cliffs": 0.966
+        },
+        {
+          "mwu": ".07",
+          "ks": ".17",
+          "pass": true,
+          "w1": 0.018,
+          "cliffs": 0.133
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.886,
+          "cliffs": 0.674
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.858,
+          "cliffs": 0.489
+        },
+        {
+          "mwu": ".01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.128,
+          "cliffs": 0.178
+        },
+        {
+          "mwu": ".04",
+          "ks": ".13",
+          "pass": false,
+          "w1": 0.035,
+          "cliffs": 0.148
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.296,
+          "cliffs": 0.427
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.187,
+          "cliffs": 0.87
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.034,
+          "cliffs": 0.192
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.259,
+          "cliffs": 0.79
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.115,
+          "cliffs": 0.412
+        }
+      ]
+    },
+    {
+      "domain": "Movies",
+      "method": "SynthPAI",
+      "model": "gpt-4o-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.011,
+          "cliffs": 0.483
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.117,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.252,
+          "cliffs": 0.921
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.525,
+          "cliffs": 0.442
+        },
+        {
+          "mwu": ".08",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.328,
+          "cliffs": 0.129
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.605,
+          "cliffs": 0.991
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.152,
+          "cliffs": 0.862
+        },
+        {
+          "mwu": ".02",
+          "ks": ".06",
+          "pass": false,
+          "w1": 0.125,
+          "cliffs": 0.173
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.125,
+          "cliffs": 0.572
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.117,
+          "cliffs": 0.768
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.238,
+          "cliffs": 0.666
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.342,
+          "cliffs": 0.747
+        }
+      ]
+    },
+    {
+      "domain": "Movies",
+      "method": "ThreadPDG",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 10,
+      "metrics": [
+        {
+          "mwu": ".97",
+          "ks": ".42",
+          "pass": true,
+          "w1": 0.003,
+          "cliffs": 0.003
+        },
+        {
+          "mwu": ".78",
+          "ks": ".70",
+          "pass": true,
+          "w1": 0.002,
+          "cliffs": 0.02
+        },
+        {
+          "mwu": ".82",
+          "ks": ".88",
+          "pass": true,
+          "w1": 0.008,
+          "cliffs": 0.016
+        },
+        {
+          "mwu": ".72",
+          "ks": ".61",
+          "pass": true,
+          "w1": 0.122,
+          "cliffs": 0.026
+        },
+        {
+          "mwu": ".28",
+          "ks": ".36",
+          "pass": true,
+          "w1": 0.223,
+          "cliffs": 0.078
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.099,
+          "cliffs": 0.197
+        },
+        {
+          "mwu": ".47",
+          "ks": ".56",
+          "pass": true,
+          "w1": 0.014,
+          "cliffs": 0.053
+        },
+        {
+          "mwu": ".80",
+          "ks": ".96",
+          "pass": true,
+          "w1": 0.04,
+          "cliffs": 0.018
+        },
+        {
+          "mwu": ".58",
+          "ks": ".47",
+          "pass": true,
+          "w1": 0.021,
+          "cliffs": 0.041
+        },
+        {
+          "mwu": ".77",
+          "ks": ".94",
+          "pass": true,
+          "w1": 0.008,
+          "cliffs": 0.022
+        },
+        {
+          "mwu": ".02",
+          "ks": ".09",
+          "pass": false,
+          "w1": 0.056,
+          "cliffs": 0.169
+        },
+        {
+          "mwu": ".36",
+          "ks": ".13",
+          "pass": true,
+          "w1": 0.023,
+          "cliffs": 0.067
+        }
+      ]
+    },
+    {
+      "domain": "Movies",
+      "method": "ThreadPDG",
+      "model": "gpt-5.4-mini",
+      "passes": 11,
+      "metrics": [
+        {
+          "mwu": ".13",
+          "ks": ".08",
+          "pass": true,
+          "w1": 0.004,
+          "cliffs": 0.107
+        },
+        {
+          "mwu": ".31",
+          "ks": ".64",
+          "pass": true,
+          "w1": 0.004,
+          "cliffs": 0.073
+        },
+        {
+          "mwu": ".38",
+          "ks": ".38",
+          "pass": true,
+          "w1": 0.013,
+          "cliffs": 0.063
+        },
+        {
+          "mwu": ".61",
+          "ks": ".34",
+          "pass": true,
+          "w1": 0.145,
+          "cliffs": 0.036
+        },
+        {
+          "mwu": ".19",
+          "ks": ".25",
+          "pass": true,
+          "w1": 0.266,
+          "cliffs": 0.095
+        },
+        {
+          "mwu": ".07",
+          "ks": ".05",
+          "pass": true,
+          "w1": 0.057,
+          "cliffs": 0.129
+        },
+        {
+          "mwu": ".67",
+          "ks": ".65",
+          "pass": true,
+          "w1": 0.014,
+          "cliffs": 0.031
+        },
+        {
+          "mwu": ".73",
+          "ks": ".76",
+          "pass": true,
+          "w1": 0.041,
+          "cliffs": 0.024
+        },
+        {
+          "mwu": ".01",
+          "ks": ".01",
+          "pass": false,
+          "w1": 0.046,
+          "cliffs": 0.184
+        },
+        {
+          "mwu": ".33",
+          "ks": ".37",
+          "pass": true,
+          "w1": 0.015,
+          "cliffs": 0.069
+        },
+        {
+          "mwu": ".09",
+          "ks": ".15",
+          "pass": true,
+          "w1": 0.037,
+          "cliffs": 0.122
+        },
+        {
+          "mwu": ".50",
+          "ks": ".11",
+          "pass": true,
+          "w1": 0.022,
+          "cliffs": 0.049
+        }
+      ]
+    },
+    {
+      "domain": "Movies",
+      "method": "ThreadPDG",
+      "model": "gpt-4o-mini",
+      "passes": 3,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.007,
+          "cliffs": 0.306
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.03,
+          "cliffs": 0.513
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.082,
+          "cliffs": 0.453
+        },
+        {
+          "mwu": ".43",
+          "ks": ".36",
+          "pass": true,
+          "w1": 0.147,
+          "cliffs": 0.059
+        },
+        {
+          "mwu": ".05",
+          "ks": ".14",
+          "pass": false,
+          "w1": 0.346,
+          "cliffs": 0.148
+        },
+        {
+          "mwu": ".03",
+          "ks": ".04",
+          "pass": false,
+          "w1": 0.061,
+          "cliffs": 0.163
+        },
+        {
+          "mwu": ".30",
+          "ks": ".15",
+          "pass": true,
+          "w1": 0.025,
+          "cliffs": 0.078
+        },
+        {
+          "mwu": "<.01",
+          "ks": ".04",
+          "pass": false,
+          "w1": 0.143,
+          "cliffs": 0.198
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.1,
+          "cliffs": 0.338
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.048,
+          "cliffs": 0.292
+        },
+        {
+          "mwu": ".08",
+          "ks": ".15",
+          "pass": true,
+          "w1": 0.043,
+          "cliffs": 0.128
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.08,
+          "cliffs": 0.275
+        }
+      ]
+    },
+    {
+      "domain": "News",
+      "method": "OASIS",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.008,
+          "cliffs": 0.241
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.068,
+          "cliffs": 0.945
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.332,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.06,
+          "cliffs": 0.96
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.421,
+          "cliffs": 0.96
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.571,
+          "cliffs": 0.97
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.065,
+          "cliffs": 0.566
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.309,
+          "cliffs": 0.402
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.273,
+          "cliffs": 0.553
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.177,
+          "cliffs": 0.915
+        },
+        {
+          "mwu": ".43",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.134,
+          "cliffs": 0.063
+        },
+        {
+          "mwu": ".50",
+          "ks": ".09",
+          "pass": true,
+          "w1": 0.069,
+          "cliffs": 0.054
+        }
+      ]
+    },
+    {
+      "domain": "News",
+      "method": "OASIS",
+      "model": "gpt-5.4-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.073,
+          "cliffs": 0.931
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.156,
+          "cliffs": 0.998
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.37,
+          "cliffs": 0.997
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.06,
+          "cliffs": 0.96
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.421,
+          "cliffs": 0.96
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.802,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.097,
+          "cliffs": 0.864
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.642,
+          "cliffs": 0.728
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.088,
+          "cliffs": 0.641
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.073,
+          "cliffs": 0.366
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.164,
+          "cliffs": 0.504
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.144,
+          "cliffs": 0.529
+        }
+      ]
+    },
+    {
+      "domain": "News",
+      "method": "OASIS",
+      "model": "gpt-4o-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.041,
+          "cliffs": 0.871
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.212,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.532,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.06,
+          "cliffs": 0.96
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 2.421,
+          "cliffs": 0.96
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.779,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.111,
+          "cliffs": 0.981
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.345,
+          "cliffs": 0.469
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.559,
+          "cliffs": 0.917
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.129,
+          "cliffs": 0.702
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.382,
+          "cliffs": 0.722
+        },
+        {
+          "mwu": ".02",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.128,
+          "cliffs": 0.191
+        }
+      ]
+    },
+    {
+      "domain": "News",
+      "method": "SynthPAI",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.034,
+          "cliffs": 0.858
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.061,
+          "cliffs": 0.937
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.026,
+          "cliffs": 0.293
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.679,
+          "cliffs": 0.544
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.595,
+          "cliffs": 0.302
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.346,
+          "cliffs": 0.784
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.047,
+          "cliffs": 0.378
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.176,
+          "cliffs": 0.297
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.077,
+          "cliffs": 0.518
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.144,
+          "cliffs": 0.811
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.232,
+          "cliffs": 0.803
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.092,
+          "cliffs": 0.274
+        }
+      ]
+    },
+    {
+      "domain": "News",
+      "method": "SynthPAI",
+      "model": "gpt-5.4-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.058,
+          "cliffs": 0.935
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.061,
+          "cliffs": 0.937
+        },
+        {
+          "mwu": ".03",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.016,
+          "cliffs": 0.148
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.843,
+          "cliffs": 0.653
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.817,
+          "cliffs": 0.429
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.144,
+          "cliffs": 0.196
+        },
+        {
+          "mwu": ".01",
+          "ks": ".05",
+          "pass": false,
+          "w1": 0.028,
+          "cliffs": 0.164
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.125,
+          "cliffs": 0.174
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.097,
+          "cliffs": 0.666
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.111,
+          "cliffs": 0.656
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.238,
+          "cliffs": 0.798
+        },
+        {
+          "mwu": ".05",
+          "ks": ".02",
+          "pass": false,
+          "w1": 0.048,
+          "cliffs": 0.13
+        }
+      ]
+    },
+    {
+      "domain": "News",
+      "method": "SynthPAI",
+      "model": "gpt-4o-mini",
+      "passes": 2,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.013,
+          "cliffs": 0.501
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.125,
+          "cliffs": 0.995
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.223,
+          "cliffs": 0.938
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.435,
+          "cliffs": 0.373
+        },
+        {
+          "mwu": ".44",
+          "ks": ".37",
+          "pass": true,
+          "w1": 0.299,
+          "cliffs": 0.055
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.754,
+          "cliffs": 0.999
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.101,
+          "cliffs": 0.908
+        },
+        {
+          "mwu": ".46",
+          "ks": ".54",
+          "pass": true,
+          "w1": 0.056,
+          "cliffs": 0.053
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.061,
+          "cliffs": 0.367
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.182,
+          "cliffs": 0.946
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.264,
+          "cliffs": 0.841
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.327,
+          "cliffs": 0.798
+        }
+      ]
+    },
+    {
+      "domain": "News",
+      "method": "ThreadPDG",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 7,
+      "metrics": [
+        {
+          "mwu": ".13",
+          "ks": ".16",
+          "pass": true,
+          "w1": 0.005,
+          "cliffs": 0.102
+        },
+        {
+          "mwu": ".63",
+          "ks": ".74",
+          "pass": true,
+          "w1": 0.003,
+          "cliffs": 0.032
+        },
+        {
+          "mwu": ".01",
+          "ks": ".02",
+          "pass": false,
+          "w1": 0.018,
+          "cliffs": 0.167
+        },
+        {
+          "mwu": ".38",
+          "ks": ".36",
+          "pass": true,
+          "w1": 0.17,
+          "cliffs": 0.06
+        },
+        {
+          "mwu": ".78",
+          "ks": ".29",
+          "pass": true,
+          "w1": 0.314,
+          "cliffs": 0.019
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.096,
+          "cliffs": 0.179
+        },
+        {
+          "mwu": ".14",
+          "ks": ".19",
+          "pass": true,
+          "w1": 0.013,
+          "cliffs": 0.1
+        },
+        {
+          "mwu": ".55",
+          "ks": ".83",
+          "pass": true,
+          "w1": 0.056,
+          "cliffs": 0.041
+        },
+        {
+          "mwu": ".09",
+          "ks": ".07",
+          "pass": true,
+          "w1": 0.021,
+          "cliffs": 0.115
+        },
+        {
+          "mwu": ".02",
+          "ks": ".07",
+          "pass": false,
+          "w1": 0.037,
+          "cliffs": 0.162
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.077,
+          "cliffs": 0.263
+        },
+        {
+          "mwu": ".01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.039,
+          "cliffs": 0.168
+        }
+      ]
+    },
+    {
+      "domain": "News",
+      "method": "ThreadPDG",
+      "model": "gpt-5.4-mini",
+      "passes": 9,
+      "metrics": [
+        {
+          "mwu": ".42",
+          "ks": ".65",
+          "pass": true,
+          "w1": 0.003,
+          "cliffs": 0.054
+        },
+        {
+          "mwu": ".20",
+          "ks": ".38",
+          "pass": true,
+          "w1": 0.004,
+          "cliffs": 0.087
+        },
+        {
+          "mwu": ".35",
+          "ks": ".53",
+          "pass": true,
+          "w1": 0.01,
+          "cliffs": 0.064
+        },
+        {
+          "mwu": ".57",
+          "ks": ".59",
+          "pass": true,
+          "w1": 0.13,
+          "cliffs": 0.038
+        },
+        {
+          "mwu": ".99",
+          "ks": ".57",
+          "pass": true,
+          "w1": 0.23,
+          "cliffs": 0.001
+        },
+        {
+          "mwu": ".45",
+          "ks": ".57",
+          "pass": true,
+          "w1": 0.03,
+          "cliffs": 0.051
+        },
+        {
+          "mwu": ".92",
+          "ks": "1.0",
+          "pass": true,
+          "w1": 0.006,
+          "cliffs": 0.006
+        },
+        {
+          "mwu": ".21",
+          "ks": ".20",
+          "pass": true,
+          "w1": 0.057,
+          "cliffs": 0.084
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.045,
+          "cliffs": 0.269
+        },
+        {
+          "mwu": "<.01",
+          "ks": ".03",
+          "pass": false,
+          "w1": 0.048,
+          "cliffs": 0.22
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.08,
+          "cliffs": 0.272
+        },
+        {
+          "mwu": ".12",
+          "ks": ".06",
+          "pass": true,
+          "w1": 0.027,
+          "cliffs": 0.106
+        }
+      ]
+    },
+    {
+      "domain": "News",
+      "method": "ThreadPDG",
+      "model": "gpt-4o-mini",
+      "passes": 4,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.015,
+          "cliffs": 0.562
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.033,
+          "cliffs": 0.713
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.089,
+          "cliffs": 0.657
+        },
+        {
+          "mwu": ".45",
+          "ks": ".66",
+          "pass": true,
+          "w1": 0.135,
+          "cliffs": 0.051
+        },
+        {
+          "mwu": ".94",
+          "ks": ".54",
+          "pass": true,
+          "w1": 0.269,
+          "cliffs": 0.005
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.152,
+          "cliffs": 0.343
+        },
+        {
+          "mwu": ".69",
+          "ks": ".91",
+          "pass": true,
+          "w1": 0.008,
+          "cliffs": 0.027
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.336,
+          "cliffs": 0.513
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.042,
+          "cliffs": 0.21
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.06,
+          "cliffs": 0.325
+        },
+        {
+          "mwu": ".54",
+          "ks": ".45",
+          "pass": true,
+          "w1": 0.022,
+          "cliffs": 0.041
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.069,
+          "cliffs": 0.235
+        }
+      ]
+    },
+    {
+      "domain": "TV Series",
+      "method": "OASIS",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 2,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.016,
+          "cliffs": 0.514
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.051,
+          "cliffs": 0.909
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.298,
+          "cliffs": 0.991
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.705,
+          "cliffs": 0.987
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.848,
+          "cliffs": 0.987
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.531,
+          "cliffs": 0.978
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.129,
+          "cliffs": 0.656
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.452,
+          "cliffs": 0.512
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.163,
+          "cliffs": 0.466
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.137,
+          "cliffs": 0.741
+        },
+        {
+          "mwu": ".09",
+          "ks": ".33",
+          "pass": true,
+          "w1": 0.052,
+          "cliffs": 0.121
+        },
+        {
+          "mwu": ".83",
+          "ks": ".82",
+          "pass": true,
+          "w1": 0.016,
+          "cliffs": 0.016
+        }
+      ]
+    },
+    {
+      "domain": "TV Series",
+      "method": "OASIS",
+      "model": "gpt-5.4-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.044,
+          "cliffs": 0.772
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.128,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.409,
+          "cliffs": 0.999
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.705,
+          "cliffs": 0.987
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.848,
+          "cliffs": 0.987
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.663,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.193,
+          "cliffs": 0.908
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.399,
+          "cliffs": 0.462
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.123,
+          "cliffs": 0.599
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.125,
+          "cliffs": 0.667
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.265,
+          "cliffs": 0.68
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.134,
+          "cliffs": 0.305
+        }
+      ]
+    },
+    {
+      "domain": "TV Series",
+      "method": "OASIS",
+      "model": "gpt-4o-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.034,
+          "cliffs": 0.744
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.176,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.526,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.705,
+          "cliffs": 0.987
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.848,
+          "cliffs": 0.987
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.67,
+          "cliffs": 0.999
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.221,
+          "cliffs": 0.99
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.224,
+          "cliffs": 0.279
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.527,
+          "cliffs": 0.899
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.159,
+          "cliffs": 0.874
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.315,
+          "cliffs": 0.661
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.233,
+          "cliffs": 0.445
+        }
+      ]
+    },
+    {
+      "domain": "TV Series",
+      "method": "SynthPAI",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 1,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.027,
+          "cliffs": 0.736
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.061,
+          "cliffs": 0.95
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.035,
+          "cliffs": 0.305
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.673,
+          "cliffs": 0.481
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.759,
+          "cliffs": 0.373
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.242,
+          "cliffs": 0.622
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.112,
+          "cliffs": 0.601
+        },
+        {
+          "mwu": ".87",
+          "ks": ".09",
+          "pass": true,
+          "w1": 0.104,
+          "cliffs": 0.011
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.14,
+          "cliffs": 0.648
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.093,
+          "cliffs": 0.459
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.277,
+          "cliffs": 0.795
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.184,
+          "cliffs": 0.562
+        }
+      ]
+    },
+    {
+      "domain": "TV Series",
+      "method": "SynthPAI",
+      "model": "gpt-5.4-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.045,
+          "cliffs": 0.853
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.061,
+          "cliffs": 0.952
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.051,
+          "cliffs": 0.38
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.035,
+          "cliffs": 0.804
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 1.138,
+          "cliffs": 0.664
+        },
+        {
+          "mwu": ".07",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.142,
+          "cliffs": 0.124
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.097,
+          "cliffs": 0.554
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.321,
+          "cliffs": 0.401
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.15,
+          "cliffs": 0.714
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.064,
+          "cliffs": 0.293
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.231,
+          "cliffs": 0.697
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.124,
+          "cliffs": 0.422
+        }
+      ]
+    },
+    {
+      "domain": "TV Series",
+      "method": "SynthPAI",
+      "model": "gpt-4o-mini",
+      "passes": 0,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.011,
+          "cliffs": 0.223
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.115,
+          "cliffs": 1.0
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.215,
+          "cliffs": 0.92
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.669,
+          "cliffs": 0.668
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.437,
+          "cliffs": 0.347
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.64,
+          "cliffs": 0.996
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.201,
+          "cliffs": 0.953
+        },
+        {
+          "mwu": ".79",
+          "ks": ".03",
+          "pass": false,
+          "w1": 0.139,
+          "cliffs": 0.019
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.102,
+          "cliffs": 0.455
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.151,
+          "cliffs": 0.818
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.267,
+          "cliffs": 0.68
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.379,
+          "cliffs": 0.778
+        }
+      ]
+    },
+    {
+      "domain": "TV Series",
+      "method": "ThreadPDG",
+      "model": "DeepSeek-V4.1-Flash",
+      "passes": 11,
+      "metrics": [
+        {
+          "mwu": ".27",
+          "ks": ".31",
+          "pass": true,
+          "w1": 0.004,
+          "cliffs": 0.073
+        },
+        {
+          "mwu": ".08",
+          "ks": ".09",
+          "pass": true,
+          "w1": 0.005,
+          "cliffs": 0.116
+        },
+        {
+          "mwu": ".46",
+          "ks": ".44",
+          "pass": true,
+          "w1": 0.008,
+          "cliffs": 0.049
+        },
+        {
+          "mwu": ".51",
+          "ks": ".25",
+          "pass": true,
+          "w1": 0.11,
+          "cliffs": 0.044
+        },
+        {
+          "mwu": ".63",
+          "ks": ".76",
+          "pass": true,
+          "w1": 0.164,
+          "cliffs": 0.032
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.1,
+          "cliffs": 0.187
+        },
+        {
+          "mwu": ".58",
+          "ks": ".46",
+          "pass": true,
+          "w1": 0.013,
+          "cliffs": 0.037
+        },
+        {
+          "mwu": ".96",
+          "ks": ".21",
+          "pass": true,
+          "w1": 0.079,
+          "cliffs": 0.003
+        },
+        {
+          "mwu": ".61",
+          "ks": ".72",
+          "pass": true,
+          "w1": 0.02,
+          "cliffs": 0.034
+        },
+        {
+          "mwu": ".20",
+          "ks": ".34",
+          "pass": true,
+          "w1": 0.026,
+          "cliffs": 0.086
+        },
+        {
+          "mwu": ".08",
+          "ks": ".41",
+          "pass": true,
+          "w1": 0.041,
+          "cliffs": 0.116
+        },
+        {
+          "mwu": ".65",
+          "ks": ".90",
+          "pass": true,
+          "w1": 0.011,
+          "cliffs": 0.03
+        }
+      ]
+    },
+    {
+      "domain": "TV Series",
+      "method": "ThreadPDG",
+      "model": "gpt-5.4-mini",
+      "passes": 11,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.009,
+          "cliffs": 0.183
+        },
+        {
+          "mwu": ".24",
+          "ks": ".36",
+          "pass": true,
+          "w1": 0.003,
+          "cliffs": 0.079
+        },
+        {
+          "mwu": "1.0",
+          "ks": ".70",
+          "pass": true,
+          "w1": 0.008,
+          "cliffs": 0.0
+        },
+        {
+          "mwu": ".46",
+          "ks": ".35",
+          "pass": true,
+          "w1": 0.106,
+          "cliffs": 0.05
+        },
+        {
+          "mwu": ".58",
+          "ks": ".74",
+          "pass": true,
+          "w1": 0.153,
+          "cliffs": 0.037
+        },
+        {
+          "mwu": ".06",
+          "ks": ".16",
+          "pass": true,
+          "w1": 0.06,
+          "cliffs": 0.125
+        },
+        {
+          "mwu": ".74",
+          "ks": ".77",
+          "pass": true,
+          "w1": 0.013,
+          "cliffs": 0.022
+        },
+        {
+          "mwu": ".38",
+          "ks": ".06",
+          "pass": true,
+          "w1": 0.098,
+          "cliffs": 0.058
+        },
+        {
+          "mwu": ".19",
+          "ks": ".14",
+          "pass": true,
+          "w1": 0.025,
+          "cliffs": 0.087
+        },
+        {
+          "mwu": ".43",
+          "ks": ".30",
+          "pass": true,
+          "w1": 0.023,
+          "cliffs": 0.053
+        },
+        {
+          "mwu": ".70",
+          "ks": ".86",
+          "pass": true,
+          "w1": 0.015,
+          "cliffs": 0.025
+        },
+        {
+          "mwu": ".26",
+          "ks": ".42",
+          "pass": true,
+          "w1": 0.02,
+          "cliffs": 0.075
+        }
+      ]
+    },
+    {
+      "domain": "TV Series",
+      "method": "ThreadPDG",
+      "model": "gpt-4o-mini",
+      "passes": 4,
+      "metrics": [
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.008,
+          "cliffs": 0.319
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.016,
+          "cliffs": 0.324
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.051,
+          "cliffs": 0.378
+        },
+        {
+          "mwu": ".61",
+          "ks": ".33",
+          "pass": true,
+          "w1": 0.108,
+          "cliffs": 0.036
+        },
+        {
+          "mwu": ".82",
+          "ks": ".89",
+          "pass": true,
+          "w1": 0.148,
+          "cliffs": 0.016
+        },
+        {
+          "mwu": ".05",
+          "ks": ".11",
+          "pass": true,
+          "w1": 0.063,
+          "cliffs": 0.137
+        },
+        {
+          "mwu": ".08",
+          "ks": ".04",
+          "pass": false,
+          "w1": 0.024,
+          "cliffs": 0.125
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.169,
+          "cliffs": 0.198
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.078,
+          "cliffs": 0.322
+        },
+        {
+          "mwu": "<.01",
+          "ks": ".03",
+          "pass": false,
+          "w1": 0.047,
+          "cliffs": 0.197
+        },
+        {
+          "mwu": ".18",
+          "ks": ".15",
+          "pass": true,
+          "w1": 0.039,
+          "cliffs": 0.095
+        },
+        {
+          "mwu": "<.01",
+          "ks": "<.01",
+          "pass": false,
+          "w1": 0.081,
+          "cliffs": 0.287
+        }
+      ]
+    }
+  ],
+  "human_evaluation": {
+    "annotators": 436,
+    "pairs": 240,
+    "aggregation": "Pair-level majority vote, ties excluded. Generated-thread selections and cannot-distinguish votes count together as not distinguished.",
+    "results": [
+      {
+        "method": "ThreadPDG",
+        "not_distinguished": 78.7
+      },
+      {
+        "method": "OASIS",
+        "not_distinguished": 61.1
+      },
+      {
+        "method": "SynthPAI",
+        "not_distinguished": 58.7
+      }
+    ]
+  },
+  "reported_total_subdomains": 116,
+  "real_reference": {
+    "Camera": {
+      "self_bleu_4": {
+        "mwu_pass_rate": 94.5,
+        "ks_pass_rate": 95.5,
+        "w1": 0.0055,
+        "cliffs": 0.0558
+      },
+      "self_bertscore_mean_f1": {
+        "mwu_pass_rate": 93.0,
+        "ks_pass_rate": 96.0,
+        "w1": 0.0249,
+        "cliffs": 0.0565
+      },
+      "semantic_mean_cosine": {
+        "mwu_pass_rate": 94.0,
+        "ks_pass_rate": 95.5,
+        "w1": 0.0247,
+        "cliffs": 0.0546
+      },
+      "avg_depth": {
+        "mwu_pass_rate": 94.5,
+        "ks_pass_rate": 96.5,
+        "w1": 0.08,
+        "cliffs": 0.0514
+      },
+      "structural_virality": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 99.5,
+        "w1": 0.1148,
+        "cliffs": 0.0502
+      },
+      "length_cv": {
+        "mwu_pass_rate": 97.0,
+        "ks_pass_rate": 97.0,
+        "w1": 0.0527,
+        "cliffs": 0.0541
+      },
+      "mean_story_probability": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 96.0,
+        "w1": 0.0154,
+        "cliffs": 0.0532
+      },
+      "emotion_entropy": {
+        "mwu_pass_rate": 93.5,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0699,
+        "cliffs": 0.0526
+      },
+      "polite_rate": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 97.0,
+        "w1": 0.0384,
+        "cliffs": 0.0549
+      },
+      "neutral_rate": {
+        "mwu_pass_rate": 94.5,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0386,
+        "cliffs": 0.0535
+      },
+      "impolite_rate": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 98.0,
+        "w1": 0.0352,
+        "cliffs": 0.0461
+      },
+      "hard_disagree_rate": {
+        "mwu_pass_rate": 93.0,
+        "ks_pass_rate": 98.5,
+        "w1": 0.0236,
+        "cliffs": 0.0475
+      }
+    },
+    "Celebrity": {
+      "self_bleu_4": {
+        "mwu_pass_rate": 92.5,
+        "ks_pass_rate": 93.5,
+        "w1": 0.0112,
+        "cliffs": 0.0574
+      },
+      "self_bertscore_mean_f1": {
+        "mwu_pass_rate": 92.5,
+        "ks_pass_rate": 94.0,
+        "w1": 0.0281,
+        "cliffs": 0.0568
+      },
+      "semantic_mean_cosine": {
+        "mwu_pass_rate": 94.0,
+        "ks_pass_rate": 96.5,
+        "w1": 0.0243,
+        "cliffs": 0.0537
+      },
+      "avg_depth": {
+        "mwu_pass_rate": 92.0,
+        "ks_pass_rate": 96.0,
+        "w1": 0.0907,
+        "cliffs": 0.0524
+      },
+      "structural_virality": {
+        "mwu_pass_rate": 89.5,
+        "ks_pass_rate": 97.0,
+        "w1": 0.1653,
+        "cliffs": 0.0526
+      },
+      "length_cv": {
+        "mwu_pass_rate": 92.5,
+        "ks_pass_rate": 94.0,
+        "w1": 0.0643,
+        "cliffs": 0.056
+      },
+      "mean_story_probability": {
+        "mwu_pass_rate": 93.5,
+        "ks_pass_rate": 95.0,
+        "w1": 0.0226,
+        "cliffs": 0.0533
+      },
+      "emotion_entropy": {
+        "mwu_pass_rate": 90.5,
+        "ks_pass_rate": 96.5,
+        "w1": 0.1076,
+        "cliffs": 0.0593
+      },
+      "polite_rate": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 96.5,
+        "w1": 0.0419,
+        "cliffs": 0.0513
+      },
+      "neutral_rate": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 95.0,
+        "w1": 0.0339,
+        "cliffs": 0.0548
+      },
+      "impolite_rate": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 97.5,
+        "w1": 0.041,
+        "cliffs": 0.054
+      },
+      "hard_disagree_rate": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0232,
+        "cliffs": 0.0525
+      }
+    },
+    "Cellphone": {
+      "self_bleu_4": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 97.0,
+        "w1": 0.0053,
+        "cliffs": 0.0532
+      },
+      "self_bertscore_mean_f1": {
+        "mwu_pass_rate": 94.5,
+        "ks_pass_rate": 97.0,
+        "w1": 0.0245,
+        "cliffs": 0.0521
+      },
+      "semantic_mean_cosine": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 96.0,
+        "w1": 0.0232,
+        "cliffs": 0.0555
+      },
+      "avg_depth": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 96.5,
+        "w1": 0.1031,
+        "cliffs": 0.0488
+      },
+      "structural_virality": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 99.0,
+        "w1": 0.1401,
+        "cliffs": 0.0487
+      },
+      "length_cv": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 98.0,
+        "w1": 0.0518,
+        "cliffs": 0.0516
+      },
+      "mean_story_probability": {
+        "mwu_pass_rate": 94.5,
+        "ks_pass_rate": 96.5,
+        "w1": 0.0155,
+        "cliffs": 0.053
+      },
+      "emotion_entropy": {
+        "mwu_pass_rate": 97.0,
+        "ks_pass_rate": 99.0,
+        "w1": 0.0698,
+        "cliffs": 0.0496
+      },
+      "polite_rate": {
+        "mwu_pass_rate": 94.5,
+        "ks_pass_rate": 97.5,
+        "w1": 0.036,
+        "cliffs": 0.0493
+      },
+      "neutral_rate": {
+        "mwu_pass_rate": 94.0,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0396,
+        "cliffs": 0.0522
+      },
+      "impolite_rate": {
+        "mwu_pass_rate": 96.5,
+        "ks_pass_rate": 98.0,
+        "w1": 0.0363,
+        "cliffs": 0.0485
+      },
+      "hard_disagree_rate": {
+        "mwu_pass_rate": 92.0,
+        "ks_pass_rate": 98.0,
+        "w1": 0.0128,
+        "cliffs": 0.0462
+      }
+    },
+    "Game": {
+      "self_bleu_4": {
+        "mwu_pass_rate": 97.0,
+        "ks_pass_rate": 98.5,
+        "w1": 0.0037,
+        "cliffs": 0.0493
+      },
+      "self_bertscore_mean_f1": {
+        "mwu_pass_rate": 94.5,
+        "ks_pass_rate": 96.5,
+        "w1": 0.0238,
+        "cliffs": 0.0487
+      },
+      "semantic_mean_cosine": {
+        "mwu_pass_rate": 94.0,
+        "ks_pass_rate": 96.5,
+        "w1": 0.016,
+        "cliffs": 0.0489
+      },
+      "avg_depth": {
+        "mwu_pass_rate": 95.5,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0719,
+        "cliffs": 0.0457
+      },
+      "structural_virality": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 98.5,
+        "w1": 0.1325,
+        "cliffs": 0.0462
+      },
+      "length_cv": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0576,
+        "cliffs": 0.0481
+      },
+      "mean_story_probability": {
+        "mwu_pass_rate": 95.5,
+        "ks_pass_rate": 96.0,
+        "w1": 0.016,
+        "cliffs": 0.0541
+      },
+      "emotion_entropy": {
+        "mwu_pass_rate": 95.5,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0931,
+        "cliffs": 0.0491
+      },
+      "polite_rate": {
+        "mwu_pass_rate": 93.5,
+        "ks_pass_rate": 95.0,
+        "w1": 0.0429,
+        "cliffs": 0.0504
+      },
+      "neutral_rate": {
+        "mwu_pass_rate": 95.5,
+        "ks_pass_rate": 97.0,
+        "w1": 0.0371,
+        "cliffs": 0.0492
+      },
+      "impolite_rate": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 98.5,
+        "w1": 0.0349,
+        "cliffs": 0.051
+      },
+      "hard_disagree_rate": {
+        "mwu_pass_rate": 93.5,
+        "ks_pass_rate": 98.0,
+        "w1": 0.0153,
+        "cliffs": 0.0476
+      }
+    },
+    "Health Issue": {
+      "self_bleu_4": {
+        "mwu_pass_rate": 97.5,
+        "ks_pass_rate": 98.0,
+        "w1": 0.0096,
+        "cliffs": 0.0474
+      },
+      "self_bertscore_mean_f1": {
+        "mwu_pass_rate": 96.5,
+        "ks_pass_rate": 98.5,
+        "w1": 0.0264,
+        "cliffs": 0.0456
+      },
+      "semantic_mean_cosine": {
+        "mwu_pass_rate": 97.5,
+        "ks_pass_rate": 99.0,
+        "w1": 0.0239,
+        "cliffs": 0.0475
+      },
+      "avg_depth": {
+        "mwu_pass_rate": 95.5,
+        "ks_pass_rate": 99.0,
+        "w1": 0.0593,
+        "cliffs": 0.038
+      },
+      "structural_virality": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 99.5,
+        "w1": 0.0823,
+        "cliffs": 0.0379
+      },
+      "length_cv": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 97.0,
+        "w1": 0.0483,
+        "cliffs": 0.0501
+      },
+      "mean_story_probability": {
+        "mwu_pass_rate": 97.5,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0251,
+        "cliffs": 0.0479
+      },
+      "emotion_entropy": {
+        "mwu_pass_rate": 94.5,
+        "ks_pass_rate": 98.5,
+        "w1": 0.0701,
+        "cliffs": 0.0466
+      },
+      "polite_rate": {
+        "mwu_pass_rate": 94.5,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0445,
+        "cliffs": 0.0513
+      },
+      "neutral_rate": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 97.0,
+        "w1": 0.039,
+        "cliffs": 0.05
+      },
+      "impolite_rate": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 99.5,
+        "w1": 0.0292,
+        "cliffs": 0.0418
+      },
+      "hard_disagree_rate": {
+        "mwu_pass_rate": 97.0,
+        "ks_pass_rate": 100.0,
+        "w1": 0.0202,
+        "cliffs": 0.0359
+      }
+    },
+    "Movies": {
+      "self_bleu_4": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 95.5,
+        "w1": 0.0079,
+        "cliffs": 0.0559
+      },
+      "self_bertscore_mean_f1": {
+        "mwu_pass_rate": 95.5,
+        "ks_pass_rate": 97.0,
+        "w1": 0.0246,
+        "cliffs": 0.0513
+      },
+      "semantic_mean_cosine": {
+        "mwu_pass_rate": 93.5,
+        "ks_pass_rate": 95.5,
+        "w1": 0.0236,
+        "cliffs": 0.0523
+      },
+      "avg_depth": {
+        "mwu_pass_rate": 94.5,
+        "ks_pass_rate": 96.5,
+        "w1": 0.1155,
+        "cliffs": 0.0508
+      },
+      "structural_virality": {
+        "mwu_pass_rate": 94.0,
+        "ks_pass_rate": 95.0,
+        "w1": 0.1675,
+        "cliffs": 0.0495
+      },
+      "length_cv": {
+        "mwu_pass_rate": 96.5,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0523,
+        "cliffs": 0.0497
+      },
+      "mean_story_probability": {
+        "mwu_pass_rate": 96.5,
+        "ks_pass_rate": 99.0,
+        "w1": 0.0164,
+        "cliffs": 0.0509
+      },
+      "emotion_entropy": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 94.5,
+        "w1": 0.0929,
+        "cliffs": 0.0516
+      },
+      "polite_rate": {
+        "mwu_pass_rate": 98.0,
+        "ks_pass_rate": 99.5,
+        "w1": 0.0356,
+        "cliffs": 0.0475
+      },
+      "neutral_rate": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 96.5,
+        "w1": 0.0259,
+        "cliffs": 0.0492
+      },
+      "impolite_rate": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 96.0,
+        "w1": 0.0367,
+        "cliffs": 0.0521
+      },
+      "hard_disagree_rate": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 95.0,
+        "w1": 0.0254,
+        "cliffs": 0.053
+      }
+    },
+    "News": {
+      "self_bleu_4": {
+        "mwu_pass_rate": 93.5,
+        "ks_pass_rate": 95.5,
+        "w1": 0.0049,
+        "cliffs": 0.0544
+      },
+      "self_bertscore_mean_f1": {
+        "mwu_pass_rate": 95.5,
+        "ks_pass_rate": 96.5,
+        "w1": 0.0223,
+        "cliffs": 0.0524
+      },
+      "semantic_mean_cosine": {
+        "mwu_pass_rate": 94.5,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0168,
+        "cliffs": 0.0534
+      },
+      "avg_depth": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0989,
+        "cliffs": 0.0527
+      },
+      "structural_virality": {
+        "mwu_pass_rate": 96.5,
+        "ks_pass_rate": 97.0,
+        "w1": 0.176,
+        "cliffs": 0.0529
+      },
+      "length_cv": {
+        "mwu_pass_rate": 96.5,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0611,
+        "cliffs": 0.054
+      },
+      "mean_story_probability": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 97.0,
+        "w1": 0.0137,
+        "cliffs": 0.0508
+      },
+      "emotion_entropy": {
+        "mwu_pass_rate": 96.0,
+        "ks_pass_rate": 95.0,
+        "w1": 0.0868,
+        "cliffs": 0.0489
+      },
+      "polite_rate": {
+        "mwu_pass_rate": 97.0,
+        "ks_pass_rate": 96.5,
+        "w1": 0.028,
+        "cliffs": 0.0489
+      },
+      "neutral_rate": {
+        "mwu_pass_rate": 96.5,
+        "ks_pass_rate": 98.5,
+        "w1": 0.0382,
+        "cliffs": 0.0505
+      },
+      "impolite_rate": {
+        "mwu_pass_rate": 98.0,
+        "ks_pass_rate": 97.0,
+        "w1": 0.037,
+        "cliffs": 0.051
+      },
+      "hard_disagree_rate": {
+        "mwu_pass_rate": 98.0,
+        "ks_pass_rate": 98.0,
+        "w1": 0.0277,
+        "cliffs": 0.0489
+      }
+    },
+    "TV Series": {
+      "self_bleu_4": {
+        "mwu_pass_rate": 94.0,
+        "ks_pass_rate": 96.0,
+        "w1": 0.0059,
+        "cliffs": 0.0547
+      },
+      "self_bertscore_mean_f1": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 96.0,
+        "w1": 0.0225,
+        "cliffs": 0.0552
+      },
+      "semantic_mean_cosine": {
+        "mwu_pass_rate": 93.0,
+        "ks_pass_rate": 94.0,
+        "w1": 0.0183,
+        "cliffs": 0.0561
+      },
+      "avg_depth": {
+        "mwu_pass_rate": 95.5,
+        "ks_pass_rate": 98.0,
+        "w1": 0.1561,
+        "cliffs": 0.0503
+      },
+      "structural_virality": {
+        "mwu_pass_rate": 94.5,
+        "ks_pass_rate": 96.5,
+        "w1": 0.2037,
+        "cliffs": 0.0495
+      },
+      "length_cv": {
+        "mwu_pass_rate": 93.5,
+        "ks_pass_rate": 97.0,
+        "w1": 0.06,
+        "cliffs": 0.0505
+      },
+      "mean_story_probability": {
+        "mwu_pass_rate": 91.5,
+        "ks_pass_rate": 94.0,
+        "w1": 0.0241,
+        "cliffs": 0.0553
+      },
+      "emotion_entropy": {
+        "mwu_pass_rate": 97.0,
+        "ks_pass_rate": 97.5,
+        "w1": 0.0963,
+        "cliffs": 0.0505
+      },
+      "polite_rate": {
+        "mwu_pass_rate": 97.0,
+        "ks_pass_rate": 98.0,
+        "w1": 0.0343,
+        "cliffs": 0.0502
+      },
+      "neutral_rate": {
+        "mwu_pass_rate": 91.0,
+        "ks_pass_rate": 94.0,
+        "w1": 0.0288,
+        "cliffs": 0.051
+      },
+      "impolite_rate": {
+        "mwu_pass_rate": 95.0,
+        "ks_pass_rate": 98.0,
+        "w1": 0.0393,
+        "cliffs": 0.0527
+      },
+      "hard_disagree_rate": {
+        "mwu_pass_rate": 94.5,
+        "ks_pass_rate": 95.5,
+        "w1": 0.0291,
+        "cliffs": 0.0525
+      }
+    }
+  }
+}

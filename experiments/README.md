@@ -1,6 +1,6 @@
 # Submitting to the MiroBench leaderboard
 
-The public leaderboard at <https://yyu6.github.io/MiroBench/leaderboard.html> is
+The public leaderboard at <https://yyu6.github.io/ThreadBench/leaderboard.html> is
 **generated from this folder**. You add one folder of scored CSVs via a pull
 request; on merge, CI recomputes the statistics and refreshes the site. You
 never edit any HTML.
