@@ -10,9 +10,11 @@ ThreadBench is the revised paper's name. The canonical site is https://yyu6.gith
 - [Overview](https://yyu6.github.io/ThreadBench/): Corpus, metric definitions, statistical protocol, results, limitations and citation.
 - [ThreadPDG method](https://yyu6.github.io/ThreadBench/method.html): Prompt-based Planner–Writer discussion generation with full real-seed conditioning and multi-draft branch composition.
 - [Results explorer](https://yyu6.github.io/ThreadBench/results.html): All 72 published comparisons, with model/method/domain filters and metric-level rounded MWU/KS p-values.
+- [FAQ](https://yyu6.github.io/ThreadBench/#faq): What ThreadBench measures, how pass decisions work, how ThreadPDG, OASIS and SynthPAI compare, and how ThreadBench differs from SimBench.
 
 ## Data and citation
 
+- [Full text for AI assistants](https://yyu6.github.io/ThreadBench/llms-full.txt): Corpus table, all 12 metric definitions, every pass count, human evaluation, FAQ and citation in one Markdown file.
 - [Paper result JSON](https://yyu6.github.io/ThreadBench/paper-data.json): 72 comparisons and 864 metric-level p-value pairs with explicit published pass flags and source metadata. This export is paper results, not raw Reddit corpus data.
 - [Paper result CSV](https://yyu6.github.io/ThreadBench/paper-results.csv): One row per comparison and metric, with rounded p-values and published pass decisions.
 - [BibTeX](https://yyu6.github.io/ThreadBench/threadbench.bib): Seven-author paper citation.
@@ -23,6 +25,8 @@ ThreadBench is the revised paper's name. The canonical site is https://yyu6.gith
 A metric passes when both two-sided MWU and KS tests have p >= 0.05; passing does not establish equivalence. Published p-values are rounded: use the explicit paper pass flags rather than recomputing decisions from displayed .05 values.
 
 ThreadPDG passes 67–92% of metrics with GPT-5.4-mini, 58–100% with DeepSeek-V4.1-Flash, and 17–42% with GPT-4o-mini across eight domains. The 58–100% headline is not the range for all three backbones.
+
+Across all 96 metric–domain cells (12 metrics × 8 domains), ThreadPDG passes 78/96 with GPT-5.4-mini, 78/96 with DeepSeek-V4.1-Flash and 27/96 with GPT-4o-mini. The six OASIS and SynthPAI configurations pass between 1/96 and 11/96. Repeated real-vs-real samples pass both tests in 94.30% of metric comparisons.
 
 The human study has 436 retained annotators and 240 matched pairs across all three systems. ThreadPDG is not distinguished in 78.7% of its non-tied pairs by pair-level majority vote: generated-as-real and cannot-distinguish votes are combined. This is not an individual-rater accuracy score.
 

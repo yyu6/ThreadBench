@@ -1,0 +1,253 @@
+# ThreadBench
+
+> ThreadBench is a benchmark for measuring realism in LLM-based social simulation of Reddit discussions, introduced in “ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions” (arXiv:2606.14715, v2, October 10, 2026). It contains 9,817 real Reddit threads across 8 domains (Camera, Celebrity, Cellphone, Game, Health Issue, Movies, News, TV Series) and 116 reported subdomains, and tests whether a set of generated threads reproduces the distributions of held-out real threads.
+
+- Canonical site: https://yyu6.github.io/ThreadBench/
+- Paper: https://arxiv.org/abs/2606.14715 (PDF https://arxiv.org/pdf/2606.14715; DOI https://doi.org/10.48550/arXiv.2606.14715)
+- Repository: https://github.com/yyu6/ThreadBench (earlier MiroBench implementation and five-domain data; not the expanded corpus or ThreadPDG)
+- Paper version: v2, October 10, 2026. Website updated October 29, 2026.
+
+## Corpus
+
+| Domain | Real threads | Subdomains |
+|---|---:|---:|
+| Camera | 1,922 | 44 |
+| Celebrity | 700 | 4 |
+| Cellphone | 1,395 | 44 |
+| Game | 1,000 | 5 |
+| Health Issue | 2,100 | 5 |
+| Movies | 700 | 5 |
+| News | 1,000 | 5 |
+| TV Series | 1,000 | 5 |
+| Total | 9,817 | 116 (reported) |
+
+Paper Table 1 lists domain subdomain counts summing to 117 while the abstract and total report 116. Both are preserved pending author correction.
+
+Each domain has non-overlapping seed, reference and test pools.
+
+## Metrics
+
+### Uniformity: Do people bring different ideas?
+
+Three complementary views of repetition, from shared phrases to shared meaning.
+
+- Self-BLEU-4 (`self_bleu_4`): Pairwise 4-gram overlap between comments detects repeated wording.
+- Self-BERTScore (`self_bertscore_mean_f1`): Contextual similarity between comments detects paraphrases and similar expressions.
+- Semantic cosine (`semantic_mean_cosine`): Mean cosine similarity with all-mpnet-base-v2 captures convergence in meaning.
+
+### Expression: Does the conversation feel personal?
+
+Personal experience and emotional variation capture different parts of how people express themselves.
+
+- Story probability (`mean_story_probability`): StorySeeker estimates the prevalence of personal stories and first-person experiences.
+- Emotion entropy (`emotion_entropy`): Entropy of GoEmotions labels measures emotional diversity across comments.
+
+### Tone: How do people address one another?
+
+Interpersonal manner and disagreement are measured separately: people can disagree politely.
+
+- Polite rate (`polite_rate`): Fraction of comments classified as polite by Intel/polite-guard.
+- Neutral rate (`neutral_rate`): Fraction of comments classified as neutral by Intel/polite-guard.
+- Impolite rate (`impolite_rate`): Fraction of comments classified as impolite by Intel/polite-guard.
+- Hard disagreement (`hard_disagree_rate`): Explicit disagreement in parent–reply pairs.
+
+### Interaction: How does a discussion grow?
+
+Reply depth, branching and variation in contribution length describe the shape of a discussion.
+
+- Average depth (`avg_depth`): Mean reply depth measures how far multi-step exchanges develop.
+- Structural virality (`structural_virality`): Mean shortest-path distance between comments captures the spread of interaction across the reply tree.
+- Length variation (`length_cv`): Coefficient of variation of comment lengths measures the mixture of short reactions and longer contributions.
+
+## Results
+
+Metric–domain cells passing both MWU and KS tests (p ≥ 0.05), out of 12 metrics × 8 domains = 96. Each comparison uses 150 generated and 150 held-out real threads.
+
+| Method | Model | Passing cells | Share | Per-domain range (of 12) |
+|---|---|---:|---:|---:|
+| ThreadPDG | gpt-5.4-mini | 78/96 | 81.2% | 8–11 |
+| ThreadPDG | DeepSeek-V4.1-Flash | 78/96 | 81.2% | 7–12 |
+| ThreadPDG | gpt-4o-mini | 27/96 | 28.1% | 2–5 |
+| OASIS | gpt-5.4-mini | 3/96 | 3.1% | 0–1 |
+| OASIS | DeepSeek-V4.1-Flash | 11/96 | 11.5% | 1–2 |
+| OASIS | gpt-4o-mini | 1/96 | 1.0% | 0–1 |
+| SynthPAI | gpt-5.4-mini | 6/96 | 6.2% | 0–2 |
+| SynthPAI | DeepSeek-V4.1-Flash | 7/96 | 7.3% | 0–2 |
+| SynthPAI | gpt-4o-mini | 5/96 | 5.2% | 0–2 |
+
+### Per-domain pass counts
+
+| Domain | Method | Model | Metrics passing (of 12) |
+|---|---|---|---:|
+| Camera | OASIS | DeepSeek-V4.1-Flash | 1 |
+| Camera | OASIS | gpt-5.4-mini | 0 |
+| Camera | OASIS | gpt-4o-mini | 0 |
+| Camera | SynthPAI | DeepSeek-V4.1-Flash | 1 |
+| Camera | SynthPAI | gpt-5.4-mini | 1 |
+| Camera | SynthPAI | gpt-4o-mini | 2 |
+| Camera | ThreadPDG | DeepSeek-V4.1-Flash | 11 |
+| Camera | ThreadPDG | gpt-5.4-mini | 10 |
+| Camera | ThreadPDG | gpt-4o-mini | 2 |
+| Celebrity | OASIS | DeepSeek-V4.1-Flash | 1 |
+| Celebrity | OASIS | gpt-5.4-mini | 1 |
+| Celebrity | OASIS | gpt-4o-mini | 0 |
+| Celebrity | SynthPAI | DeepSeek-V4.1-Flash | 0 |
+| Celebrity | SynthPAI | gpt-5.4-mini | 0 |
+| Celebrity | SynthPAI | gpt-4o-mini | 0 |
+| Celebrity | ThreadPDG | DeepSeek-V4.1-Flash | 12 |
+| Celebrity | ThreadPDG | gpt-5.4-mini | 11 |
+| Celebrity | ThreadPDG | gpt-4o-mini | 3 |
+| Cellphone | OASIS | DeepSeek-V4.1-Flash | 1 |
+| Cellphone | OASIS | gpt-5.4-mini | 1 |
+| Cellphone | OASIS | gpt-4o-mini | 0 |
+| Cellphone | SynthPAI | DeepSeek-V4.1-Flash | 1 |
+| Cellphone | SynthPAI | gpt-5.4-mini | 1 |
+| Cellphone | SynthPAI | gpt-4o-mini | 1 |
+| Cellphone | ThreadPDG | DeepSeek-V4.1-Flash | 10 |
+| Cellphone | ThreadPDG | gpt-5.4-mini | 10 |
+| Cellphone | ThreadPDG | gpt-4o-mini | 5 |
+| Game | OASIS | DeepSeek-V4.1-Flash | 2 |
+| Game | OASIS | gpt-5.4-mini | 0 |
+| Game | OASIS | gpt-4o-mini | 0 |
+| Game | SynthPAI | DeepSeek-V4.1-Flash | 1 |
+| Game | SynthPAI | gpt-5.4-mini | 2 |
+| Game | SynthPAI | gpt-4o-mini | 0 |
+| Game | ThreadPDG | DeepSeek-V4.1-Flash | 10 |
+| Game | ThreadPDG | gpt-5.4-mini | 8 |
+| Game | ThreadPDG | gpt-4o-mini | 3 |
+| Health Issue | OASIS | DeepSeek-V4.1-Flash | 1 |
+| Health Issue | OASIS | gpt-5.4-mini | 1 |
+| Health Issue | OASIS | gpt-4o-mini | 1 |
+| Health Issue | SynthPAI | DeepSeek-V4.1-Flash | 2 |
+| Health Issue | SynthPAI | gpt-5.4-mini | 1 |
+| Health Issue | SynthPAI | gpt-4o-mini | 0 |
+| Health Issue | ThreadPDG | DeepSeek-V4.1-Flash | 7 |
+| Health Issue | ThreadPDG | gpt-5.4-mini | 8 |
+| Health Issue | ThreadPDG | gpt-4o-mini | 3 |
+| Movies | OASIS | DeepSeek-V4.1-Flash | 2 |
+| Movies | OASIS | gpt-5.4-mini | 0 |
+| Movies | OASIS | gpt-4o-mini | 0 |
+| Movies | SynthPAI | DeepSeek-V4.1-Flash | 1 |
+| Movies | SynthPAI | gpt-5.4-mini | 1 |
+| Movies | SynthPAI | gpt-4o-mini | 0 |
+| Movies | ThreadPDG | DeepSeek-V4.1-Flash | 10 |
+| Movies | ThreadPDG | gpt-5.4-mini | 11 |
+| Movies | ThreadPDG | gpt-4o-mini | 3 |
+| News | OASIS | DeepSeek-V4.1-Flash | 1 |
+| News | OASIS | gpt-5.4-mini | 0 |
+| News | OASIS | gpt-4o-mini | 0 |
+| News | SynthPAI | DeepSeek-V4.1-Flash | 0 |
+| News | SynthPAI | gpt-5.4-mini | 0 |
+| News | SynthPAI | gpt-4o-mini | 2 |
+| News | ThreadPDG | DeepSeek-V4.1-Flash | 7 |
+| News | ThreadPDG | gpt-5.4-mini | 9 |
+| News | ThreadPDG | gpt-4o-mini | 4 |
+| TV Series | OASIS | DeepSeek-V4.1-Flash | 2 |
+| TV Series | OASIS | gpt-5.4-mini | 0 |
+| TV Series | OASIS | gpt-4o-mini | 0 |
+| TV Series | SynthPAI | DeepSeek-V4.1-Flash | 1 |
+| TV Series | SynthPAI | gpt-5.4-mini | 0 |
+| TV Series | SynthPAI | gpt-4o-mini | 0 |
+| TV Series | ThreadPDG | DeepSeek-V4.1-Flash | 11 |
+| TV Series | ThreadPDG | gpt-5.4-mini | 11 |
+| TV Series | ThreadPDG | gpt-4o-mini | 4 |
+
+Repeated real-vs-real reference (150 vs 150 real threads, 200 repeats per domain): MWU passes 94.99%, KS 96.95% and both 94.30% of metric comparisons.
+
+## Human evaluation
+
+436 retained annotators; 240 matched pairs (8 domains × 3 systems × 10 pairs). Pair-level majority vote, ties excluded. Generated-thread selections and cannot-distinguish votes count together as not distinguished.
+
+| Method | Not distinguished |
+|---|---:|
+| ThreadPDG | 78.7% |
+| OASIS | 61.1% |
+| SynthPAI | 58.7% |
+
+## Frequently asked questions
+
+### What is ThreadBench?
+
+ThreadBench is a benchmark for measuring realism in LLM-based social simulation of Reddit discussions, introduced in “ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions” (arXiv:2606.14715, v2, October 10, 2026). It contains 9,817 real Reddit threads across 8 domains (Camera, Celebrity, Cellphone, Game, Health Issue, Movies, News, TV Series) and 116 reported subdomains, and tests whether a set of generated threads reproduces the distributions of held-out real threads.
+
+### What does ThreadBench measure?
+
+ThreadBench scores 12 thread-level metrics in four families: Uniformity (Self-BLEU-4, Self-BERTScore, Semantic cosine); Expression (Story probability, Emotion entropy); Tone (Polite rate, Neutral rate, Impolite rate, Hard disagreement); Interaction (Average depth, Structural virality, Length variation). Together they cover repeated wording and meaning, personal stories and emotion, politeness and disagreement, and the shape of the reply tree. Read all 12 definitions.
+
+### How does ThreadBench decide whether simulated discussions are realistic?
+
+For each method, model and domain, ThreadBench compares 150 generated threads with 150 held-out real test threads. A metric passes only when both two-sided Mann–Whitney U and Kolmogorov–Smirnov tests give p ≥ 0.05, so each system is scored on 12 × 8 = 96 metric–domain cells. Wasserstein-1 distance and absolute Cliff’s delta describe how large the remaining gaps are. Repeated real-vs-real samples pass both tests in 94.30% of comparisons. A pass means no difference was detected, not proof of equivalence.
+
+### How do ThreadPDG, OASIS and SynthPAI compare on ThreadBench?
+
+Under the same protocol, ThreadPDG passes 78 of 96 metric–domain cells with GPT-5.4-mini, 78 with DeepSeek-V4.1-Flash and 27 with GPT-4o-mini. The strongest baselines pass 11 of 96 (OASIS with DeepSeek-V4.1-Flash) and 7 of 96 (SynthPAI with DeepSeek-V4.1-Flash). In the human study (436 retained annotators, 240 matched pairs), ThreadPDG is not distinguished from real discussions in 78.7% of its non-tied pairs, versus 61.1% for OASIS and 58.7% for SynthPAI. See all 72 comparisons.
+
+### What is ThreadPDG?
+
+ThreadPDG (Thread-Prompt-based Discussion Generation) is the paper’s prompt-based Planner–Writer method. The Planner reads a complete real seed thread and plans each branch and comment role; the Writer fills those plans with assigned personas; up to K = 3 drafts are combined branch by branch against reference-pool metric targets. It depends on real seed discussions, and root-post-only generation is future work. How ThreadPDG works.
+
+### When should I use ThreadBench?
+
+Use ThreadBench to check whether an LLM agent or social simulator produces multi-party discussions whose content and reply structure match real Reddit threads, rather than individual replies that merely sound fluent. It covers Reddit across eight domains. It does not score single-persona accuracy, other platforms, or group-level phenomena such as polarization or information cascades.
+
+### How is ThreadBench different from OASIS, SynthPAI and SimBench?
+
+ThreadBench is an evaluation benchmark: it tests whether the distribution of generated discussions matches real Reddit threads. OASIS (CAMEL-AI) is a social media simulation framework, and SynthPAI is a synthetic Reddit-comment dataset for personal attribute inference; ThreadBench evaluates their generation methods as baselines. SimBench benchmarks human-behavior simulation on structured tasks such as moral and economic choices; it is related work with a different scope and no shared score scale.
+
+### What changed from MiroBench to ThreadBench?
+
+ThreadBench is the revised name and protocol of the earlier MiroBench project. The earlier MiroBench release, which is the Python code and data in the GitHub repository, covers 5 product domains and an archived 16-metric, MWU-only leaderboard. The revised paper uses 9,817 threads across 8 domains, 12 metrics, both MWU and KS tests, and introduces ThreadPDG. The expanded corpus and ThreadPDG implementation are not implied to be released in the repository.
+
+### Where can I find the ThreadBench paper, results and data?
+
+The paper is on arXiv (2606.14715). Published results for all 72 comparisons and 864 metric-level p-value pairs are available as CSV and JSON, and the results explorer filters them by model, method and domain. The GitHub repository holds the earlier MiroBench code and five-domain data. Plain-text summaries for AI assistants are at llms.txt and llms-full.txt.
+
+### How do I cite ThreadBench?
+
+Cite Yu et al. (2026), “ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions,” arXiv:2606.14715, doi:10.48550/arXiv.2606.14715. Copy the BibTeX entry below or download threadbench.bib.
+
+### How does ThreadBench relate to other social simulation projects?
+
+ThreadBench evaluates the distributions of generated Reddit discussions against real threads. OASIS is a social media simulation framework; SynthPAI provides synthetic Reddit comments for personal attribute inference. Their generation methods are evaluated alongside ThreadPDG in this paper. SimBench benchmarks human-behavior simulation across structured tasks such as moral and economic choices; it is related work, with a different evaluation scope and no shared score scale.
+
+### Does ThreadPDG fine-tune the language model?
+
+No. ThreadPDG is prompt-based generation: the Planner and Writer are prompted with the seed thread, a structural template, a domain profile and sampled personas. No model-weight update is implied.
+
+### Can ThreadPDG generate a discussion from only a root post?
+
+Not in the paper’s main setting. ThreadPDG conditions on a complete real seed thread, including its comments and reply relationships, and each draft inherits the seed’s comment count and reply-tree topology. Independent root-post-only generation is future work.
+
+### How should ThreadBench MWU and KS pass rates be interpreted?
+
+A metric passes when both two-sided Mann–Whitney U and Kolmogorov–Smirnov tests give p ≥ 0.05 against 150 held-out real threads. A pass means no difference was detected at that threshold; it is not proof of equivalence. The paper’s p-values are rounded, so use the published pass flags instead of recomputing decisions from a displayed “.05”. For reference, repeated real-vs-real samples pass both tests in 94.30% of metric comparisons.
+
+### Which method performs best on ThreadBench?
+
+ThreadPDG passes the most metric–domain cells with every backbone: 78/96 with GPT-5.4-mini, 78/96 with DeepSeek-V4.1-Flash and 27/96 with GPT-4o-mini. The six OASIS and SynthPAI configurations pass between 1/96 and 11/96. Results still vary by domain, and politeness, disagreement and length remain challenges.
+
+### What does “not distinguished” mean in the human evaluation?
+
+A pair is “not distinguished” when votes selecting the generated thread as real, plus “cannot distinguish” votes, outnumber votes selecting the real thread. Ties are excluded. ThreadPDG reaches 78.7%, versus 61.1% for OASIS and 58.7% for SynthPAI, across 436 retained annotators and 240 matched pairs.
+
+## Data downloads
+
+- [Paper result CSV](https://yyu6.github.io/ThreadBench/paper-results.csv): one row per comparison and metric (864 rows).
+- [Paper result JSON](https://yyu6.github.io/ThreadBench/paper-data.json): 72 comparisons with rounded p-values, explicit pass flags, W1, Cliff's delta and source metadata.
+- [BibTeX](https://yyu6.github.io/ThreadBench/threadbench.bib)
+
+## Citation
+
+```bibtex
+@article{yu2026threadbench,
+  title = {ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions},
+  author = {Yu, Yaoning and Yu, Ye and Sciarappo, John and Luo, Haojing and Chang, Kai-min and Wang, Yi-Chia and Wang, Haohan},
+  journal = {arXiv preprint arXiv:2606.14715},
+  year = {2026},
+  eprint = {2606.14715},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.MA},
+  doi = {10.48550/arXiv.2606.14715},
+  url = {https://arxiv.org/abs/2606.14715}
+}
+```

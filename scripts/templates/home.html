@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ThreadBench — Reddit Discussion Simulation Benchmark</title>
-<meta name="description" content="ThreadBench evaluates Reddit discussion simulation using 9,817 real threads, 12 metrics and ThreadPDG. Compare OASIS and SynthPAI with paper-grounded results.">
+<meta name="description" content="@@DESCRIPTION@@">
 <meta name="author" content="@@AUTHOR_NAMES@@">
-<meta name="keywords" content="ThreadBench, Reddit discussion simulation benchmark, ThreadPDG, LLM social simulation evaluation, conversation simulation, OASIS, SynthPAI">
+<meta name="keywords" content="ThreadBench, Reddit discussion simulation benchmark, LLM social simulation evaluation, social media simulation, agent-based social simulation, conversation simulation, LLM agents, multi-agent systems, ThreadPDG, OASIS, SynthPAI">
 
 <link rel="canonical" href="https://yyu6.github.io/ThreadBench/">
 <link rel="sitemap" type="application/xml" href="https://yyu6.github.io/ThreadBench/sitemap.xml">
 
 <meta property="og:title" content="ThreadBench — Reddit Discussion Simulation Benchmark">
-<meta property="og:description" content="ThreadBench evaluates Reddit discussion simulation using 9,817 real threads, 12 metrics and ThreadPDG. Compare OASIS and SynthPAI with paper-grounded results.">
+<meta property="og:description" content="@@DESCRIPTION@@">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yyu6.github.io/ThreadBench/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ThreadBench — Reddit Discussion Simulation Benchmark">
-<meta name="twitter:description" content="ThreadBench evaluates Reddit discussion simulation using 9,817 real threads, 12 metrics and ThreadPDG. Compare OASIS and SynthPAI with paper-grounded results.">
+<meta name="twitter:description" content="@@DESCRIPTION@@">
 
 <script type="application/ld+json">@@SCHEMA@@</script>
 
@@ -210,6 +210,7 @@
       <a href="#realref" class="hover:text-text">Reference</a>
       <a href="#metrics" class="hover:text-text">Metrics</a>
       <a href="#quickstart" class="hover:text-text">Quick start</a>
+      <a href="#faq" class="hover:text-text">FAQ</a>
       <a href="#cite" class="hover:text-text">Cite</a>
     </nav>
     <a href="https://github.com/yyu6/ThreadBench" target="_blank" rel="noopener"
@@ -230,7 +231,7 @@
 
       <!-- LEFT: title + meta + abstract -->
       <div>
-        <div class="sec-num">A reddit discussion simulation benchmark</div>
+        <div class="sec-num">A Reddit discussion simulation benchmark for LLM agents</div>
         <h1 class="serif-italic mt-3 text-[40px] sm:text-[52px] lg:text-[58px] leading-[1.05] tracking-[-0.01em] max-w-[18ch]">
           ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions
         </h1>
@@ -260,13 +261,13 @@
         </div>
 
         <p class="mt-8 text-[15.5px] text-text leading-[1.7] max-w-[60ch]">
-          <span class="serif-italic">ThreadBench</span> is a benchmark for Reddit discussion simulation,
-          built from <span class="num">9,817</span> real threads across <span class="num">8</span> domains
-          and <span class="num">116</span> subdomains. It evaluates LLM-generated discussions with
-          <span class="num">12</span> metrics of uniformity, expression, tone and interaction,
-          and introduces <span class="font-medium">ThreadPDG</span>, a Planner–Writer method evaluated against OASIS and SynthPAI.
+          <span class="serif-italic">ThreadBench</span> is a benchmark that measures how realistically LLM agents simulate
+          Reddit discussions. Built from <span class="num">9,817</span> real threads across <span class="num">8</span> domains
+          and <span class="num">116</span> subdomains, it compares generated threads with held-out real threads on
+          <span class="num">12</span> metrics of uniformity, expression, tone and interaction.
+          The paper also introduces <span class="font-medium">ThreadPDG</span>, a Planner–Writer method evaluated against OASIS and SynthPAI.
         </p>
-        <p class="mt-3 font-mono text-[10.5px] text-mute2">arXiv:2606.14715 · Paper v2, October 10, 2026 · Website updated <time datetime="2026-10-25">October 25, 2026</time></p>
+        <p class="mt-3 font-mono text-[10.5px] text-mute2">arXiv:2606.14715 · Paper v2, October 10, 2026 · Website updated @@SITE_UPDATED@@</p>
       </div>
 
       <!-- RIGHT: sunburst chart + info panel -->
@@ -321,7 +322,7 @@
           broader social behavior.
         </p>
         <p class="mt-4">
-          ThreadBench combines <span class="num">9,817</span> real Reddit threads across eight domains with
+          ThreadBench addresses this gap. It combines <span class="num">9,817</span> real Reddit threads across eight domains with
           separate seed, reference and test pools, and a framework that compares
           generated and real discussions through both comment-derived signals
           <em class="not-italic font-medium">and</em> reply-tree structure.
@@ -677,6 +678,7 @@
 <section id="quickstart" class="py-16 border-t border-line bg-surf">
   <div class="max-w-[1280px] mx-auto px-6">
     <div class="sec-num reveal">§ 04 — Quick start</div>
+    <h2 class="reveal mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[48ch]">How do I run the earlier <span class="serif-italic">MiroBench</span> code?</h2>
 
     <p class="reveal mt-4 mb-7 text-[13.5px] text-mute leading-relaxed">These commands document the repository’s earlier MiroBench code and five-domain data release. The revised ThreadBench paper uses twelve metrics across eight domains and ThreadPDG; the expanded corpus and method are not implied to be released by these commands.</p><div class="space-y-5">
 
@@ -854,6 +856,9 @@ pip install -e ".[generation]"'>copy</button>
 
   </div>
 </section>
+
+<!-- ════════ FAQ ════════ -->
+@@FAQ@@
 
 <!-- ════════ CITATION ════════ -->
 @@CITATION@@

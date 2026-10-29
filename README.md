@@ -8,9 +8,24 @@
 
 ThreadBench is a benchmark for evaluating whether LLM-generated online discussion threads match real Reddit discussion patterns.
 
-[Website](https://yyu6.github.io/ThreadBench/) | [Paper](https://arxiv.org/abs/2606.14715) | [Code](https://github.com/yyu6/ThreadBench) | HuggingFace(coming soon)
+[Website](https://yyu6.github.io/ThreadBench/) | [Paper](https://arxiv.org/abs/2606.14715) | [Code](https://github.com/yyu6/ThreadBench) | [FAQ](https://yyu6.github.io/ThreadBench/#faq) | HuggingFace(coming soon)
 
 </div>
+
+## ThreadBench at a glance
+
+- **What it is:** a benchmark that measures how realistically LLM agents simulate Reddit discussions, built from 9,817 real threads across 8 domains (Camera, Celebrity, Cellphone, Game, Health Issue, Movies, News, TV Series) and 116 reported subdomains.
+- **What it measures:** 12 thread-level metrics in four families: Uniformity (Self-BLEU-4, Self-BERTScore, semantic cosine), Expression (story probability, emotion entropy), Tone (polite, neutral and impolite rates, hard disagreement) and Interaction (average reply depth, structural virality, comment-length variation).
+- **How it decides:** each comparison uses 150 generated and 150 held-out real threads. A metric passes only when both two-sided Mann–Whitney U and Kolmogorov–Smirnov tests give p ≥ 0.05, so each system is scored on 12 × 8 = 96 metric–domain cells. A pass is not proof of equivalence; repeated real-vs-real samples pass both tests in 94.30% of comparisons.
+- **What it found** (paper Table 3 and human study with 436 annotators and 240 matched pairs):
+
+| Method | GPT-5.4-mini | DeepSeek-V4.1-Flash | GPT-4o-mini | Human eval: not distinguished |
+|---|:---:|:---:|:---:|:---:|
+| ThreadPDG (Planner–Writer) | 78/96 | 78/96 | 27/96 | 78.7% |
+| OASIS | 3/96 | 11/96 | 1/96 | 61.1% |
+| SynthPAI | 6/96 | 7/96 | 5/96 | 58.7% |
+
+Explore all 72 comparisons in the [results explorer](https://yyu6.github.io/ThreadBench/results.html), read [how ThreadPDG works](https://yyu6.github.io/ThreadBench/method.html), or give an AI assistant the [llms-full.txt](https://yyu6.github.io/ThreadBench/llms-full.txt) summary. To cite ThreadBench, see [Citation](#citation) or use GitHub's "Cite this repository" button.
 
 ## Earlier implementation overview
 

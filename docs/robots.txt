@@ -1,4 +1,22 @@
+# ThreadBench paper site. Search engines and AI assistants may crawl and cite every page.
+# Note: crawlers read robots.txt from the domain root (https://yyu6.github.io/robots.txt);
+# this copy documents the intended policy for the /ThreadBench/ project site.
 User-agent: *
+Allow: /
+
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: CCBot
+User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://yyu6.github.io/ThreadBench/sitemap.xml

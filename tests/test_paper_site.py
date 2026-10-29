@@ -156,6 +156,37 @@ class PaperSiteTests(unittest.TestCase):
         self.assertIn('noindex,follow',(DOCS/'leaderboard.html').read_text())
         self.assertNotIn('leaderboard.html',(DOCS/'sitemap.xml').read_text())
 
+    def test_geo_structured_data_matches_visible_content(self):
+        import html
+        import re
+        def graph(name):
+            text=(DOCS/name).read_text()
+            return json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',text).group(1))['@graph']
+        home=graph('index.html')
+        types={t for n in home for t in (n['@type'] if isinstance(n['@type'],list) else [n['@type']])}
+        self.assertTrue({'FAQPage','Dataset','DefinedTermSet','SoftwareSourceCode','ScholarlyArticle'}<=types)
+        for name in self.pages:
+            text=re.sub(r'<script.*?</script>','',(DOCS/name).read_text(),flags=re.S)
+            visible=html.unescape(re.sub(r'<[^>]+>','',text))
+            webpage=next(n for n in graph(name) if 'WebPage' in n['@type'])
+            self.assertGreaterEqual(len(webpage['mainEntity']),3,name)
+            for q in webpage['mainEntity']:
+                # FAQ structured data must mirror text a reader can see on the same page.
+                self.assertIn(q['name'],visible,name)
+                self.assertIn(q['acceptedAnswer']['text'],visible,name)
+        dataset=next(n for n in home if n['@type']=='Dataset')
+        self.assertEqual(len(dataset['variableMeasured']),12)
+        for d in dataset['distribution']:
+            self.assertTrue((DOCS/d['contentUrl'].removeprefix('https://yyu6.github.io/ThreadBench/')).exists())
+        llms_full=(DOCS/'llms-full.txt').read_text()
+        for method in ['ThreadPDG','OASIS','SynthPAI']:
+            for model in ['gpt-5.4-mini','DeepSeek-V4.1-Flash','gpt-4o-mini']:
+                cells=sum(r['passes'] for r in self.data['results'] if r['method']==method and r['model']==model)
+                self.assertIn(f'| {method} | {model} | {cells}/96 |',llms_full)
+        self.assertIn('Sitemap: https://yyu6.github.io/ThreadBench/sitemap.xml',(DOCS/'robots.txt').read_text())
+        self.assertIn('llms-full.txt',(DOCS/'llms.txt').read_text())
+        self.assertIn('doi: 10.48550/arXiv.2606.14715',(ROOT/'CITATION.cff').read_text())
+
     def test_generated_files_are_current(self):
         spec=importlib.util.spec_from_file_location('paper_site_build',ROOT/'scripts/build_paper_site.py')
         mod=importlib.util.module_from_spec(spec)

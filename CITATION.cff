@@ -1,0 +1,70 @@
+cff-version: 1.2.0
+message: "If you use ThreadBench, please cite the paper below."
+title: "ThreadBench"
+abstract: >-
+  ThreadBench is a benchmark for measuring realism in LLM-based social
+  simulation of Reddit discussions. It contains 9,817 real Reddit threads
+  across 8 domains and 116 reported subdomains, and compares generated and
+  held-out real threads with 12 metrics in four families (Uniformity,
+  Expression, Tone, Interaction) using two-sided Mann-Whitney U and
+  Kolmogorov-Smirnov tests. This repository contains the earlier MiroBench
+  implementation and five-domain data release.
+type: software
+authors:
+  - given-names: Yaoning
+    family-names: Yu
+    affiliation: "University of Illinois Urbana-Champaign"
+  - given-names: Ye
+    family-names: Yu
+    affiliation: "University of Illinois Urbana-Champaign"
+  - given-names: John
+    family-names: Sciarappo
+    affiliation: "U.S. Bank"
+  - given-names: Haojing
+    family-names: Luo
+    affiliation: "Starc.Institute"
+  - given-names: Kai-min
+    family-names: Chang
+    affiliation: "U.S. Bank"
+  - given-names: Yi-Chia
+    family-names: Wang
+    affiliation: "Carnegie Mellon University"
+  - given-names: Haohan
+    family-names: Wang
+    affiliation: "University of Illinois Urbana-Champaign"
+repository-code: "https://github.com/yyu6/ThreadBench"
+url: "https://yyu6.github.io/ThreadBench/"
+license: MIT
+keywords:
+  - ThreadBench
+  - Reddit discussion simulation
+  - LLM social simulation evaluation
+  - agent-based social simulation
+  - LLM agents
+  - benchmark
+identifiers:
+  - type: doi
+    value: 10.48550/arXiv.2606.14715
+    description: "ThreadBench paper (arXiv:2606.14715)"
+preferred-citation:
+  type: article
+  title: "ThreadBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions"
+  authors:
+    - given-names: Yaoning
+      family-names: Yu
+    - given-names: Ye
+      family-names: Yu
+    - given-names: John
+      family-names: Sciarappo
+    - given-names: Haojing
+      family-names: Luo
+    - given-names: Kai-min
+      family-names: Chang
+    - given-names: Yi-Chia
+      family-names: Wang
+    - given-names: Haohan
+      family-names: Wang
+  journal: "arXiv preprint arXiv:2606.14715"
+  year: 2026
+  doi: 10.48550/arXiv.2606.14715
+  url: "https://arxiv.org/abs/2606.14715"

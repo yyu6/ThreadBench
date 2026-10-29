@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://yyu6.github.io/ThreadBench/</loc><lastmod>2026-10-26</lastmod></url>
-  <url><loc>https://yyu6.github.io/ThreadBench/method.html</loc><lastmod>2026-10-26</lastmod></url>
-  <url><loc>https://yyu6.github.io/ThreadBench/results.html</loc><lastmod>2026-10-26</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://yyu6.github.io/ThreadBench/</loc><lastmod>2026-10-29</lastmod><image:image><image:loc>https://yyu6.github.io/ThreadBench/figures/realref_pvalue_heatmap.png</image:loc></image:image><image:image><image:loc>https://yyu6.github.io/ThreadBench/figures/realref_w1_radar.png</image:loc></image:image><image:image><image:loc>https://yyu6.github.io/ThreadBench/figures/realref_cliff_radar.png</image:loc></image:image><image:image><image:loc>https://yyu6.github.io/ThreadBench/figures/realref_model_gap_dotplot.png</image:loc></image:image></url>
+  <url><loc>https://yyu6.github.io/ThreadBench/method.html</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://yyu6.github.io/ThreadBench/results.html</loc><lastmod>2026-10-29</lastmod></url>
 </urlset>
